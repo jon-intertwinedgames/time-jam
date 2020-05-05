@@ -35,8 +35,8 @@ namespace com.leothelegion.Nav
             {
                 for (int x = 0; x < mapSize.x; x++)
                 {
-                    float xa = x - (mapSizebuffer.x / 2f) + this.transform.position.x;
-                    float ya = y - (mapSizebuffer.y / 2f) + this.transform.position.y;
+                    float xa = x;
+                    float ya = y;
 
                     RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f);
 
@@ -55,14 +55,12 @@ namespace com.leothelegion.Nav
             foreach (var p in points)
             {
                 Vector2Int v = p.Key;
-                float x = (float)v.x - (mapSizebuffer.x / 2f) + this.transform.position.x;
-                float y = (float)v.y - (mapSizebuffer.y / 2f) + this.transform.position.y;
+                float x = (float)v.x;
+                float y = (float)v.y;
 
                 if (p.Value)
                     Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
             }
-
-
         }
 
         public static Dictionary<Vector2Int, bool> GetPoints()

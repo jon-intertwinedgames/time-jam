@@ -31,6 +31,18 @@ public class TestScript : MonoBehaviour
             Mathf.FloorToInt(goal.position.x),
             Mathf.FloorToInt(goal.position.y)
             );
-        agent.FindPath(s, e);
+        path =  agent.FindPath(s, e);
+
+        //print(path.Count);
+    }
+    //Called by Unity
+    private void OnDrawGizmosSelected()
+    {
+        if (path == null) return;
+        Gizmos.color = Color.green;
+        foreach (var p in path)
+        {
+           Gizmos.DrawWireSphere(new Vector2(p.x, p.y), 0.1f);
+        }
     }
 }

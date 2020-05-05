@@ -30,10 +30,10 @@ namespace com.leothelegion.Nav
             if (!NavMap.GetPoints().ContainsKey(goal))
                 return path;
 
-            ///////BUG IS HERE
 
             Node current = CreateNewNode(start, null, 0, getDistance(start, goal));//new Node(start, null, 0, getDistance(start, goal));
             openList.Add(current);
+            
             //Debug.Log (start + "awdd"+ goal);
             while (openList.Count > 0)
             {
