@@ -24,7 +24,7 @@ namespace com.leothelegion.Nav
             }
 
             if (!map.isbaked)
-                EditorGUILayout.HelpBox("Bake Me", MessageType.Info);
+                EditorGUILayout.HelpBox("Bake Me----Preview", MessageType.Info);
             else
                 EditorGUILayout.HelpBox("I'm baked, bro", MessageType.Info);
 

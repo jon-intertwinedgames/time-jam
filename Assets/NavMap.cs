@@ -1,4 +1,5 @@
-﻿using System;
+﻿using com.leothelegion.Serializables;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace com.leothelegion.Nav
 {
     public class NavMap : MonoBehaviour
     {
-        Dictionary<Vector2Int, bool> points = new Dictionary<Vector2Int, bool>();
+        SerializableDictionary<Vector2Int, bool> points = new SerializableDictionary<Vector2Int, bool>();
         
         [SerializeField]
         internal Vector2Int mapSize;
