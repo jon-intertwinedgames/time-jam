@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float defaultSpeed = 0;
     [HideInInspector] public float speed;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         speed = defaultSpeed;
@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     public virtual void Move(Vector2 vel)
     {
-        rb.velocity = vel;
+        Move(vel.x, vel.y);
     }
 
     public virtual void Move(float xVel, float yVel)

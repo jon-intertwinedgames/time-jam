@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Protagonist protagonist_script;
     private LandMovement movement_script;
     private Aimer aimer_script;
-    // Start is called before the first frame update
+    private TimeManipulation time_script;
+
+    private Rigidbody2D rb;
+
     void Start()
     {
-        protagonist_script = GetComponent<Protagonist>();
         movement_script = GetComponent<LandMovement>();
         aimer_script = GetComponentInChildren<Aimer>();
+        time_script = GetComponent<TimeManipulation>();
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         MovementInput();
         ArrowInput();
+        TeleportationInput();
+        TimeInput();
     }
 
     void MovementInput()
@@ -32,11 +37,53 @@ public class PlayerController : MonoBehaviour
 
     void ArrowInput()
     {
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButton(0))
         {
-            Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 projectileDirection = aimer_script.GetDirection(transform.position, mouseInWorldPoint);
-            aimer_script.CreateProjectile(transform.position, projectileDirection, "arrow");
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            aimer_script.ShowTrajectory(mousePos);
+        }            
+
+        else if (Input.GetMouseButtonUp(0))
+            ReleaseBow();
+    }
+
+    void TeleportationInput()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Transform[] allArrows = Arrow.GetAllActiveArrows();
+
+            if (allArrows.Length > 0)
+            {
+                GameObject closestArrow = Arrow.FindClosestArrowToCursor(allArrows);
+                TeleportToArrow(closestArrow);
+            }
         }
+    }
+
+    void TimeInput()
+    {
+        if (Input.GetMouseButtonDown(1))
+            time_script.StartSlowingDownTime();
+        else if (Input.GetMouseButtonUp(1))
+            time_script.ResetTimeScale();
+
+        //if (Input.GetMouseButtonDown(1))
+        //    time_script.ToggleTimeScale();
+    }
+
+    private void ReleaseBow()
+    {
+        Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
+        aimer_script.ShootProjectile(projectileDirection, "arrow");
+    }
+
+    private void TeleportToArrow(GameObject arrowToTeleportTo)
+    {
+        Vector2 arrowVelocity = arrowToTeleportTo.GetComponent<Rigidbody2D>().velocity;
+        Destroy(arrowToTeleportTo);
+        transform.position = arrowToTeleportTo.transform.position;
+        rb.velocity = arrowVelocity;
     }
 }

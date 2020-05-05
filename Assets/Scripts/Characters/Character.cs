@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public Collider2D col;
+
 }
