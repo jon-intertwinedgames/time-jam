@@ -10,7 +10,7 @@ namespace com.leothelegion.Nav
     {
         SerializableDictionary<Vector2Int, bool> points = new SerializableDictionary<Vector2Int, bool>();
         
-        [HideInInspector]
+        [SerializeField]
         internal Vector2Int mapSize;
         Vector2Int mapSizebuffer;//for graphics
 

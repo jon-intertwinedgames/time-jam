@@ -62,7 +62,7 @@ namespace com.leothelegion.Nav
                     }
 
                     path_node.Clear();
-
+                    path.Reverse();
                     calculatedPaths.Add((start, goal), path);
 
                     return path;
@@ -80,16 +80,16 @@ namespace com.leothelegion.Nav
                     //filter start
 
                     //if(xi == 1 && yi == 1)
-                    //   continue;
+                     //  continue;
 
                     //if (xi == -1 && yi == -1)
-                    //    continue;
+                     //   continue;
 
                     //if (xi == 1 && yi == -1)
-                    //   continue;
+                     //  continue;
 
                     //if (xi == -1 && yi == 1)
-                    //  continue;
+                     // continue;
 
                     Vector2Int pointinQuestion = new Vector2Int(x + xi, y + yi);
 

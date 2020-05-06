@@ -28,8 +28,8 @@ namespace com.leothelegion.Nav
             else
                 EditorGUILayout.HelpBox("I'm baked, bro", MessageType.Info);
 
-            var x = map.mapSize.x = EditorGUILayout.IntField("X:", map.mapSize.x);
-            var y = map.mapSize.y = EditorGUILayout.IntField("Y:", map.mapSize.y);
+            var x = map.mapSize.x;// = EditorGUILayout.IntField("X:", map.mapSize.x);
+            var y = map.mapSize.y;// = EditorGUILayout.IntField("Y:", map.mapSize.y);
 
             if (GUILayout.Button("Bake"))
             {
