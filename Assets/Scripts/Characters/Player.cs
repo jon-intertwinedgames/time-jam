@@ -11,23 +11,10 @@ public class Player : Character
     protected override void Awake()
     {
         base.Awake();
+        UpdateHealth();
+
         healthBarReductionRate = healthBar_trans.rect.width / startingHealth;
         healthOffSet = startingHealth * healthBarReductionRate;
-    }
-
-    public int Health
-    {
-        get => health;
-
-        set
-        {
-            if (health != value)
-            {
-                health = value;
-
-                UpdateHealth();
-            }
-        }
     }
 
     private void UpdateHealth()
@@ -37,13 +24,10 @@ public class Player : Character
         healthBar_trans.localPosition = newHealthPos;
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        Health -= damage;
+        base.TakeDamage(damage);
 
-        if(Health <= 0)
-        {
-            //Dies
-        }
+        UpdateHealth();
     }
 }

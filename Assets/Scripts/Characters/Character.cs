@@ -12,4 +12,14 @@ public class Character : MonoBehaviour
     {
         health = startingHealth;
     }
+
+    public virtual void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            //Dies
+        }
+    }
 }
