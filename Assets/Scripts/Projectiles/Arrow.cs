@@ -5,11 +5,22 @@ using UnityEngine;
 [RequireComponent(typeof(AirMovement), typeof(Rigidbody2D))]
 public class Arrow : Projectile
 {
+
+    protected AirMovement movement_script;
+
     private void Awake()
     {
         movement_script = GetComponent<AirMovement>();
         transform.SetParent(GetArrowContainer());
         rotationOffset = -90;
+    }
+
+    public override void SetInMotion(Vector2 direction)
+    {
+        float rotation = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + rotationOffset;
+        transform.Rotate(0, 0, -rotation);
+        Vector2 vel = direction * movement_script.speed;
+        movement_script.Move(vel);
     }
 
     public static Transform GetArrowContainer()
@@ -28,7 +39,7 @@ public class Arrow : Projectile
 
         return allArrows;
     }
-
+//d
     public static GameObject FindClosestArrowToCursor(Transform[] allArrows)
     {
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);

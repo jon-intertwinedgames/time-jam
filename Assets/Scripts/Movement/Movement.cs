@@ -15,12 +15,12 @@ public class Movement : MonoBehaviour
         speed = defaultSpeed;
     }
 
-    public virtual void Move(Vector2 vel)
+    protected void Move(Vector2 vel)
     {
         Move(vel.x, vel.y);
     }
 
-    public virtual void Move(float xVel, float yVel)
+    protected void Move(float xVel, float yVel)
     {
         rb.velocity = new Vector2(xVel, yVel);
     }

@@ -23,15 +23,7 @@ public class TimeManipulation : MonoBehaviour
     private float blackScreenAlphaValue = 0;
 
     [SerializeField]
-    private Image blackScreen_image;
-
-    //public void ToggleTimeScale()
-    //{
-    //    if (timeLerp == null)
-    //        StartSlowingDownTime();
-    //    else
-    //        ResetTimeScale();
-    //}
+    private Image blackScreen_image = null;
 
     public void StartSlowingDownTime()
     {

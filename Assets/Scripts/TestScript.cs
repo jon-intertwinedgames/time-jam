@@ -6,13 +6,13 @@ using UnityEngine;
 public class TestScript : MonoBehaviour
 {
     [SerializeField]
-    NavAgent agent;
+    NavAgent agent = null;
 
     [SerializeField]
     List<Vector2> path;
 
     [SerializeField]
-    Transform goal;
+    Transform goal = null;
     // Start is called before the first frame update
     void Start()
     {

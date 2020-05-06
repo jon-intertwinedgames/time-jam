@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(HandlePlayerState))]
 public class PlayerController : MonoBehaviour
 {
     private LandMovement movement_script;
     private Aimer aimer_script;
     private TimeManipulation time_script;
+    private HandlePlayerState playerState_script;
 
     private Rigidbody2D rb;
 
@@ -15,6 +18,7 @@ public class PlayerController : MonoBehaviour
         movement_script = GetComponent<LandMovement>();
         aimer_script = GetComponentInChildren<Aimer>();
         time_script = GetComponent<TimeManipulation>();
+        playerState_script = GetComponent<HandlePlayerState>();
 
         rb = GetComponent<Rigidbody2D>();
     }
@@ -32,7 +36,10 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Jump");
 
-        movement_script.Move(h, v);
+        movement_script.Move(h);
+
+        if (v != 0)
+            movement_script.Jump();
     }
 
     void ArrowInput()
@@ -67,9 +74,6 @@ public class PlayerController : MonoBehaviour
             time_script.StartSlowingDownTime();
         else if (Input.GetMouseButtonUp(1))
             time_script.ResetTimeScale();
-
-        //if (Input.GetMouseButtonDown(1))
-        //    time_script.ToggleTimeScale();
     }
 
     private void ReleaseBow()
@@ -85,5 +89,7 @@ public class PlayerController : MonoBehaviour
         Destroy(arrowToTeleportTo);
         transform.position = arrowToTeleportTo.transform.position;
         rb.velocity = arrowVelocity;
+
+        playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
     }
 }

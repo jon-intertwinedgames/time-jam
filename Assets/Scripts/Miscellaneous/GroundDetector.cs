@@ -1,12 +1,20 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundDetector : MonoBehaviour
 {
     [SerializeField] private float groundDetectionLength = 0;
+    private bool isOnGround;
+    public bool IsOnGround { get => isOnGround; }
 
-    public bool IsOnGround()
+    private void Update()
+    {
+        isOnGround = CheckIfOnGround();
+    }
+
+    public bool CheckIfOnGround()
     {
         Vector2 startPosition = GetStartPosition();
         RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.right, groundDetectionLength, LayerMask.GetMask("Terrain"));

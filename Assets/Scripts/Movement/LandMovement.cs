@@ -7,9 +7,11 @@ public class LandMovement : Movement
 {
     [SerializeField] private float jumpSpeed = 0;
     [SerializeField] private float horizontalJumpSpeedForce = 0;
-    
+
+    private GroundDetector groundDetector_script;
+
     private float horizontalJumpSpeedCap = 0;
-    private bool jumped;
+    private bool canJump = true;
 
     protected override void Awake()
     {
@@ -17,51 +19,52 @@ public class LandMovement : Movement
         horizontalJumpSpeedCap = speed;
     }
 
-    public override void Move(float xVel, float yVel)
+    private void Start()
     {
-        bool isOnGround = IsOnGround();
+        groundDetector_script = GetComponentInChildren<GroundDetector>();
+    }
 
-        if (yVel != 0 && jumped == false)
+    public void Move(float xVelMultiplier)
+    {
+        if (groundDetector_script.IsOnGround)
         {
-            if(isOnGround)
-                Jump(yVel);
-        }
-            
-        else if(yVel == 0)
-            jumped = false;
-
-        if (isOnGround)
-        {
-            xVel *= speed;
-            base.Move(xVel, rb.velocity.y);
+            xVelMultiplier *= speed;
+            base.Move(xVelMultiplier, rb.velocity.y);
         }
         else
-            ForceMobility(xVel);
+            ForceMobility(xVelMultiplier);
     }
 
-    private void ForceMobility(float xVel)
+    private void ForceMobility(float xVelMultiplier)
     {
-        xVel *= horizontalJumpSpeedForce;
+        xVelMultiplier *= horizontalJumpSpeedForce;
 
-        if(xVel > 0 && rb.velocity.x < horizontalJumpSpeedCap)
-            rb.AddForce(new Vector2(xVel, 0), ForceMode2D.Force);
-        else if (xVel < 0 && rb.velocity.x > -horizontalJumpSpeedCap)
-            rb.AddForce(new Vector2(xVel, 0), ForceMode2D.Force);
+        if(xVelMultiplier > 0 && rb.velocity.x < horizontalJumpSpeedCap)
+            rb.AddForce(new Vector2(xVelMultiplier, 0), ForceMode2D.Force);
+        else if (xVelMultiplier < 0 && rb.velocity.x > -horizontalJumpSpeedCap)
+            rb.AddForce(new Vector2(xVelMultiplier, 0), ForceMode2D.Force);
     }
 
-    private void Jump(float yVel)
+    public void Jump()
     {
-        rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-        jumped = true;
+        if (canJump == true)
+        {
+            if (groundDetector_script.IsOnGround)
+            {
+                rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                StartCoroutine(AllowAJump());
+            }
+        }
     }
 
-    private bool IsOnGround()
+    //I'm OCD and would like to guarantee that the character is no longer touching the ground before allowing for a jump again
+    private IEnumerator AllowAJump()
     {
-        GroundDetector groundDetector_script = GetComponentInChildren<GroundDetector>();
-        
-        if(groundDetector_script.IsOnGround())
-            return true;
+        canJump = false;
 
-        return false;
+        for (int i = 0; i < 2; i++)
+            yield return new WaitForFixedUpdate();
+
+        canJump = true;
     }
 }

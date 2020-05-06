@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class AirMovement : Movement
 {
-    public override void Move(float xVel, float yVel)
+    public new void Move(Vector2 vel)
+    {
+        Move(vel.x, vel.y);
+    }
+
+    public new void Move(float xVel, float yVel)
     {
         xVel *= speed;
         yVel *= speed;
