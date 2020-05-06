@@ -14,7 +14,15 @@ public class DrifterController : MonoBehaviour
     [SerializeField]
     Transform goal = null;
 
-    
+    [SerializeField]
+    float minFlyingAltitude = 10f;
+
+    [SerializeField]
+    [Range(0.00001f, 0.5f)]
+    private float floatyness = 0.01f;
+
+    Vector2 floatyMovement = Vector2.zero;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +33,9 @@ public class DrifterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float xa = 0;
+        float ya = 0;
+
         Vector2Int s = new Vector2Int(
             Mathf.FloorToInt(this.transform.position.x),
             Mathf.FloorToInt(this.transform.position.y)
@@ -36,9 +47,6 @@ public class DrifterController : MonoBehaviour
             );
         path =  agent.FindPath(s, e);
 
-        float xa = 0;
-        float ya = 0;
-
         if (path != null)
         {
             if (path.Count > 0)
@@ -49,7 +57,7 @@ public class DrifterController : MonoBehaviour
                 float y = this.transform.position.y;
 
 
-                //if (Vector2.Distance(point, this.transform.position) > 0.1f)
+                if (Vector2.Distance(point, this.transform.position) > 0.1f)
                 {
                     if (point.x < x)
                         xa = -1;
@@ -58,22 +66,43 @@ public class DrifterController : MonoBehaviour
                     else
                         xa = 0;
 
-                    if (point.y < y)
-                        ya = -1;
-                    else if ((point.y > y))
+                    if(y > minFlyingAltitude)
+                    {
+                        if (point.y < y)
+                            ya = -1;
+                        else if ((point.y > y))
+                            ya = 1;
+                        else
+                            ya = 0;
+                    }
+                    else if(y < minFlyingAltitude)
+                    {
                         ya = 1;
-                    else
+                    }
+                    else if(y == minFlyingAltitude)
+                    {
                         ya = 0;
+                    }
+
+                    
                 }
             }
         }
 
-        movement.Move(new Vector2(xa, ya));
+        floatyMovement = Vector2.Lerp(floatyMovement, new Vector2(xa, ya), floatyness);
+
+        movement.Move(new Vector2(floatyMovement.x, floatyMovement.y));
 
     }
     //Called by Unity
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.yellow;
+        var drawRange = 10;
+        Gizmos.DrawLine(
+            new Vector3(this.transform.position.x - drawRange, minFlyingAltitude, 0),
+            new Vector3(this.transform.position.x + drawRange, minFlyingAltitude, 0)
+            );
         if (path == null) return;
         Gizmos.color = Color.green;
         foreach (var p in path)

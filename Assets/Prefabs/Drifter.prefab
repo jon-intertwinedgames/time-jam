@@ -115,6 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   goal: {fileID: 0}
+  minFlyingAltitude: 10
+  floatyness: 0.017
 --- !u!114 &554573303193546125
 MonoBehaviour:
   m_ObjectHideFlags: 0
