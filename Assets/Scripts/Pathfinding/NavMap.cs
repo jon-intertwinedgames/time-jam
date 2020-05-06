@@ -4,20 +4,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace com.leothelegion.Nav
 {
     public class NavMap : MonoBehaviour
     {
         SerializableDictionary<Vector2Int, bool> points = new SerializableDictionary<Vector2Int, bool>();
         
-        [SerializeField]
+        [HideInInspector]
         internal Vector2Int mapSize;
         Vector2Int mapSizebuffer;//for graphics
 
         internal bool isbaked = false;
 
         static NavMap INSTANCE;
+
+        [SerializeField]
+        LayerMask mask;
 
         private void Start()
         {
@@ -39,7 +41,7 @@ namespace com.leothelegion.Nav
                     float xa = x;
                     float ya = y;
 
-                    RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f);
+                    RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f,mask);
 
                     if (hit.collider == null)
                         points.Add(new Vector2Int(x, y), true);
