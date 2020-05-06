@@ -5,12 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(AirMovement), typeof(Rigidbody2D))]
 public class Arrow : Projectile
 {
-
     protected AirMovement movement_script;
+
+    private Rigidbody2D rb;
+
+    [SerializeField] [Range(0.01f, 0.2f)]
+    private float slowDownDuration = 0;
+    private bool struckSomething;
 
     private void Awake()
     {
         movement_script = GetComponent<AirMovement>();
+        rb = GetComponent<Rigidbody2D>();
         transform.SetParent(GetArrowContainer());
         rotationOffset = -90;
     }
@@ -60,5 +66,23 @@ public class Arrow : Projectile
         }
 
         return closestArrow;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (struckSomething == false)
+            StartCoroutine(SlowDown());
+    }
+
+    private IEnumerator SlowDown()
+    {
+        float timer = 0;
+        Vector2 currentSpeed = rb.velocity;
+        while (rb.velocity != Vector2.zero)
+        {
+            rb.velocity = Vector2.Lerp(currentSpeed, Vector2.zero, timer/slowDownDuration);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

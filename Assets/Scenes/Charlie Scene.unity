@@ -557,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 767049179}
   - component: {fileID: 767049180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1065811259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,13 +960,12 @@ GameObject:
   - component: {fileID: 1653382647}
   - component: {fileID: 1653382646}
   - component: {fileID: 1653382645}
-  - component: {fileID: 1653382650}
   - component: {fileID: 1653382643}
   - component: {fileID: 1653382644}
   - component: {fileID: 1653382651}
   - component: {fileID: 1653382652}
-  m_Layer: 0
-  m_Name: Protagonist
+  m_Layer: 9
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,18 +1098,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1653382650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653382642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e899e3dcbff064bb84121717f15e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1653382651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1137,7 @@ GameObject:
   - component: {fileID: 1872151615}
   - component: {fileID: 1872151616}
   - component: {fileID: 1872151617}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
