@@ -11,7 +11,7 @@ public class Arrow : Projectile
 
     [SerializeField] [Range(0.01f, 0.2f)]
     private float slowDownDuration = 0;
-    private bool struckSomething;
+    private bool struckSomething = false;
 
     private void Awake()
     {
@@ -76,6 +76,8 @@ public class Arrow : Projectile
 
     private IEnumerator SlowDown()
     {
+        struckSomething = true;
+
         float timer = 0;
         Vector2 currentSpeed = rb.velocity;
         while (rb.velocity != Vector2.zero)
