@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3829405722963638434}
   - component: {fileID: 554573303193546125}
   - component: {fileID: 1619159720}
+  - component: {fileID: 5312177842759004227}
+  - component: {fileID: 5360387596142997343}
   m_Layer: 0
   m_Name: Drifter
   m_TagString: Untagged
@@ -97,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a8150ae2dac9547870d27e8d7b9796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useSharedPathing: 1
   D: 0.95
 --- !u!114 &3829405722963638434
 MonoBehaviour:
@@ -110,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce375dfd22e41b948b2120ca0b706758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 674611989468756764}
   path: []
   goal: {fileID: 0}
 --- !u!114 &554573303193546125
@@ -148,3 +150,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5312177842759004227
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674611989468756754}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
+--- !u!114 &5360387596142997343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674611989468756754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae6e8661de20f64ba476ac66bf67f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
