@@ -10,6 +10,9 @@ namespace com.leothelegion.Nav
 {
     public class NavAgent: MonoBehaviour
     {
+        [SerializeField]
+        bool useSharedPathing = true;
+
         static NodeComparer nodeSorter = new NodeComparer();
 
         Queue<Node> nodePool = new Queue<Node>();
@@ -22,10 +25,14 @@ namespace com.leothelegion.Nav
 
         public List<Vector2> FindPath(Vector2Int start, Vector2Int goal)
         {
-            if (calculatedPaths.ContainsKey((start, goal)))
+            if (useSharedPathing)
             {
-                return calculatedPaths[(start, goal)];
+                if (calculatedPaths.ContainsKey((start, goal)))
+                {
+                    return calculatedPaths[(start, goal)];
+                }
             }
+            
             List<Vector2> path = new List<Vector2>();
 
             if (!NavMap.GetPoints().ContainsKey(goal))
@@ -63,7 +70,8 @@ namespace com.leothelegion.Nav
 
                     path_node.Clear();
                     path.Reverse();
-                    calculatedPaths.Add((start, goal), path);
+                    if(useSharedPathing)
+                        calculatedPaths.Add((start, goal), path);
 
                     return path;
                 }
