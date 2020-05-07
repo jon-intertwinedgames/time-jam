@@ -12,12 +12,7 @@ public class PlayerController : MonoBehaviour
     private HandlePlayerState playerState_script;
     private Health health_script;
 
-    [SerializeField] private RectTransform healthBar_trans = null;
-
     private Rigidbody2D rb;
-
-    [Header("Health")]
-    private float healthBarReductionRate, healthOffSet;
 
     void Start()
     {
@@ -29,9 +24,7 @@ public class PlayerController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
 
-        UpdateHealth();
-        healthBarReductionRate = healthBar_trans.rect.width / health_script.StartingHealth;
-        healthOffSet = health_script.StartingHealth * healthBarReductionRate;
+        health_script.DeathEvent += Death;
     }
 
     void Update()
@@ -40,6 +33,11 @@ public class PlayerController : MonoBehaviour
         ArrowInput();
         TeleportationInput();
         TimeInput();
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            health_script.TakeDamage(10);
+        }
     }
 
     void MovementInput()
@@ -59,10 +57,12 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimer_script.ShowTrajectory(mousePos);
-        }            
+        }
 
         else if (Input.GetMouseButtonUp(0))
+        {
             ReleaseBow();
+        }
     }
 
     void TeleportationInput()
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
         aimer_script.ShootProjectile(projectileDirection, "arrow");
+        playerState_script.ActionState = HandlePlayerState.PlayerState.Shooting;
     }
 
     private void TeleportToArrow(GameObject arrowToTeleportTo)
@@ -104,10 +105,8 @@ public class PlayerController : MonoBehaviour
         playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
     }
 
-    public void UpdateHealth()
+    private void Death()
     {
-        Vector2 newHealthPos = healthBar_trans.localPosition;
-        newHealthPos.x = health_script.CurrentHealth * healthBarReductionRate - healthOffSet;
-        healthBar_trans.localPosition = newHealthPos;
+        Destroy(gameObject);
     }
 }

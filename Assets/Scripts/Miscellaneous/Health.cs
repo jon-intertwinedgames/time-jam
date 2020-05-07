@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ public class Health : MonoBehaviour
     private int currentHealth = 0;
     public int CurrentHealth { get => currentHealth; }
 
+    public event Action DeathEvent;
+    public event Action DamageTakenEvent;
+
     protected virtual void Awake()
     {
         currentHealth = startingHealth;
@@ -18,11 +22,15 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        GetComponent<PlayerController>()?.UpdateHealth();   //Health Bar will update IF you are the player.
 
-        if (currentHealth <= 0)
+        if (DamageTakenEvent != null)
         {
-            //Dies
+            DamageTakenEvent();
+        }
+
+        if (currentHealth <= 0 && DeathEvent != null)
+        {
+            DeathEvent();
         }
     }
 }
