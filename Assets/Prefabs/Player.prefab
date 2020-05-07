@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1440747908043183962}
   - component: {fileID: 1440747908043183963}
   - component: {fileID: 1440747908043183960}
-  - component: {fileID: 3084958477309887119}
+  - component: {fileID: 5821969490864295767}
   - component: {fileID: 1440747908043183966}
   - component: {fileID: 1440747908043183961}
   - component: {fileID: 1440747908043183958}
@@ -200,7 +200,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3084958477309887119
+--- !u!114 &5821969490864295767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,11 +209,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440747908043183967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f808a789dfce2874799b0a1b603a4b14, type: 3}
+  m_Script: {fileID: 11500000, guid: f69ae92405e151a4cb28a0f0a149fb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 0
-  healthBar_trans: {fileID: 0}
+  startingHealth: 100
+  currentHealth: 0
 --- !u!114 &1440747908043183966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34ac10dd0ab6fc4b8c35d7f3a0f0be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar_trans: {fileID: 0}
 --- !u!114 &1440747908043183961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +242,6 @@ MonoBehaviour:
   defaultSpeed: 10
   speed: 10
   jumpSpeed: 15
-  horizontalJumpSpeedForce: 10
 --- !u!114 &1440747908043183958
 MonoBehaviour:
   m_ObjectHideFlags: 0

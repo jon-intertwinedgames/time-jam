@@ -227,6 +227,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2000616863 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5187053492795773634, guid: 35089e163fd2ca340a82ee0e820ca7de,
+    type: 3}
+  m_PrefabInstance: {fileID: 3024515770067454214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3024515770067454214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,6 +240,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3024515768499606770, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: defaultSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024515768499606770, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024515768499606770, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: jumpSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024515768499606770, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: horizontalJumpSpeedForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024515768499606773, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: healthBar_trans
+      value: 
+      objectReference: {fileID: 2000616863}
     - target: {fileID: 3024515768843197054, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
       propertyPath: m_Name
@@ -294,5 +325,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1209309839014183204, guid: 35089e163fd2ca340a82ee0e820ca7de, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35089e163fd2ca340a82ee0e820ca7de, type: 3}

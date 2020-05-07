@@ -10,8 +10,14 @@ public class PlayerController : MonoBehaviour
     private Aimer aimer_script;
     private TimeManipulation time_script;
     private HandlePlayerState playerState_script;
+    private Health health_script;
+
+    [SerializeField] private RectTransform healthBar_trans = null;
 
     private Rigidbody2D rb;
+
+    [Header("Health")]
+    private float healthBarReductionRate, healthOffSet;
 
     void Start()
     {
@@ -19,8 +25,13 @@ public class PlayerController : MonoBehaviour
         aimer_script = GetComponentInChildren<Aimer>();
         time_script = GetComponent<TimeManipulation>();
         playerState_script = GetComponent<HandlePlayerState>();
+        health_script = GetComponent<Health>();
 
         rb = GetComponent<Rigidbody2D>();
+
+        UpdateHealth();
+        healthBarReductionRate = healthBar_trans.rect.width / health_script.StartingHealth;
+        healthOffSet = health_script.StartingHealth * healthBarReductionRate;
     }
 
     void Update()
@@ -91,5 +102,12 @@ public class PlayerController : MonoBehaviour
         rb.velocity = arrowVelocity;
 
         playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
+    }
+
+    public void UpdateHealth()
+    {
+        Vector2 newHealthPos = healthBar_trans.localPosition;
+        newHealthPos.x = health_script.CurrentHealth * healthBarReductionRate - healthOffSet;
+        healthBar_trans.localPosition = newHealthPos;
     }
 }
