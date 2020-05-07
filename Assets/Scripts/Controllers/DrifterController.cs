@@ -21,6 +21,16 @@ public class DrifterController : MonoBehaviour
     [Range(0.00001f, 0.5f)]
     private float floatyness = 0.01f;
 
+    [SerializeField]
+    GameObject projectile;
+
+    [SerializeField]
+    float firingRange = 10f;
+    [SerializeField]
+    float firerate = 1f;
+
+    float time = 0f;
+
     Vector2 floatyMovement = Vector2.zero;
 
     // Start is called before the first frame update
@@ -32,6 +42,32 @@ public class DrifterController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        time += Time.deltaTime;
+
+        HuntPlayer();
+
+        if (Vector3.Distance(this.transform.position, goal.position) < firingRange)
+        {
+            if(time> firerate)
+            {
+                Vector3 a = goal.position;
+                Vector3 b = this.transform.position;
+                a.x = a.x - b.x;
+                a.y = a.y - b.y;
+                float angle = Mathf.Atan2(a.y, a.x) * Mathf.Rad2Deg;
+                //angle -= 90;
+                var rot = Quaternion.Euler(new Vector3(0, 0, angle));
+
+                Projectile.CreateProjectile(projectile, this.transform.position, rot);
+
+                time = 0;
+            }
+            
+        }
+    }
+
+    private void HuntPlayer()
     {
         float xa = 0;
         float ya = 0;
@@ -45,7 +81,7 @@ public class DrifterController : MonoBehaviour
             Mathf.FloorToInt(goal.position.x),
             Mathf.FloorToInt(goal.position.y)
             );
-        path =  agent.FindPath(s, e);
+        path = agent.FindPath(s, e);
 
         if (path != null)
         {
@@ -66,7 +102,7 @@ public class DrifterController : MonoBehaviour
                     else
                         xa = 0;
 
-                    if(y > minFlyingAltitude)
+                    if (y > minFlyingAltitude)
                     {
                         if (point.y < y)
                             ya = -1;
@@ -75,16 +111,16 @@ public class DrifterController : MonoBehaviour
                         else
                             ya = 0;
                     }
-                    else if(y < minFlyingAltitude)
+                    else if (y < minFlyingAltitude)
                     {
                         ya = 1;
                     }
-                    else if(y == minFlyingAltitude)
+                    else if (y == minFlyingAltitude)
                     {
                         ya = 0;
                     }
 
-                    
+
                 }
             }
         }
@@ -92,17 +128,21 @@ public class DrifterController : MonoBehaviour
         floatyMovement = Vector2.Lerp(floatyMovement, new Vector2(xa, ya), floatyness);
 
         movement.Move(new Vector2(floatyMovement.x, floatyMovement.y));
-
     }
+
     //Called by Unity
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, firingRange);
+        /////////
         Gizmos.color = Color.yellow;
         var drawRange = 10;
         Gizmos.DrawLine(
             new Vector3(this.transform.position.x - drawRange, minFlyingAltitude, 0),
             new Vector3(this.transform.position.x + drawRange, minFlyingAltitude, 0)
             );
+        ///////////////
         if (path == null) return;
         Gizmos.color = Color.green;
         foreach (var p in path)
