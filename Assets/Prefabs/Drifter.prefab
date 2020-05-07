@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1619159720}
   - component: {fileID: 5312177842759004227}
   - component: {fileID: 5360387596142997343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Drifter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useSharedPathing: 1
-  D: 0.95
+  D: 1.09
 --- !u!114 &3829405722963638434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +117,10 @@ MonoBehaviour:
   goal: {fileID: 0}
   minFlyingAltitude: 10
   floatyness: 0.017
+  projectile: {fileID: 8757331915550913764, guid: 03e49544475a41c4db14c2c8ab2791d3,
+    type: 3}
+  firingRange: 17.78
+  firerate: 1
 --- !u!114 &554573303193546125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5312177842759004227
 CircleCollider2D:
   m_ObjectHideFlags: 0
