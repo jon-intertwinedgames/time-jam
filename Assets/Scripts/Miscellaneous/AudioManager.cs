@@ -4,7 +4,9 @@ using UnityEngine;
 
 public enum SFX
 {
-    Running,
+    Running1,
+    Running2,
+    Running3,
     Jumping,
     NormalLanding,
     Air,
@@ -32,7 +34,10 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeDatabase()
     {
-
+        sfxDictionary.Add(SFX.Running1, Resources.Load<AudioClip>("SFX/Running/Running1"));
+        sfxDictionary.Add(SFX.Running2, Resources.Load<AudioClip>("SFX/Running/Running2"));
+        sfxDictionary.Add(SFX.Running3, Resources.Load<AudioClip>("SFX/Running/Running3"));
+        sfxDictionary.Add(SFX.Jumping, Resources.Load<AudioClip>("SFX/Jumping/Jump 3"));
     }
 
     public static void PlayMusic(Music music)

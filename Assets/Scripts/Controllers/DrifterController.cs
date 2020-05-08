@@ -7,6 +7,7 @@ public class DrifterController : MonoBehaviour
 {
     NavAgent agent = null;
     AirMovement movement = null;
+    Health health = null;
 
     [SerializeField]
     List<Vector2> path;
@@ -38,6 +39,9 @@ public class DrifterController : MonoBehaviour
     {
         agent = GetComponent<NavAgent>();
         movement = GetComponent<AirMovement>();
+        health = GetComponent<Health>();
+
+        health.DeathEvent += Death;
     }
 
     // Update is called once per frame
@@ -128,6 +132,11 @@ public class DrifterController : MonoBehaviour
         floatyMovement = Vector2.Lerp(floatyMovement, new Vector2(xa, ya), floatyness);
 
         movement.Move(new Vector2(floatyMovement.x, floatyMovement.y));
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
     //Called by Unity

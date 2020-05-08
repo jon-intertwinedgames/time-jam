@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class HandlePlayerState : MonoBehaviour
 {
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
+    private Animator anim;
+
+    private string currentTrigger = "";
+
 
     public enum PlayerState
     {
@@ -12,8 +16,10 @@ public class HandlePlayerState : MonoBehaviour
         Running,
         Jumping,
         Falling,
-        Shooting,
-        Soaring
+        GroundShooting,
+        AirShooting,
+        Soaring,
+        Death
     }
 
     private PlayerState actionState;
@@ -27,21 +33,37 @@ public class HandlePlayerState : MonoBehaviour
             {
                 actionState = value;
 
+                if (currentTrigger != "")
+                {
+                    anim.ResetTrigger(currentTrigger);
+                }
+
                 switch (actionState)
                 {
                     case PlayerState.Idle:
+                        currentTrigger = "Idle";
                         break;
                     case PlayerState.Running:
+                        currentTrigger = "Running";
                         break;
                     case PlayerState.Jumping:
+                        currentTrigger = "Jumping";
                         break;
                     case PlayerState.Falling:
                         break;
-                    case PlayerState.Shooting:
+                    case PlayerState.GroundShooting:
+                        currentTrigger = "Ground Shooting";
+                        break;
+                    case PlayerState.AirShooting:
+                        currentTrigger = "Air Shooting";
                         break;
                     case PlayerState.Soaring:
                         break;
+                    case PlayerState.Death:
+                        break;
                 }
+
+                anim.SetTrigger(currentTrigger);
             }
         }
     }
@@ -49,6 +71,7 @@ public class HandlePlayerState : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -62,7 +85,7 @@ public class HandlePlayerState : MonoBehaviour
             ActionState = PlayerState.Idle;
         else if (rb.velocity.x != 0 && rb.velocity.y == 0)
             ActionState = PlayerState.Running;
-        else if (rb.velocity.y > 0 && actionState != PlayerState.Soaring)
+        else if (rb.velocity.y != 0 && actionState != PlayerState.Soaring) //Separate this into Falling later.
             ActionState = PlayerState.Jumping;
         else if (rb.velocity.y < 0 && actionState != PlayerState.Soaring)
             ActionState = PlayerState.Falling;

@@ -16,4 +16,13 @@ public class SelfDestruct : MonoBehaviour
         yield return new WaitForSeconds(secondsToDestroySelf);
         Destroy(gameObject);
     }
+
+    public void ResetWithNewTimer(float selfDestructionSeconds)
+    {
+        StopAllCoroutines();
+
+        secondsToDestroySelf = selfDestructionSeconds;
+
+        StartCoroutine(DestroySelf());
+    }
 }

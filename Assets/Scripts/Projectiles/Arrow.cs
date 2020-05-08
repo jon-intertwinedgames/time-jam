@@ -2,24 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AirMovement), typeof(Rigidbody2D))]
+[RequireComponent(typeof(AirMovement))]
 public class Arrow : Projectile
 {
     protected AirMovement movement_script;
-
     private Rigidbody2D rb;
 
     [SerializeField] [Range(0.01f, 0.2f)]
     private float slowDownDuration = 0;
 
-    private bool struckSomething = false;
+    private Vector2? objectStruckInitialPos = null;
+
+    private static List<Transform> allArrows = new List<Transform>();
+    public static List<Transform> AllArrows { get => allArrows; }
+
+    private static string arrowContainerTag = "Arrow Container";
+
+    [SerializeField] private float timerAfterCollision = 0;
 
     private void Awake()
     {
         movement_script = GetComponent<AirMovement>();
         rb = GetComponent<Rigidbody2D>();
-        transform.SetParent(GetArrowContainer());
+        transform.SetParent(GameObject.FindGameObjectWithTag(arrowContainerTag).transform);
         rotationOffset = -90;
+
+        allArrows.Add(transform);
     }
 
     public override void SetInMotion(Vector2 direction)
@@ -30,30 +38,13 @@ public class Arrow : Projectile
         movement_script.Move(vel);
     }
 
-    public static Transform GetArrowContainer()
-    {
-        return GameObject.FindGameObjectWithTag("Arrow Container").transform;
-    }
-
-    public static Transform[] GetAllActiveArrows()
-    {
-        Transform arrowContainer_trans = Arrow.GetArrowContainer();
-        int numOfArrows = arrowContainer_trans.childCount;
-        Transform[] allArrows = new Transform[numOfArrows];
-
-        for (int i = 0; i < numOfArrows; i++)
-            allArrows[i] = arrowContainer_trans.GetChild(i);
-
-        return allArrows;
-    }
-//d
-    public static GameObject FindClosestArrowToCursor(Transform[] allArrows)
+    public static GameObject FindClosestArrowToCursor()
     {
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         GameObject closestArrow = allArrows[0].gameObject;
         float shortestDistance = ((Vector2)closestArrow.transform.position - mouseInWorldPoint).magnitude;
 
-        for (int i = 1; i < allArrows.Length; i++)
+        for (int i = 1; i < allArrows.Count; i++)
         {
             Transform currentArrow = allArrows[i];
             Vector2 distance = (Vector2)currentArrow.position - mouseInWorldPoint;
@@ -71,8 +62,9 @@ public class Arrow : Projectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (struckSomething == false)
+        if (objectStruckInitialPos == null)
         {
+            objectStruckInitialPos = collision.transform.position;
             StartCoroutine(SlowDown());
 
             if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
@@ -83,17 +75,27 @@ public class Arrow : Projectile
         }
     }
 
+    private void OnDestroy()
+    {
+        allArrows.Remove(transform);
+        allArrows.TrimExcess();
+    }
+
     private IEnumerator SlowDown()
     {
-        struckSomething = true;
-
         float timer = 0;
-        Vector2 currentSpeed = rb.velocity;
-        while (rb.velocity != Vector2.zero)
+        float speed = rb.velocity.magnitude;
+        Destroy(rb);
+        float currentSpeed = 1;
+
+        GetComponent<SelfDestruct>().ResetWithNewTimer(timerAfterCollision);
+
+        while (currentSpeed != 0)
         {
-            rb.velocity = Vector2.Lerp(currentSpeed, Vector2.zero, timer/slowDownDuration);
+            currentSpeed = Mathf.Lerp(speed, 0, timer / slowDownDuration);
+            transform.Translate(currentSpeed * Time.deltaTime, 0, 0, Space.Self);
             timer += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
     }
 }
