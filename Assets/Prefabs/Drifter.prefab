@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 554573303193546125}
   - component: {fileID: 1619159720}
   - component: {fileID: 5312177842759004227}
-  - component: {fileID: 5360387596142997343}
-  m_Layer: 9
+  - component: {fileID: 125622084}
+  m_Layer: 11
   m_Name: Drifter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &5360387596142997343
+--- !u!114 &125622084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 674611989468756754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae6e8661de20f64ba476ac66bf67f19, type: 3}
+  m_Script: {fileID: 11500000, guid: f69ae92405e151a4cb28a0f0a149fb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
