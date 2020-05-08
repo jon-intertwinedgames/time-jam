@@ -6,7 +6,6 @@ using UnityEngine;
 public class LandMovement : Movement
 {
     [SerializeField] private float jumpSpeed = 0;
-    [SerializeField] private float horizontalJumpSpeedForce = 0;
 
     private GroundDetector groundDetector_script;
 
@@ -37,7 +36,7 @@ public class LandMovement : Movement
 
     private void ForceMobility(float xVelMultiplier)
     {
-        xVelMultiplier *= horizontalJumpSpeedForce;
+        xVelMultiplier *= speed;
 
         if(xVelMultiplier > 0 && rb.velocity.x < horizontalJumpSpeedCap)
             rb.AddForce(new Vector2(xVelMultiplier, 0), ForceMode2D.Force);
