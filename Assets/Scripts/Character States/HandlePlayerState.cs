@@ -12,6 +12,7 @@ public class HandlePlayerState : MonoBehaviour
         Running,
         Jumping,
         Falling,
+        Shooting,
         Soaring
     }
 
@@ -35,6 +36,8 @@ public class HandlePlayerState : MonoBehaviour
                     case PlayerState.Jumping:
                         break;
                     case PlayerState.Falling:
+                        break;
+                    case PlayerState.Shooting:
                         break;
                     case PlayerState.Soaring:
                         break;

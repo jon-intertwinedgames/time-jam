@@ -11,6 +11,7 @@ public class Arrow : Projectile
 
     [SerializeField] [Range(0.01f, 0.2f)]
     private float slowDownDuration = 0;
+
     private bool struckSomething = false;
 
     private void Awake()
@@ -71,7 +72,15 @@ public class Arrow : Projectile
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (struckSomething == false)
+        {
             StartCoroutine(SlowDown());
+
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+            {
+                collision.GetComponent<Health>().TakeDamage(damage);
+                transform.SetParent(collision.transform);
+            }
+        }
     }
 
     private IEnumerator SlowDown()

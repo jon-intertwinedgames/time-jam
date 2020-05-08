@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Aimer aimer_script;
     private TimeManipulation time_script;
     private HandlePlayerState playerState_script;
+    private Health health_script;
 
     private Rigidbody2D rb;
 
@@ -19,8 +20,11 @@ public class PlayerController : MonoBehaviour
         aimer_script = GetComponentInChildren<Aimer>();
         time_script = GetComponent<TimeManipulation>();
         playerState_script = GetComponent<HandlePlayerState>();
+        health_script = GetComponent<Health>();
 
         rb = GetComponent<Rigidbody2D>();
+
+        health_script.DeathEvent += Death;
     }
 
     void Update()
@@ -29,6 +33,11 @@ public class PlayerController : MonoBehaviour
         ArrowInput();
         TeleportationInput();
         TimeInput();
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            health_script.TakeDamage(10);
+        }
     }
 
     void MovementInput()
@@ -48,10 +57,12 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimer_script.ShowTrajectory(mousePos);
-        }            
+        }
 
         else if (Input.GetMouseButtonUp(0))
+        {
             ReleaseBow();
+        }
     }
 
     void TeleportationInput()
@@ -81,6 +92,7 @@ public class PlayerController : MonoBehaviour
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
         aimer_script.ShootProjectile(projectileDirection, "arrow");
+        playerState_script.ActionState = HandlePlayerState.PlayerState.Shooting;
     }
 
     private void TeleportToArrow(GameObject arrowToTeleportTo)
@@ -91,5 +103,10 @@ public class PlayerController : MonoBehaviour
         rb.velocity = arrowVelocity;
 
         playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }
