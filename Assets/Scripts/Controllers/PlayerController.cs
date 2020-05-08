@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Health health_script;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         health_script = GetComponent<Health>();
 
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
 
         health_script.DeathEvent += Death;
     }
@@ -45,10 +47,17 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Jump");
 
+        if (h > 0)
+            sr.flipX = false;
+        else if (h < 0)
+            sr.flipX = true;
+
         movement_script.Move(h);
 
         if (v != 0)
+        {
             movement_script.Jump();
+        }
     }
 
     void ArrowInput()
@@ -69,11 +78,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            Transform[] allArrows = Arrow.GetAllActiveArrows();
-
-            if (allArrows.Length > 0)
+            if (Arrow.AllArrows.Count > 0)
             {
-                GameObject closestArrow = Arrow.FindClosestArrowToCursor(allArrows);
+                GameObject closestArrow = Arrow.FindClosestArrowToCursor();
                 TeleportToArrow(closestArrow);
             }
         }
@@ -92,15 +99,33 @@ public class PlayerController : MonoBehaviour
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
         aimer_script.ShootProjectile(projectileDirection, "arrow");
-        playerState_script.ActionState = HandlePlayerState.PlayerState.Shooting;
+
+        if (rb.velocity.y == 0)
+        {
+            playerState_script.ActionState = HandlePlayerState.PlayerState.GroundShooting;
+        }
+        else
+        {
+            playerState_script.ActionState = HandlePlayerState.PlayerState.AirShooting;
+        }
     }
 
     private void TeleportToArrow(GameObject arrowToTeleportTo)
     {
-        Vector2 arrowVelocity = arrowToTeleportTo.GetComponent<Rigidbody2D>().velocity;
-        Destroy(arrowToTeleportTo);
+        Rigidbody2D arrowRB = arrowToTeleportTo.GetComponent<Rigidbody2D>();
+
+        if(arrowRB == null)
+        {
+            rb.velocity = Vector2.zero;            
+        }
+        else
+        {
+            Vector2 arrowVelocity = arrowToTeleportTo.GetComponent<Rigidbody2D>().velocity;
+            rb.velocity = arrowVelocity;
+        }
+
         transform.position = arrowToTeleportTo.transform.position;
-        rb.velocity = arrowVelocity;
+        Destroy(arrowToTeleportTo);        
 
         playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
     }

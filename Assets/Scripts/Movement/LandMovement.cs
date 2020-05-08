@@ -50,6 +50,7 @@ public class LandMovement : Movement
         {
             if (groundDetector_script.IsOnGround)
             {
+                AudioManager.PlayOneShot(SFX.Jumping);
                 rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 StartCoroutine(AllowAJump());
             }
