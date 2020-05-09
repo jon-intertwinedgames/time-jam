@@ -11,6 +11,7 @@ public class LandMovement : Movement
 
     private float horizontalJumpSpeedCap = 0;
     private bool canJump = true;
+    public bool CanJump { get => canJump; }
 
     protected override void Awake()
     {
