@@ -40,6 +40,6 @@ public class Aimer : MonoBehaviour
         lr.enabled = false;
 
         GameObject projectile = projectile_GameObjects.First(p => p.name.ToLower() == projectileName.ToLower());
-        Projectile.CreateProjectile(projectile, transform.position, projectileDirection, projectileName);
+        Projectile.CreateProjectile(projectile, transform.position, projectileDirection);
     }
 }

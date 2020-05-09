@@ -23,7 +23,7 @@ public class DrifterController : MonoBehaviour
     private float floatyness = 0.01f;
 
     [SerializeField]
-    GameObject projectile;
+    GameObject projectile = null;
 
     [SerializeField]
     float firingRange = 10f;
@@ -136,6 +136,7 @@ public class DrifterController : MonoBehaviour
 
     private void Death()
     {
+        ScoreAccumulator.AddToScore(1);
         Destroy(gameObject);
     }
 
