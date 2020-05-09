@@ -162,7 +162,6 @@ GameObject:
   - component: {fileID: 1440747908043183963}
   - component: {fileID: 1440747908043183960}
   - component: {fileID: 5153484378315229352}
-  - component: {fileID: 3850179678045362773}
   - component: {fileID: 1440747908043183953}
   - component: {fileID: 1440747908043183966}
   - component: {fileID: 1440747908043183961}
@@ -170,6 +169,7 @@ GameObject:
   - component: {fileID: 2537100171531488124}
   - component: {fileID: 3735859577938741648}
   - component: {fileID: 5332025641119448418}
+  - component: {fileID: 145456463300354630}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -280,25 +280,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3850179678045362773
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440747908043183967}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a65eb2cbafeb5ea4e9fe9b35b8cf949b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1440747908043183953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +373,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd408cae52917804698a3f904e734971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &145456463300354630
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440747908043183967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a65eb2cbafeb5ea4e9fe9b35b8cf949b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1440747908094185107
 GameObject:
   m_ObjectHideFlags: 0
