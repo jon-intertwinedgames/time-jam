@@ -148,5 +148,12 @@ public class TutorialController : MonoBehaviour
         UpdateReadingText("Nice!");
         ToggleNotificationTutorial(false);
         ToggleReadingTutorial(true);
+
+
+        //DELETE BELOW LATER
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        ToggleReadingTutorial(false);
+        playerController_script.enabled = true;
+        yield return new WaitForEndOfFrame();
     }
 }
