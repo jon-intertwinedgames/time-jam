@@ -13,7 +13,7 @@ public class DrifterController : MonoBehaviour
     List<Vector2> path;
 
     [SerializeField]
-    Transform goal = null;
+    Transform goal = null; // to make this run faster, we should make this static
 
     [SerializeField]
     float minFlyingAltitude = 10f;
@@ -42,6 +42,11 @@ public class DrifterController : MonoBehaviour
         health = GetComponent<Health>();
 
         health.DeathEvent += Death;
+
+        if (goal == null)
+        {
+            goal = GameObject.FindObjectOfType<PlayerController>().transform;
+        }
     }
 
     // Update is called once per frame
@@ -136,7 +141,7 @@ public class DrifterController : MonoBehaviour
 
     private void Death()
     {
-        ScoreAccumulator.AddToScore(1);
+        GlobalVars.EnemiesKilled += 1;
         Destroy(gameObject);
     }
 
