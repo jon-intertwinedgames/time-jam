@@ -52,8 +52,8 @@ public class DrifterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (goal == null) return;
         time += Time.deltaTime;
-
         HuntPlayer();
 
         if (Vector3.Distance(this.transform.position, goal.position) < firingRange)

@@ -17,7 +17,7 @@ public class GroundDetector : MonoBehaviour
     public bool CheckIfOnGround()
     {
         Vector2 startPosition = GetStartPosition();
-        RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.right, groundDetectionLength, LayerMask.GetMask("Terrain"));
+        RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.down, groundDetectionLength, LayerMask.GetMask("Terrain"));
 
         if (hit)
             return true;
@@ -34,13 +34,9 @@ public class GroundDetector : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Vector3 startPosition = GetStartPosition();
-        startPosition.z = Camera.main.transform.position.z + 1;
-
-        Vector3 endPosition = startPosition;
-        endPosition.x += groundDetectionLength;
-
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(startPosition, endPosition);
+        Gizmos.DrawCube(this.transform.position
+            + (Vector3.down * this.groundDetectionLength)
+            , new Vector3(1,1,1) * 1f);
     }
 }
