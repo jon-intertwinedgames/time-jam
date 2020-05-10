@@ -10,7 +10,7 @@ public abstract class Projectile : MonoBehaviour
 
     protected float rotationOffset;
 
-    public static void CreateProjectile(GameObject projectileToCreate, Vector2 projectilePos, Vector2 projectileDirection, string projectileName)
+    public static void CreateProjectile(GameObject projectileToCreate, Vector2 projectilePos, Vector2 projectileDirection)
     {
         GameObject newProjectile = Instantiate(projectileToCreate, projectilePos, Quaternion.identity);
         newProjectile.GetComponent<Projectile>().SetInMotion(projectileDirection);

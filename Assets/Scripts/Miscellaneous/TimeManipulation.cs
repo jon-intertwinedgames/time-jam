@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,13 +9,22 @@ public class TimeManipulation : MonoBehaviour
     private Coroutine timeLerp = null;
 
     [SerializeField]
-    private float duration = 0;
+    private float secondsToSlow = 0;
 
     [Header("Time")]
 
     [SerializeField]
+    private int startingTimeValue = 0;
+    public int StartingTimeValue { get => startingTimeValue; }
+
+    private float currentTimeValue;
+
+    [SerializeField]
+    private int timeReductionPerSec = 0, timeRegenPerSec = 0;
+
+    [SerializeField]
     [Range(0.1f, 0.75f)]
-    private float targetTimeScaleSlow = 0;
+    private float slowScale = 0;
 
     [Header("Black Screen")]
 
@@ -25,6 +35,39 @@ public class TimeManipulation : MonoBehaviour
     [SerializeField]
     private Image blackScreen_image = null;
 
+    public Action<float> UpdateTimeBar;
+
+    protected void Awake()
+    {
+        currentTimeValue = startingTimeValue;
+    }
+
+    private void Update()
+    {
+        if(Time.timeScale != 1 && UpdateTimeBar != null)
+        {
+            currentTimeValue -= timeReductionPerSec * Time.unscaledDeltaTime;
+
+            if(currentTimeValue <= 0)
+            {
+                currentTimeValue = 0;
+                ResetTimeScale();
+            }
+        }
+
+        else if(Time.timeScale == 1)
+        {
+            currentTimeValue += timeRegenPerSec * Time.unscaledDeltaTime;
+
+            if(currentTimeValue >= 100)
+            {
+                currentTimeValue = 100;
+            }
+        }
+
+        UpdateTimeBar(currentTimeValue);
+    }
+
     public void StartSlowingDownTime()
     {
         timeLerp = StartCoroutine(LerpTime());
@@ -32,7 +75,7 @@ public class TimeManipulation : MonoBehaviour
 
     public void ResetTimeScale()
     {
-        StopCoroutine(timeLerp);
+        StopAllCoroutines();
         timeLerp = null;
         blackScreen_image.color = Color.clear;
         Time.timeScale = 1;
@@ -41,10 +84,10 @@ public class TimeManipulation : MonoBehaviour
     private IEnumerator LerpTime()
     {
         float timer = 0;
-        while(Time.timeScale != targetTimeScaleSlow)
+        while(Time.timeScale != slowScale)
         {
-            float currentTime = timer / duration;
-            Time.timeScale = Mathf.Lerp(1, targetTimeScaleSlow, currentTime);
+            float currentTime = timer / secondsToSlow;
+            Time.timeScale = Mathf.Lerp(1, slowScale, currentTime);
             blackScreen_image.color = Color.Lerp(Color.clear, new Color(0, 0, 0, blackScreenAlphaValue), currentTime);
             timer += Time.deltaTime;
             yield return new WaitForEndOfFrame();

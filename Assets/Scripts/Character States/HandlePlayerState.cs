@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class HandlePlayerState : MonoBehaviour
         Running,
         Jumping,
         Falling,
+        Landing,
         GroundShooting,
         AirShooting,
         Soaring,
@@ -31,6 +33,9 @@ public class HandlePlayerState : MonoBehaviour
         {
             if (actionState != value)
             {
+                if (actionState == PlayerState.Falling && (value == PlayerState.Idle || value == PlayerState.Running))
+                    AudioManager.PlayOneShot(SFX.NormalLanding);
+
                 actionState = value;
 
                 if (currentTrigger != "")
@@ -51,11 +56,16 @@ public class HandlePlayerState : MonoBehaviour
                         break;
                     case PlayerState.Falling:
                         break;
+                    case PlayerState.Landing:
+                        //AudioManager.PlayOneShot(SFX.NormalLanding);
+                        break;
                     case PlayerState.GroundShooting:
                         currentTrigger = "Ground Shooting";
+                        AudioManager.PlayOneShot(SFX.Shooting);
                         break;
                     case PlayerState.AirShooting:
                         currentTrigger = "Air Shooting";
+                        AudioManager.PlayOneShot(SFX.Shooting);
                         break;
                     case PlayerState.Soaring:
                         break;
@@ -85,7 +95,7 @@ public class HandlePlayerState : MonoBehaviour
             ActionState = PlayerState.Idle;
         else if (rb.velocity.x != 0 && rb.velocity.y == 0)
             ActionState = PlayerState.Running;
-        else if (rb.velocity.y != 0 && actionState != PlayerState.Soaring) //Separate this into Falling later.
+        else if (rb.velocity.y > 0 && actionState != PlayerState.Soaring) //Separate this into Falling later.
             ActionState = PlayerState.Jumping;
         else if (rb.velocity.y < 0 && actionState != PlayerState.Soaring)
             ActionState = PlayerState.Falling;

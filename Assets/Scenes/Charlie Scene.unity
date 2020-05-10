@@ -442,11 +442,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrifterCharlie
       objectReference: {fileID: 0}
-    - target: {fileID: 2268378314404477576, guid: 889fe265157848f4db5bb177825c0bde,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 2522748332592232760, guid: 889fe265157848f4db5bb177825c0bde,
         type: 3}
       propertyPath: goal

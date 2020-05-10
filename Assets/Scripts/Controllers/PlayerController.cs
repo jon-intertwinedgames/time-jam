@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(HandlePlayerState))]
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+
+    private bool isAiming;
 
     void Start()
     {
@@ -62,15 +65,20 @@ public class PlayerController : MonoBehaviour
 
     void ArrowInput()
     {
-        if (Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
+        {
+            isAiming = true;
+        }
+        if (Input.GetMouseButton(0) && isAiming)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimer_script.ShowTrajectory(mousePos);
         }
 
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && isAiming)
         {
             ReleaseBow();
+            isAiming = false;
         }
     }
 

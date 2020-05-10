@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get => currentHealth; }
 
     public event Action DeathEvent;
-    public event Action DamageTakenEvent;
+    public event Action<float> UpdateHealthBarEvent;
 
     protected virtual void Awake()
     {
@@ -23,9 +23,9 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if (DamageTakenEvent != null)
+        if (UpdateHealthBarEvent != null)
         {
-            DamageTakenEvent();
+            UpdateHealthBarEvent(CurrentHealth);
         }
 
         if (currentHealth <= 0 && DeathEvent != null)
