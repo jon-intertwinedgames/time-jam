@@ -18,6 +18,7 @@ public class TimeManipulation : MonoBehaviour
     public int StartingTimeValue { get => startingTimeValue; }
 
     private float currentTimeValue;
+    public float CurrentTimeValue { get => currentTimeValue; }
 
     [SerializeField]
     private int timeReductionPerSec = 0, timeRegenPerSec = 0;
@@ -35,7 +36,7 @@ public class TimeManipulation : MonoBehaviour
     [SerializeField]
     private Image blackScreen_image = null;
 
-    public Action<float> UpdateTimeBar;
+    public event Action UpdateTimeBar;
 
     protected void Awake()
     {
@@ -65,7 +66,7 @@ public class TimeManipulation : MonoBehaviour
             }
         }
 
-        UpdateTimeBar(currentTimeValue);
+        UpdateTimeBar?.Invoke();
     }
 
     public void StartSlowingDownTime()

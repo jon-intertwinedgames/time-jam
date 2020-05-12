@@ -15,6 +15,6 @@ public class HealthBar : HUDBar
         base.Start();
 
         UpdateBar(startingValue);
-        health_script.UpdateHealthBarEvent += UpdateBar;
+        health_script.HealthChangedEvent += delegate { UpdateBar(health_script.CurrentHealth); };
     }
 }

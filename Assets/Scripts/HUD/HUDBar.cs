@@ -8,7 +8,7 @@ public class HUDBar : MonoBehaviour
 
     protected int startingValue;
 
-    [SerializeField] protected RectTransform bar_trans = null;
+    [SerializeField] private RectTransform bar_trans = null;
 
     // Start is called before the first frame update
     protected virtual void Start()

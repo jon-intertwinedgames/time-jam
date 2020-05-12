@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrifterBeam: Projectile
+public class DamageEnemy : DamageCharacter
 {
-    protected override void Awake()
-    {
-        base.Awake();
-        rotationOffset = -90;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
             collision.GetComponent<Health>().ChangeHealth(-damage);
+
+            if (destroyColliderOnHit)
+            {
+                Destroy(GetComponent<BoxCollider2D>());
+            }
         }
     }
 }

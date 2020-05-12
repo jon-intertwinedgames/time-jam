@@ -77,7 +77,7 @@ public class DrifterController : MonoBehaviour
                 //angle -= 90;
                 var rot = Quaternion.Euler(new Vector3(0, 0, angle));
 
-                Projectile.CreateProjectile(projectile, this.transform.position, rot);
+                Projectile.CreateProjectile(projectile, this.transform.position, (Vector2)goal.position - (Vector2)transform.position);
 
                 time = 0;
             }

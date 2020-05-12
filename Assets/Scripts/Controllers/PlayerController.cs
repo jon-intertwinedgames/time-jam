@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            health_script.TakeDamage(10);
+            health_script.ChangeHealth(-10);
         }
     }
 
@@ -138,6 +138,7 @@ public class PlayerController : MonoBehaviour
         playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
     }
 
+    [SerializeField]
     private void Death()
     {
         Destroy(gameObject);
