@@ -1,4 +1,5 @@
 ﻿using com.leothelegion.Nav;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,10 +44,18 @@ public class DrifterController : MonoBehaviour
 
         health.DeathEvent += Death;
 
-        if (goal == null)
+        try
         {
-            goal = GameObject.FindObjectOfType<PlayerController>().transform;
+            if (goal == null)
+            {
+                goal = GameObject.FindObjectOfType<PlayerController>().transform;
+            }
         }
+        catch(Exception ex)
+        {
+
+        }
+        
     }
 
     // Update is called once per frame

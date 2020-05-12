@@ -122,7 +122,7 @@ MonoBehaviour:
   projectile: {fileID: 8757331915550913764, guid: 03e49544475a41c4db14c2c8ab2791d3,
     type: 3}
   firingRange: 17.78
-  firerate: 1
+  firerate: 2.5
 --- !u!114 &554573303193546125
 MonoBehaviour:
   m_ObjectHideFlags: 0
