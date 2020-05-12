@@ -14,6 +14,6 @@ public class TimeBar : HUDBar
         base.Start();
 
         UpdateBar(startingValue);
-        timeManip_script.UpdateTimeBar += UpdateBar;
+        timeManip_script.UpdateTimeBar += delegate { UpdateBar(timeManip_script.CurrentTimeValue); };
     }
 }

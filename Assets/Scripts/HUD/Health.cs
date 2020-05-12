@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -11,26 +14,41 @@ public class Health : MonoBehaviour
     private int currentHealth = 0;
     public int CurrentHealth { get => currentHealth; }
 
-    public event Action DeathEvent;
-    public event Action<float> UpdateHealthBarEvent;
+    public event Action HealthChangedEvent;                 //Executed when the character's health changes
+    public event Action DamagedEvent;                       //Executed when the character is dealt damage
+    public event Action RegenEvent;                         //Executed when the character gains health
+    public event Action DeathEvent;                         //Executed when the character drops to 0 health or below                        
 
     protected virtual void Awake()
     {
         currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int damage)
+    [HideInInspector]
+    public void ChangeHealth(int healthChange)              //Method to heal and damage character
     {
-        currentHealth -= damage;
+        currentHealth += healthChange;
 
-        if (UpdateHealthBarEvent != null)
+        HealthChangedEvent?.Invoke();
+
+        if(healthChange < 0)
         {
-            UpdateHealthBarEvent(CurrentHealth);
+            DamagedEvent?.Invoke();
+
+            if (currentHealth <= 0)
+            {
+                DeathEvent?.Invoke();
+            }
         }
 
-        if (currentHealth <= 0 && DeathEvent != null)
+        else if(healthChange > 0)
         {
-            DeathEvent();
+            RegenEvent?.Invoke();
+
+            if (currentHealth >= startingHealth)
+            {
+                currentHealth = startingHealth;
+            }
         }
     }
 }

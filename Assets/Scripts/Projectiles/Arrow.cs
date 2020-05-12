@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(AirMovement))]
 public class Arrow : Projectile
 {
-    protected AirMovement movement_script;
     private Rigidbody2D rb;
 
     [SerializeField] [Range(0.01f, 0.2f)]
@@ -20,22 +19,14 @@ public class Arrow : Projectile
 
     [SerializeField] private float timerAfterCollision = 0;
 
-    private void Awake()
+    protected override void Awake()
     {
-        movement_script = GetComponent<AirMovement>();
+        base.Awake();
         rb = GetComponent<Rigidbody2D>();
         transform.SetParent(GameObject.FindGameObjectWithTag(arrowContainerTag).transform);
         rotationOffset = -90;
 
         allArrows.Add(transform);
-    }
-
-    public override void SetInMotion(Vector2 direction)
-    {
-        float rotation = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + rotationOffset;
-        transform.Rotate(0, 0, -rotation);
-        Vector2 vel = direction * movement_script.speed;
-        movement_script.Move(vel);
     }
 
     public static GameObject FindClosestArrowToCursor()
@@ -65,11 +56,11 @@ public class Arrow : Projectile
         if (objectStruckInitialPos == null)
         {
             objectStruckInitialPos = collision.transform.position;
-            StartCoroutine(SlowDown());
+            StartCoroutine(SlowDownAfterCollision());
 
             if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
             {
-                collision.GetComponent<Health>().TakeDamage(damage);
+                collision.GetComponent<Health>().ChangeHealth(-damage);
                 transform.SetParent(collision.transform);
             }
         }
@@ -81,7 +72,7 @@ public class Arrow : Projectile
         allArrows.TrimExcess();
     }
 
-    private IEnumerator SlowDown()
+    private IEnumerator SlowDownAfterCollision()
     {
         float timer = 0;
         float speed = rb.velocity.magnitude;
