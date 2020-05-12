@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +13,22 @@ public class ArrowSFX : MonoBehaviour
     {
         if (GetComponent<AudioSource>() != null)
         {
-            SFX_Loop_RandomFlyingArrow();
+            RandomFunctionCall(SFX_Loop_FlyingArrow1, SFX_Loop_FlyingArrow2, SFX_Loop_FlyingArrow3, SFX_Loop_FlyingArrow4);
         }
     }
+    ///////////////////////UTILS START
+    /// <summary>
+    /// Excutes one random function/action from the number of args
+    /// </summary>
+    /// <param name="sfxs"></param>
+    private void RandomFunctionCall(params Action[] sfxs)
+    {
+        int i = ran.Next(0, sfxs.Length - 1);
+
+        sfxs[i]();
+    }
+    ///////////////////////UTILS END
+
     /// <summary>
     /// On Looping SFX 
     /// </summary>
@@ -41,29 +55,9 @@ public class ArrowSFX : MonoBehaviour
         GetComponent<AudioSource>().clip = AudioManager.getSFXClip(SFX.FlyingArrow4);
         GetComponent<AudioSource>().Play();
     }
-
-    private void SFX_Loop_RandomFlyingArrow()
-    {
-        int i = ran.Next(0, 4);
-
-        switch (i)
-        {
-            case 0:
-                SFX_Loop_FlyingArrow1();
-                break;
-            case 1:
-                SFX_Loop_FlyingArrow2();
-                break;
-            case 2:
-                SFX_Loop_FlyingArrow3();
-                break;
-            default:
-                SFX_Loop_FlyingArrow4();
-                break;
-        }
-    }
+    
     /// <summary>
-    /// Collision SFX
+    /// Collision/Impact SFX
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
@@ -86,12 +80,25 @@ public class ArrowSFX : MonoBehaviour
         switch (str)
         {
             case "Terrain":
-                SFX_Impact_ArrowHittingWall();
+                 RandomFunctionCall(
+                    SFX_Impact_ArrowHittingWall1,
+                    SFX_Impact_ArrowHittingWall2,
+                    SFX_Impact_ArrowHittingWall3,
+                    SFX_Impact_ArrowHittingWall4);
+                break;
+            case "Enemies":
+                RandomFunctionCall(
+                    SFX_Impact_ArrowHittingFlesh1,
+                    SFX_Impact_ArrowHittingFlesh2,
+                    SFX_Impact_ArrowHittingFlesh3,
+                    SFX_Impact_ArrowHittingFlesh4);
                 break;
             default:
+                Debug.LogError("IDK WHAT " + this.gameObject + "JUST HIT... Soo I can't play SFX :O");
                 break;
         }
     }
+    
 
     private void SFX_Impact_ArrowHittingWall1()
     {
@@ -109,24 +116,21 @@ public class ArrowSFX : MonoBehaviour
     {
         AudioManager.PlayOneShotSFX(SFX.ArrowHittingWall4, this.transform.position);
     }
-    private void SFX_Impact_ArrowHittingWall()
-    {
-        int i = ran.Next(0, 4);
 
-        switch (i)
-        {
-            case 0:
-                SFX_Impact_ArrowHittingWall1();
-                break;
-            case 1:
-                SFX_Impact_ArrowHittingWall2();
-                break;
-            case 2:
-                SFX_Impact_ArrowHittingWall3();
-                break;
-            default:
-                SFX_Impact_ArrowHittingWall4();
-                break;
-        }
+    private void SFX_Impact_ArrowHittingFlesh1()
+    {
+        AudioManager.PlayOneShotSFX(SFX.ArrowHittingFlesh1, this.transform.position);
+    }
+    private void SFX_Impact_ArrowHittingFlesh2()
+    {
+        AudioManager.PlayOneShotSFX(SFX.ArrowHittingFlesh2, this.transform.position);
+    }
+    private void SFX_Impact_ArrowHittingFlesh3()
+    {
+        AudioManager.PlayOneShotSFX(SFX.ArrowHittingFlesh3, this.transform.position);
+    }
+    private void SFX_Impact_ArrowHittingFlesh4()
+    {
+        AudioManager.PlayOneShotSFX(SFX.ArrowHittingFlesh4, this.transform.position);
     }
 }

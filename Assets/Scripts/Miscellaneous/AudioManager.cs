@@ -23,7 +23,12 @@ public enum SFX
     ArrowHittingWall1,
     ArrowHittingWall2,
     ArrowHittingWall3,
-    ArrowHittingWall4
+    ArrowHittingWall4,
+
+    ArrowHittingFlesh1,
+    ArrowHittingFlesh2,
+    ArrowHittingFlesh3,
+    ArrowHittingFlesh4
 }
 
 public enum Music
@@ -62,6 +67,11 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.ArrowHittingWall2, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 2"));
         sfxDictionary.Add(SFX.ArrowHittingWall3, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 3"));
         sfxDictionary.Add(SFX.ArrowHittingWall4, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 4"));
+
+        sfxDictionary.Add(SFX.ArrowHittingFlesh1, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 1"));
+        sfxDictionary.Add(SFX.ArrowHittingFlesh2, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 2"));
+        sfxDictionary.Add(SFX.ArrowHittingFlesh3, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 3"));
+        sfxDictionary.Add(SFX.ArrowHittingFlesh4, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 4"));
     }
 
     public static void PlayMusic(Music music)
@@ -83,7 +93,7 @@ public class AudioManager : MonoBehaviour
         audioSource3D.loop = false;
         audioSource3D.spatialBlend = 1;
         audioSource3D.Play();
-        Destroy(audioSource3D, 5f);
+        Destroy(audioSource3D.gameObject, 5f);
     }
 
     public static AudioClip getSFXClip(SFX sfx)
