@@ -524,11 +524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drifter
       objectReference: {fileID: 0}
-    - target: {fileID: 674611989468756754, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 674611989468756766, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -583,26 +578,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 674611989468756767, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7780200035288704531, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1474121849
-      objectReference: {fileID: 0}
-    - target: {fileID: 7780200035288704531, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7780200035288704531, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a27cac7fb785c74db40927a983e2184, type: 3}
@@ -1017,6 +992,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764822897635043617, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35089e163fd2ca340a82ee0e820ca7de, type: 3}

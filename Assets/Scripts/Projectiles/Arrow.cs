@@ -58,9 +58,8 @@ public class Arrow : Projectile
             objectStruckInitialPos = collision.transform.position;
             StartCoroutine(SlowDownAfterCollision());
 
-            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+            if (collision.tag == "Enemy")
             {
-                collision.GetComponent<Health>().ChangeHealth(-damage);
                 transform.SetParent(collision.transform);
             }
         }

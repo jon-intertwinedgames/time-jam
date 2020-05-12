@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Arrow Container
+  - Enemy
   layers:
   - Default
   - TransparentFX

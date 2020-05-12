@@ -9,12 +9,4 @@ public class DrifterBeam: Projectile
         base.Awake();
         rotationOffset = -90;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            collision.GetComponent<Health>().ChangeHealth(-damage);
-        }
-    }
 }
