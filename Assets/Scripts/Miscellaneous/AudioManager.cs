@@ -12,7 +12,11 @@ public enum SFX
     Air,
     DrawingBow,
     Shooting,
-    ArrowFlying
+    ArrowFlying,
+    FlyingArrow1,
+    FlyingArrow2,
+    FlyingArrow3,
+    FlyingArrow4
 }
 
 public enum Music
@@ -41,6 +45,11 @@ public class AudioManager : MonoBehaviour
 
         sfxDictionary.Add(SFX.Shooting, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 3"));
         sfxDictionary.Add(SFX.NormalLanding, Resources.Load<AudioClip>("SFX/Normal Landing/Landing 4"));
+
+        sfxDictionary.Add(SFX.FlyingArrow1, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 1"));
+        sfxDictionary.Add(SFX.FlyingArrow2, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 2"));
+        sfxDictionary.Add(SFX.FlyingArrow3, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 3"));
+        sfxDictionary.Add(SFX.FlyingArrow4, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 4"));
     }
 
     public static void PlayMusic(Music music)
@@ -52,5 +61,10 @@ public class AudioManager : MonoBehaviour
     public static void PlayOneShot(SFX sfx) //Possibly add a timer to this function
     {
         audioSource.PlayOneShot(sfxDictionary[sfx]);
+    }
+
+    public static AudioClip getSFXClip(SFX sfx)
+    {
+        return sfxDictionary[sfx];
     }
 }
