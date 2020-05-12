@@ -176,15 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 991734762075519720, guid: 35089e163fd2ca340a82ee0e820ca7de,
+    - target: {fileID: 1368734415314835479, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.563072
-      objectReference: {fileID: 0}
-    - target: {fileID: 991734762075519720, guid: 35089e163fd2ca340a82ee0e820ca7de,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.201185
+      propertyPath: m_AnchoredPosition.x
+      value: 24.999756
       objectReference: {fileID: 0}
     - target: {fileID: 2899164055153349665, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
@@ -200,26 +195,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3419202143019959455, guid: 35089e163fd2ca340a82ee0e820ca7de,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4832736763197905312, guid: 35089e163fd2ca340a82ee0e820ca7de,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4832736763197905312, guid: 35089e163fd2ca340a82ee0e820ca7de,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.1273585
-      objectReference: {fileID: 0}
-    - target: {fileID: 4832736763197905312, guid: 35089e163fd2ca340a82ee0e820ca7de,
-        type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.1273585
       objectReference: {fileID: 0}
     - target: {fileID: 6988861212717405183, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
@@ -240,11 +215,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7190327209397668938, guid: 35089e163fd2ca340a82ee0e820ca7de,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35089e163fd2ca340a82ee0e820ca7de, type: 3}
