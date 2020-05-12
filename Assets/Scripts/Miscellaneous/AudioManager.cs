@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,22 @@ public enum SFX
     Air,
     DrawingBow,
     Shooting,
-    ArrowFlying
+    ArrowFlying,
+
+    FlyingArrow1,
+    FlyingArrow2,
+    FlyingArrow3,
+    FlyingArrow4,
+
+    ArrowHittingWall1,
+    ArrowHittingWall2,
+    ArrowHittingWall3,
+    ArrowHittingWall4,
+
+    ArrowHittingFlesh1,
+    ArrowHittingFlesh2,
+    ArrowHittingFlesh3,
+    ArrowHittingFlesh4
 }
 
 public enum Music
@@ -41,6 +57,21 @@ public class AudioManager : MonoBehaviour
 
         sfxDictionary.Add(SFX.Shooting, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 3"));
         sfxDictionary.Add(SFX.NormalLanding, Resources.Load<AudioClip>("SFX/Normal Landing/Landing 4"));
+
+        sfxDictionary.Add(SFX.FlyingArrow1, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 1"));
+        sfxDictionary.Add(SFX.FlyingArrow2, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 2"));
+        sfxDictionary.Add(SFX.FlyingArrow3, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 3"));
+        sfxDictionary.Add(SFX.FlyingArrow4, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 4"));
+
+        sfxDictionary.Add(SFX.ArrowHittingWall1, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 1"));
+        sfxDictionary.Add(SFX.ArrowHittingWall2, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 2"));
+        sfxDictionary.Add(SFX.ArrowHittingWall3, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 3"));
+        sfxDictionary.Add(SFX.ArrowHittingWall4, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 4"));
+
+        sfxDictionary.Add(SFX.ArrowHittingFlesh1, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 1"));
+        sfxDictionary.Add(SFX.ArrowHittingFlesh2, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 2"));
+        sfxDictionary.Add(SFX.ArrowHittingFlesh3, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 3"));
+        sfxDictionary.Add(SFX.ArrowHittingFlesh4, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 4"));
     }
 
     public static void PlayMusic(Music music)
@@ -49,8 +80,24 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public static void PlayOneShot(SFX sfx) //Possibly add a timer to this function
+    public static void PlayOneShotSFX(SFX sfx) //Possibly add a timer to this function
     {
         audioSource.PlayOneShot(sfxDictionary[sfx]);
+    }
+
+    public static void PlayOneShotSFX(SFX arrowHittingWall1, Vector3 position)
+    {
+        AudioSource audioSource3D = (new GameObject()).AddComponent<AudioSource>() as AudioSource;
+        audioSource3D.transform.position = position;
+        audioSource3D.clip = getSFXClip(arrowHittingWall1);
+        audioSource3D.loop = false;
+        audioSource3D.spatialBlend = 1;
+        audioSource3D.Play();
+        Destroy(audioSource3D.gameObject, 5f);
+    }
+
+    public static AudioClip getSFXClip(SFX sfx)
+    {
+        return sfxDictionary[sfx];
     }
 }
