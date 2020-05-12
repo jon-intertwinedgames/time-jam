@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CanvasGroup))]
 [RequireComponent(typeof(Fader))]
 public class LoseScreen : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class LoseScreen : MonoBehaviour
     void Start()
     {
         fader = GetComponent<Fader>();
+        GetComponent<CanvasGroup>().alpha = 0;
         GameObject.FindObjectOfType<GameMaster>().GameOver += Lose;
     }
 
