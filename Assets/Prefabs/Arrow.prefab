@@ -161,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6958319df67e6b458047deaaa1fdbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
   slowDownDuration: 0.03
   timerAfterCollision: 5
 --- !u!114 &8011687372696051877
@@ -282,6 +281,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2359645227177157192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fbfbac8f98a3054ba8208596d072a79, type: 3}
+  m_Script: {fileID: 11500000, guid: c3f154ec419578e4596a2808bfe6db6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  removeColliderOnHit: 1
+  damage: 25
+  tagName: Enemy
