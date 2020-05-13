@@ -88,7 +88,6 @@ public class ArrowSFX : MonoBehaviour
                 break;
             case "Enemies":
                 RandomFunctionCall(
-                    SFX_Impact_ArrowHittingFlesh1,
                     SFX_Impact_ArrowHittingFlesh2,
                     SFX_Impact_ArrowHittingFlesh3,
                     SFX_Impact_ArrowHittingFlesh4);
