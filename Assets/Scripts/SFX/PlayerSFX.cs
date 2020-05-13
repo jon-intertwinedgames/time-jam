@@ -8,17 +8,17 @@ public class PlayerSFX : MonoBehaviour
 
     private void SFX_Play_Running1()
     {
-        AudioManager.PlayOneShot(SFX.Running1);
+        AudioManager.PlayOneShotSFX(SFX.Running1);
     }
 
     private void SFX_Play_Running2()
     {
-        AudioManager.PlayOneShot(SFX.Running2);
+        AudioManager.PlayOneShotSFX(SFX.Running2);
     }
 
     private void SFX_Play_Running3()
     {
-        AudioManager.PlayOneShot(SFX.Running3);
+        AudioManager.PlayOneShotSFX(SFX.Running3);
     }
     /// <summary>
     /// RANDOM SFX
@@ -47,6 +47,6 @@ public class PlayerSFX : MonoBehaviour
 
     public void SFX_Jump()
     {
-        AudioManager.PlayOneShot(SFX.Jumping);
+        AudioManager.PlayOneShotSFX(SFX.Jumping);
     }
 }

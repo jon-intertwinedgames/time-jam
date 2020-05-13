@@ -34,7 +34,7 @@ public class HandlePlayerState : MonoBehaviour
             if (actionState != value)
             {
                 if (actionState == PlayerState.Falling && (value == PlayerState.Idle || value == PlayerState.Running))
-                    AudioManager.PlayOneShot(SFX.NormalLanding);
+                    AudioManager.PlayOneShotSFX(SFX.NormalLanding);
 
                 actionState = value;
 
@@ -61,11 +61,11 @@ public class HandlePlayerState : MonoBehaviour
                         break;
                     case PlayerState.GroundShooting:
                         currentTrigger = "Ground Shooting";
-                        AudioManager.PlayOneShot(SFX.Shooting);
+                        AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
                     case PlayerState.AirShooting:
                         currentTrigger = "Air Shooting";
-                        AudioManager.PlayOneShot(SFX.Shooting);
+                        AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
                     case PlayerState.Soaring:
                         break;
