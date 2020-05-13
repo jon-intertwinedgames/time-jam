@@ -30,6 +30,9 @@ public class DrifterController : MonoBehaviour
     float firingRange = 10f;
     [SerializeField]
     float firerate = 1f;
+    [SerializeField]
+    [Range(0.1F, 1.0F)]
+    float shootingAccuracy = 1f;
 
     float time = 0f;
 
@@ -67,22 +70,29 @@ public class DrifterController : MonoBehaviour
 
         if (Vector3.Distance(this.transform.position, goal.position) < firingRange)
         {
-            if(time> firerate)
+            if ((time / firerate) < shootingAccuracy)
             {
-                Vector3 a = goal.position;
-                Vector3 b = this.transform.position;
-                a.x = a.x - b.x;
-                a.y = a.y - b.y;
-                float angle = Mathf.Atan2(a.y, a.x) * Mathf.Rad2Deg;
-                //angle -= 90;
-                var rot = Quaternion.Euler(new Vector3(0, 0, angle));
-
-                Projectile.CreateProjectile(projectile, this.transform.position, (Vector2)goal.position - (Vector2)transform.position);
-
+                Targetbuffer = new Vector3(
+                    goal.position.x,
+                    goal.position.y,
+                    goal.position.z);
+            }
+            if (time> firerate)
+            {
+                ShootAtPlayer();
                 time = 0;
             }
-            
+
         }
+    }
+
+    Vector3 Targetbuffer;
+    private void ShootAtPlayer()
+    {
+        Vector3 a = Targetbuffer;
+        Vector3 b = this.transform.position;
+
+        Projectile.CreateProjectile(projectile, this.transform.position, (Vector2)a - (Vector2)b);
     }
 
     private void HuntPlayer()
@@ -157,6 +167,9 @@ public class DrifterController : MonoBehaviour
     //Called by Unity
     private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(Targetbuffer, 1f);
+        ///
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, firingRange);
         /////////
