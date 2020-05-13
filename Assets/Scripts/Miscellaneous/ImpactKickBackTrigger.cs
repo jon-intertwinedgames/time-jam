@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// This will make a triggers follow conservation of momentum if they hit an object
 /// </summary>
-[RequireComponent(typeof(Rigidbody2D))]
+//[RequireComponent(typeof(Rigidbody2D))]
 public class ImpactKickBackTrigger : MonoBehaviour
 {
     [SerializeField]
