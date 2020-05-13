@@ -20,7 +20,7 @@ public class DrifterController : MonoBehaviour
     float minFlyingAltitude = 10f;
 
     [SerializeField]
-    [Range(0.00001f, 0.5f)]
+    [Range(0.00001f, 1f)]
     private float floatyness = 0.01f;
 
     [SerializeField]

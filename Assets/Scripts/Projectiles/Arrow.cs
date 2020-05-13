@@ -56,7 +56,8 @@ public class Arrow : Projectile
         if (objectStruckInitialPos == null)
         {
             objectStruckInitialPos = collision.transform.position;
-            StartCoroutine(SlowDownAfterCollision());
+            rb.velocity = Vector2.zero;
+            //StartCoroutine(SlowDownAfterCollision());
 
             if (collision.tag == "Enemy")
             {
@@ -76,6 +77,7 @@ public class Arrow : Projectile
         float timer = 0;
         float speed = rb.velocity.magnitude;
         Destroy(rb);
+        
         float currentSpeed = 1;
 
         GetComponent<SelfDestruct>().ResetWithNewTimer(timerAfterCollision);

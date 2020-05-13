@@ -118,7 +118,7 @@ MonoBehaviour:
   path: []
   goal: {fileID: 0}
   minFlyingAltitude: 10
-  floatyness: 0.017
+  floatyness: 0.793
   projectile: {fileID: 8757331915550913764, guid: 03e49544475a41c4db14c2c8ab2791d3,
     type: 3}
   firingRange: 17.78
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b43f83f2469514c9caa3cad71dcdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpeed: 5
+  defaultSpeed: 20
   speed: 0
 --- !u!50 &1619159720
 Rigidbody2D:
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10.4
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

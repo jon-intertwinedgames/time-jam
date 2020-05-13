@@ -22,6 +22,17 @@ public class Movement : MonoBehaviour
 
     protected void Move(float xVel, float yVel)
     {
-        rb.velocity = new Vector2(xVel, yVel);
+        Vector2 forcetoAdd = new Vector2(xVel, yVel);
+
+        if (rb.velocity.magnitude > defaultSpeed)
+            return;
+
+        if(rb.velocity.magnitude != 0)
+        {
+            forcetoAdd -= rb.velocity;
+        }
+
+        rb.AddForce(forcetoAdd);
+        //rb.velocity = new Vector2(xVel, yVel);
     }
 }
