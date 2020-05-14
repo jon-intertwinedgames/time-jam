@@ -679,6 +679,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1365740634 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8218518819674639644, guid: 8a27cac7fb785c74db40927a983e2184,
+    type: 3}
+  m_PrefabInstance: {fileID: 674611989997375925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1935916324
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +859,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829405722963638434, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 1365740634}
+    - target: {fileID: 3829405722963638434, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: firingRange
+      value: 17.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829405722963638434, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: firerate
+      value: 5.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a27cac7fb785c74db40927a983e2184, type: 3}

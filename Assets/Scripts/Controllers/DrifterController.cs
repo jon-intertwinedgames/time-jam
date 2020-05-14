@@ -11,6 +11,9 @@ public class DrifterController : MonoBehaviour
     Health health = null;
 
     [SerializeField]
+    ParticleSystem particleSystem;
+
+    [SerializeField]
     List<Vector2> path;
 
     [SerializeField]
@@ -65,11 +68,12 @@ public class DrifterController : MonoBehaviour
     void Update()
     {
         if (goal == null) return;
-        time += Time.deltaTime;
+        
         HuntPlayer();
 
         if (Vector3.Distance(this.transform.position, goal.position) < firingRange)
         {
+            time += Time.deltaTime;
             if ((time / firerate) < shootingAccuracy)
             {
                 Targetbuffer = new Vector3(
@@ -77,13 +81,17 @@ public class DrifterController : MonoBehaviour
                     goal.position.y,
                     goal.position.z);
             }
-            if (time> firerate)
+            if (time > firerate)
             {
                 ShootAtPlayer();
                 time = 0;
             }
-
         }
+        else
+            time = 0;
+
+        var p = particleSystem.emission;
+        p.rateOverTime = 100f * (time / firerate);//<-- LOOK HERE Magic number :D
     }
 
     Vector3 Targetbuffer;
