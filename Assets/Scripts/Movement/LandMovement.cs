@@ -31,8 +31,9 @@ public class LandMovement : Movement
             xVelMultiplier *= speed;
             base.Move(xVelMultiplier, rb.velocity.y);
         }
-        else
-            ForceMobility(xVelMultiplier);
+        //////if you want the same logic, add air friction
+        //else
+            //ForceMobility(xVelMultiplier);
     }
 
     private void ForceMobility(float xVelMultiplier)
