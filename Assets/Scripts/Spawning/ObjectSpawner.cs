@@ -6,7 +6,7 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField]
-    GameObject objectPrefab;
+    GameObject objectPrefab = null;
 
     [SerializeField]
     float spawnFreq = 5f;

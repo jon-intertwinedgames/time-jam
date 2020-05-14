@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-    [SerializeField] private bool removeColliderOnHit;
-    [SerializeField] protected int damage;
+    [SerializeField] private bool removeColliderOnHit = false;
+    [SerializeField] protected int damage = 0;
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class ResultsProcessor : MonoBehaviour
 {
     [SerializeField]
-    TextMeshProUGUI howmanyKilled_text;
+    TextMeshProUGUI howmanyKilled_text = null;
 
     // Start is called before the first frame update
     void Start()

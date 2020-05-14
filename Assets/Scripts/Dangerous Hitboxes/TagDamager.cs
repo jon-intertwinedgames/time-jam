@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TagDamager : Damager
 {
-    [SerializeField] private string tagName;
+    [SerializeField] private string tagName = "";
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {

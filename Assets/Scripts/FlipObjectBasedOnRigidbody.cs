@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlipObjectBasedOnRigidbody : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody2D rb;
+    Rigidbody2D rb = null;
 
     // Start is called before the first frame update
     void Start()
