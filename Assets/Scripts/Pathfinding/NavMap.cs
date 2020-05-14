@@ -41,7 +41,7 @@ namespace com.leothelegion.Nav
                     float xa = x;
                     float ya = y;
 
-                    RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f,mask);
+                    RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f, mask);
 
                     if (hit.collider == null)
                         points.Add(new Vector2Int(x, y), true);

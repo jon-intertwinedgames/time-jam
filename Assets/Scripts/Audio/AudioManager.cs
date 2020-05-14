@@ -3,49 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SFX
-{
-    Running1,
-    Running2,
-    Running3,
-    Jumping,
-    NormalLanding,
-    Air,
-    DrawingBow,
-    Shooting,
-    ArrowFlying,
-
-    FlyingArrow1,
-    FlyingArrow2,
-    FlyingArrow3,
-    FlyingArrow4,
-
-    ArrowHittingWall1,
-    ArrowHittingWall2,
-    ArrowHittingWall3,
-    ArrowHittingWall4,
-
-    ArrowHittingFlesh1,
-    ArrowHittingFlesh2,
-    ArrowHittingFlesh3,
-    ArrowHittingFlesh4
-}
-
-public enum Music
-{
-
-}
-
 public class AudioManager : MonoBehaviour
 {
-    private static AudioSource audioSource;
+    private static AudioSource managerAudioSource;
     private static Dictionary<SFX, AudioClip> sfxDictionary = new Dictionary<SFX, AudioClip>();
     private static Dictionary<Music, AudioClip> musicDictionary = new Dictionary<Music, AudioClip>();
 
     private void Start()
     {
         InitializeDatabase();
-        audioSource = GetComponent<AudioSource>();
+        managerAudioSource = GetComponent<AudioSource>();
     }
 
     private void InitializeDatabase()
@@ -74,29 +41,77 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.ArrowHittingFlesh4, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 4"));
     }
 
+    /// <summary>
+    /// Plays music using the Audio Manager's Audio Source.
+    /// </summary>
+    /// <param name="music"></param>
     public static void PlayMusic(Music music)
+    {
+        PlayMusic(managerAudioSource, music);
+    }
+
+    public static void PlayMusic(AudioSource audioSource, Music music)
     {
         audioSource.clip = musicDictionary[music];
         audioSource.Play();
     }
 
+    /// <summary>
+    /// Selects a random sound effect to play one-shot using the Audio Manager's Audio Source.
+    /// </summary>
+    /// <param name="sfxs"></param>
+    public static void PlayRandomSFXOneShot(params SFX[] sfxs)
+    {
+        PlayRandomSFXOneShot(managerAudioSource, sfxs);
+    }
+
+    public static void PlayRandomSFXOneShot(AudioSource audioSource, params SFX[] sfxs)
+    {
+        int randomIndex = UnityEngine.Random.Range(0, sfxs.Length);
+
+        PlayOneShotSFX(audioSource, sfxs[randomIndex]);
+    }
+
+    /// <summary>
+    /// Plays a sound effect using the Audio Manager's Audio Source.
+    /// </summary>
+    /// <param name="sfx"></param>
     public static void PlayOneShotSFX(SFX sfx) //Possibly add a timer to this function
+    {
+        PlayOneShotSFX(managerAudioSource, sfx);
+    }
+
+    public static void PlayOneShotSFX(AudioSource audioSource, SFX sfx) //Possibly add a timer to this function
     {
         audioSource.PlayOneShot(sfxDictionary[sfx]);
     }
 
-    public static void PlayOneShotSFX(SFX arrowHittingWall1, Vector3 position)
+    //Look later
+    public static void PlayNewSFX(SFX sfx, Vector3 position, float secondsToSelfDestruct = 5)
     {
         AudioSource audioSource3D = (new GameObject()).AddComponent<AudioSource>() as AudioSource;
         audioSource3D.transform.position = position;
-        audioSource3D.clip = getSFXClip(arrowHittingWall1);
+        audioSource3D.clip = GetSFXClip(sfx);
         audioSource3D.loop = false;
         audioSource3D.spatialBlend = 1;
         audioSource3D.Play();
-        Destroy(audioSource3D.gameObject, 5f);
+        Destroy(audioSource3D.gameObject, secondsToSelfDestruct);
     }
 
-    public static AudioClip getSFXClip(SFX sfx)
+    /// <summary>
+    /// Stops playing the audio clip in the Audio Manager's Audio Source.
+    /// </summary>
+    public static void StopPlaying()
+    {
+        StopPlaying(managerAudioSource);
+    }
+
+    public static void StopPlaying(AudioSource audioSource)
+    {
+        audioSource.Stop();
+    }
+
+    public static AudioClip GetSFXClip(SFX sfx)
     {
         return sfxDictionary[sfx];
     }
