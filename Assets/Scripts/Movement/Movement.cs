@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     {
         Vector2 forcetoAdd = new Vector2(xVel, yVel);
 
-        if (rb.velocity.magnitude > defaultSpeed)
+        if ((rb.velocity.x > defaultSpeed && xVel > 0) || (rb.velocity.x < -defaultSpeed && xVel < 0))
             return;
 
         if(rb.velocity.magnitude != 0)
