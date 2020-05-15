@@ -26,11 +26,9 @@ public class LandMovement : Movement
 
     public void Move(float xVelMultiplier)
     {
-        if (groundDetector_script.IsOnGround)
-        {
-            xVelMultiplier *= speed;
-            base.Move(xVelMultiplier, rb.velocity.y);
-        }
+        xVelMultiplier *= speed;
+        base.Move(xVelMultiplier, rb.velocity.y);
+
         //////if you want the same logic, add air friction
         //else
             //ForceMobility(xVelMultiplier);
@@ -52,7 +50,6 @@ public class LandMovement : Movement
         {
             if (groundDetector_script.IsOnGround)
             {
-                AudioManager.PlayOneShotSFX(SFX.Jumping);
                 rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
                 StartCoroutine(AllowAJump());
             }

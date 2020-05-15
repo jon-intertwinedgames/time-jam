@@ -24,7 +24,7 @@ public class ImpactKickBackTrigger : MonoBehaviour
             {
                 
                 Rigidbody2D my = GetComponent<Rigidbody2D>();
-                print(my.velocity);
+
                 other.velocity += (my.mass * my.velocity) / other.mass;
                 //other.AddForce((my.mass * my.velocity) / other.mass);
                 hashit = true;
