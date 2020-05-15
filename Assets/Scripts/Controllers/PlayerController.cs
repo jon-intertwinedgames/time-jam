@@ -7,17 +7,24 @@ using UnityEngine.UI;
 [RequireComponent (typeof(HandlePlayerState))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    float fireRate = 1f;
+    [SerializeField]
+    BowSFX bowSFX;
+
     private LandMovement movement_script;
     private Aimer aimer_script;
     private TimeManipulation time_script;
     private HandlePlayerState playerState_script;
     private Health health_script;
     private PlayerSFX playerSFX_script;
+    
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
     private bool isAiming;
+    private float aimingTime = 0;
 
     void Start()
     {
@@ -64,23 +71,29 @@ public class PlayerController : MonoBehaviour
             movement_script.Jump();
         }
     }
-
+    
     void ArrowInput()
     {
         if(Input.GetMouseButtonDown(0))
         {
             isAiming = true;
+            bowSFX.PlayDrawingBowSFX();
         }
         if (Input.GetMouseButton(0) && isAiming)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimer_script.ShowTrajectory(mousePos);
+
+            aimingTime += Time.deltaTime;
         }
 
         else if (Input.GetMouseButtonUp(0) && isAiming)
         {
             ReleaseBow();
+                
             isAiming = false;
+            bowSFX.StopPlayingSFX();
+            aimingTime = 0;
         }
     }
 
@@ -107,6 +120,8 @@ public class PlayerController : MonoBehaviour
 
     private void ReleaseBow()
     {
+        if (aimingTime < fireRate) return;
+
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
         aimer_script.ShootProjectile(projectileDirection, "arrow");

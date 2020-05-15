@@ -12,6 +12,8 @@ namespace com.leothelegion.Nav
     {
         [SerializeField]
         bool useSharedPathing = true;
+        [SerializeField]
+        bool useCheapPathfindingWhenPossible = true;
 
         static NodeComparer nodeSorter = new NodeComparer();
 
@@ -32,19 +34,66 @@ namespace com.leothelegion.Nav
                     return calculatedPaths[(start, goal)];
                 }
             }
-            
-            List<Vector2> path = new List<Vector2>();
 
             if (!NavMap.GetPoints().ContainsKey(start))
-                return path;
+                return new List<Vector2>();
 
             if (!NavMap.GetPoints().ContainsKey(goal))
-                return path;
+                return new List<Vector2>();
 
+            if (useCheapPathfindingWhenPossible)
+            {
+                var cheapPath = UseCheapSearch(start, goal);
+                if (cheapPath != null)
+                    if (cheapPath.Count > 0)
+                        return cheapPath;
+            }
+
+            var AStarpath =  AStarSearch(start, goal);
+
+            if (useSharedPathing)
+                calculatedPaths.Add((start, goal), AStarpath);
+
+            return AStarpath;
+        }
+
+        private static List<Vector2> UseCheapSearch(Vector2Int start, Vector2Int goal)
+        {
+            bool foundCheap = true;
+
+            Vector2Int dir = goal - start;
+
+            float rad = Mathf.Atan2(dir.y, dir.x);
+
+            for (int i = 0; i < dir.magnitude; i++)
+            {
+                int xa = (int)(i * Mathf.Cos(rad));
+                int ya = (int)(i * Mathf.Sin(rad));
+
+                Vector2Int vec = new Vector2Int(xa, ya) + start;
+
+                if (!NavMap.GetPoints()[vec])
+                {
+                    foundCheap = false;
+                    return null;
+                }
+            }
+
+            if (foundCheap)
+            {
+                return new List<Vector2>() { goal };
+            }
+            else
+                return null;
+        }
+
+        private List<Vector2> AStarSearch(Vector2Int start, Vector2Int goal)
+        {
+            List<Vector2> path = new List<Vector2>();
 
             Node current = CreateNewNode(start, null, 0, getDistance(start, goal));//new Node(start, null, 0, getDistance(start, goal));
             openList.Add(current);
-            
+
             //Debug.Log (start + "awdd"+ goal);
             while (openList.Count > 0)
             {
@@ -73,8 +122,6 @@ namespace com.leothelegion.Nav
 
                     path_node.Clear();
                     path.Reverse();
-                    if(useSharedPathing)
-                        calculatedPaths.Add((start, goal), path);
 
                     return path;
                 }
@@ -91,16 +138,16 @@ namespace com.leothelegion.Nav
                     //filter start
 
                     //if(xi == 1 && yi == 1)
-                     //  continue;
+                    //  continue;
 
                     //if (xi == -1 && yi == -1)
-                     //   continue;
+                    //   continue;
 
                     //if (xi == 1 && yi == -1)
-                     //  continue;
+                    //  continue;
 
                     //if (xi == -1 && yi == 1)
-                     // continue;
+                    // continue;
 
                     Vector2Int pointinQuestion = new Vector2Int(x + xi, y + yi);
 
@@ -134,6 +181,10 @@ namespace com.leothelegion.Nav
             closedList.Clear();
             return null;
         }
+
+        /// 
+        /// Utils
+        /// 
 
         Node CreateNewNode(Vector2 pos, Node parent, double gCost, double hCost)
         {
