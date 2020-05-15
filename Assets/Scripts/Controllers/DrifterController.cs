@@ -11,7 +11,7 @@ public class DrifterController : MonoBehaviour
     Health health = null;
 
     [SerializeField]
-    ParticleSystem particleSystem;
+    ParticleSystem particleSystem = null;
 
     [SerializeField]
     List<Vector2> path;

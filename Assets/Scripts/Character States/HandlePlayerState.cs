@@ -20,7 +20,7 @@ public class HandlePlayerState : MonoBehaviour
         Landing,
         GroundShooting,
         AirShooting,
-        Soaring,
+        Flying,
         Death
     }
 
@@ -67,7 +67,7 @@ public class HandlePlayerState : MonoBehaviour
                         currentTrigger = "Air Shooting";
                         AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
-                    case PlayerState.Soaring:
+                    case PlayerState.Flying:
                         break;
                     case PlayerState.Death:
                         break;
@@ -95,9 +95,9 @@ public class HandlePlayerState : MonoBehaviour
             ActionState = PlayerState.Idle;
         else if (rb.velocity.x != 0 && rb.velocity.y == 0)
             ActionState = PlayerState.Running;
-        else if (rb.velocity.y > 0 && actionState != PlayerState.Soaring) //Separate this into Falling later.
+        else if (rb.velocity.y > 0 && actionState != PlayerState.Flying) //Separate this into Falling later.
             ActionState = PlayerState.Jumping;
-        else if (rb.velocity.y < 0 && actionState != PlayerState.Soaring)
+        else if (rb.velocity.y < 0 && actionState != PlayerState.Flying)
             ActionState = PlayerState.Falling;
     }
 }

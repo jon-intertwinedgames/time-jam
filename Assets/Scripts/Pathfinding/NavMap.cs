@@ -19,7 +19,7 @@ namespace com.leothelegion.Nav
         static NavMap INSTANCE;
 
         [SerializeField]
-        LayerMask mask;
+        LayerMask mask = -1;
 
         private void Start()
         {

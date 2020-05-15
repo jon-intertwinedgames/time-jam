@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private TimeManipulation time_script;
     private HandlePlayerState playerState_script;
     private Health health_script;
+    private PlayerSFX playerSFX_script;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         time_script = GetComponent<TimeManipulation>();
         playerState_script = GetComponent<HandlePlayerState>();
         health_script = GetComponent<Health>();
+        playerSFX_script = GetComponent<PlayerSFX>();
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Arrow.AllArrows.Count > 0)
             {
+                playerSFX_script.TeleportingSFX();
                 GameObject closestArrow = Arrow.FindClosestArrowToCursor();
                 TeleportToArrow(closestArrow);
             }
@@ -135,7 +138,7 @@ public class PlayerController : MonoBehaviour
         transform.position = arrowToTeleportTo.transform.position;
         Destroy(arrowToTeleportTo);        
 
-        playerState_script.ActionState = HandlePlayerState.PlayerState.Soaring;
+        playerState_script.ActionState = HandlePlayerState.PlayerState.Flying;
     }
 
     [SerializeField]
