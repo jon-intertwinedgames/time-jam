@@ -14,7 +14,8 @@
     BowDrawing1,
     BowDrawing2,
 
-    Shooting,
+    Shooting2,
+    Shooting3,
 
     FlyingArrow1,
     FlyingArrow2,

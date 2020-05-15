@@ -22,7 +22,9 @@ public class AudioManager : MonoBehaviour
 
         sfxDictionary.Add(SFX.Jumping, Resources.Load<AudioClip>("SFX/Jumping/Jump 3"));
 
-        sfxDictionary.Add(SFX.Shooting, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 3"));
+        sfxDictionary.Add(SFX.Shooting2, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 2"));
+        sfxDictionary.Add(SFX.Shooting3, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 3"));
+
         sfxDictionary.Add(SFX.NormalLanding, Resources.Load<AudioClip>("SFX/Normal Landing/Landing 4"));
 
         sfxDictionary.Add(SFX.Flying1, Resources.Load<AudioClip>("SFX/Flying/Girl Flying 1"));

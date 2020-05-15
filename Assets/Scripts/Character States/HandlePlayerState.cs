@@ -61,11 +61,13 @@ public class HandlePlayerState : MonoBehaviour
                         break;
                     case PlayerState.GroundShooting:
                         currentTrigger = "Ground Shooting";
-                        AudioManager.PlayOneShotSFX(SFX.Shooting);
+                        AudioManager.PlayRandomOneShotSFX(SFX.Shooting2, SFX.Shooting3);
+                        //AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
                     case PlayerState.AirShooting:
                         currentTrigger = "Air Shooting";
-                        AudioManager.PlayOneShotSFX(SFX.Shooting);
+                        AudioManager.PlayRandomOneShotSFX(SFX.Shooting2, SFX.Shooting3);
+                        //AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
                     case PlayerState.Flying:
                         break;
