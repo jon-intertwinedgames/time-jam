@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34ac10dd0ab6fc4b8c35d7f3a0f0be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.25
+  fireRate: 0.175
   bowSFX: {fileID: 8190358475557611048}
 --- !u!114 &1440747908043183961
 MonoBehaviour:
