@@ -55,7 +55,8 @@ namespace com.leothelegion.Nav
             if (!isbaked) return;
 
             Gizmos.color = Color.blue;
-            foreach (var p in points)
+            Gizmos.DrawCube(new Vector2(mapSize.x,mapSize.y)/2, new Vector2(mapSize.x, mapSize.y));
+            /*foreach (var p in points)
             {
                 Vector2Int v = p.Key;
                 float x = (float)v.x;
@@ -63,7 +64,7 @@ namespace com.leothelegion.Nav
 
                 if (p.Value)
                     Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
-            }
+            }*/
         }
 
         public static Dictionary<Vector2Int, bool> GetPoints()

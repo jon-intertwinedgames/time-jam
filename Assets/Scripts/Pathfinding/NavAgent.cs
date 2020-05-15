@@ -35,6 +35,9 @@ namespace com.leothelegion.Nav
             
             List<Vector2> path = new List<Vector2>();
 
+            if (!NavMap.GetPoints().ContainsKey(start))
+                return path;
+
             if (!NavMap.GetPoints().ContainsKey(goal))
                 return path;
 

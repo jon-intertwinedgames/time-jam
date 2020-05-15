@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f344a6321bc4fa408c155ca428a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 50, y: 41}
+  mapSize: {x: 569, y: 314}
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
