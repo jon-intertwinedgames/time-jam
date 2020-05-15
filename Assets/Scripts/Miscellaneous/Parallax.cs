@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] [Range(0, 2)]
-    private float speedRatio = 0;
+    [SerializeField] [Range (0, 2)]
+    private float xParallaxEffect = 0, yParallaxEffect = 0;
 
-    private Vector2 offSet;
+    private Transform camera_trans;
+    private Vector2 spriteStartPosOffset, cameraStartPosOffset;
 
     private void Awake()
     {
-        offSet = transform.position;
+        camera_trans = Camera.main.transform;
+        cameraStartPosOffset = camera_trans.position;
+        spriteStartPosOffset = transform.position;
     }
 
     private void LateUpdate()
     {
-        transform.position = ((Vector2)Camera.main.transform.position - offSet) * speedRatio + offSet;
+        Vector2 parallaxEffect = new Vector2(xParallaxEffect, yParallaxEffect);
+        Vector2 cameraPos = camera_trans.position;
+
+        Vector2 distanceToTravel = (cameraStartPosOffset - cameraPos) * parallaxEffect;
+        transform.position = spriteStartPosOffset - distanceToTravel;
     }
 }
