@@ -477,6 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.25
+  bowSFX: {fileID: 8190358475557611048}
 --- !u!114 &1440747908043183961
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     float fireRate = 1f;
+    [SerializeField]
+    BowSFX bowSFX;
 
     private LandMovement movement_script;
     private Aimer aimer_script;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private HandlePlayerState playerState_script;
     private Health health_script;
     private PlayerSFX playerSFX_script;
+    
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             isAiming = true;
+            bowSFX.PlayDrawingBowSFX();
         }
         if (Input.GetMouseButton(0) && isAiming)
         {
@@ -88,7 +92,7 @@ public class PlayerController : MonoBehaviour
             ReleaseBow();
                 
             isAiming = false;
-
+            bowSFX.StopPlayingSFX();
             aimingTime = 0;
         }
     }
@@ -116,10 +120,11 @@ public class PlayerController : MonoBehaviour
 
     private void ReleaseBow()
     {
+        if (aimingTime < fireRate) return;
+
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
-        if(aimingTime > fireRate)
-            aimer_script.ShootProjectile(projectileDirection, "arrow");
+        aimer_script.ShootProjectile(projectileDirection, "arrow");
 
         if (rb.velocity.y == 0)
         {
