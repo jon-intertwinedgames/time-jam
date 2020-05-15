@@ -73,7 +73,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8.15, y: 0}
+  m_Offset: {x: 19.6, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -84,7 +84,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.33, y: 0.125}
+  m_Size: {x: 37.1, y: 0.125}
   m_EdgeRadius: 0
 --- !u!120 &5063678287412361840
 LineRenderer:
@@ -127,16 +127,16 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 16.3, y: 0, z: 0}
+  - {x: 39.93, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0017652884
-        value: 1
+        time: 0.07148385
+        value: 0.99523735
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -144,8 +144,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.67489916
-        value: 1
+        time: 0.9821104
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -157,8 +157,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 0.91862816, g: 0.9245283, b: 0.12646852, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fad1917eb098a488c94217614b0057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToDestroySelf: 3
+  secondsToDestroySelf: 1.93
 --- !u!114 &5130980440248423990
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,6 +45,8 @@ namespace com.leothelegion.Nav
 
                     if (hit.collider == null)
                         points.Add(new Vector2Int(x, y), true);
+                    else
+                        points.Add(new Vector2Int(x, y), false);
                 }
             }
             isbaked = true;
@@ -54,7 +56,7 @@ namespace com.leothelegion.Nav
         {
             if (!isbaked) return;
 
-            Gizmos.color = Color.blue;
+            
             Gizmos.DrawCube(new Vector2(mapSize.x,mapSize.y)/2, new Vector2(mapSize.x, mapSize.y));
             /*foreach (var p in points)
             {
@@ -62,8 +64,14 @@ namespace com.leothelegion.Nav
                 float x = (float)v.x;
                 float y = (float)v.y;
 
-                if (p.Value)
+                if (p.Value){
+                    Gizmos.color = Color.blue;
                     Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
+                }else{
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
+                }
+                    
             }*/
         }
 

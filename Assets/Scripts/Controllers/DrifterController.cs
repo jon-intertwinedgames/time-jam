@@ -22,6 +22,8 @@ public class DrifterController : MonoBehaviour
     [SerializeField]
     float minFlyingAltitude = 10f;
 
+    float FlyingAltitude = 10f;
+
     [SerializeField]
     [Range(0.00001f, 1f)]
     private float floatyness = 0.01f;
@@ -68,6 +70,8 @@ public class DrifterController : MonoBehaviour
     void Update()
     {
         if (goal == null) return;
+
+        FlyingAltitude = goal.position.y + minFlyingAltitude;
         
         HuntPlayer();
 
@@ -138,7 +142,7 @@ public class DrifterController : MonoBehaviour
                     else
                         xa = 0;
 
-                    if (y > minFlyingAltitude)
+                    if (y > FlyingAltitude)
                     {
                         if (point.y < y)
                             ya = -1;
@@ -147,11 +151,11 @@ public class DrifterController : MonoBehaviour
                         else
                             ya = 0;
                     }
-                    else if (y < minFlyingAltitude)
+                    else if (y < FlyingAltitude)
                     {
                         ya = 1;
                     }
-                    else if (y == minFlyingAltitude)
+                    else if (y == FlyingAltitude)
                     {
                         ya = 0;
                     }
@@ -184,8 +188,8 @@ public class DrifterController : MonoBehaviour
         Gizmos.color = Color.yellow;
         var drawRange = 10;
         Gizmos.DrawLine(
-            new Vector3(this.transform.position.x - drawRange, minFlyingAltitude, 0),
-            new Vector3(this.transform.position.x + drawRange, minFlyingAltitude, 0)
+            new Vector3(this.transform.position.x - drawRange, FlyingAltitude, 0),
+            new Vector3(this.transform.position.x + drawRange, FlyingAltitude, 0)
             );
         ///////////////
         if (path == null) return;

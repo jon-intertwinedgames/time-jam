@@ -7,6 +7,9 @@ using UnityEngine.UI;
 [RequireComponent (typeof(HandlePlayerState))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    float fireRate = 1f;
+
     private LandMovement movement_script;
     private Aimer aimer_script;
     private TimeManipulation time_script;
@@ -18,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
 
     private bool isAiming;
+    private float aimingTime = 0;
 
     void Start()
     {
@@ -64,7 +68,7 @@ public class PlayerController : MonoBehaviour
             movement_script.Jump();
         }
     }
-
+    
     void ArrowInput()
     {
         if(Input.GetMouseButtonDown(0))
@@ -75,12 +79,17 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimer_script.ShowTrajectory(mousePos);
+
+            aimingTime += Time.deltaTime;
         }
 
         else if (Input.GetMouseButtonUp(0) && isAiming)
         {
             ReleaseBow();
+                
             isAiming = false;
+
+            aimingTime = 0;
         }
     }
 
@@ -109,7 +118,8 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
-        aimer_script.ShootProjectile(projectileDirection, "arrow");
+        if(aimingTime > fireRate)
+            aimer_script.ShootProjectile(projectileDirection, "arrow");
 
         if (rb.velocity.y == 0)
         {
