@@ -173,6 +173,15 @@ public class DrifterController : MonoBehaviour
         Destroy(gameObject);
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
+        {
+            anim.SetTrigger("Damaged");
+        }
+    }
+
     //Called by Unity
     private void OnDrawGizmosSelected()
     {
@@ -197,11 +206,4 @@ public class DrifterController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
-        {
-            anim.SetTrigger("Damaged");
-        }
-    }
 }
