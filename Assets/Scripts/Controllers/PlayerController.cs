@@ -74,12 +74,12 @@ public class PlayerController : MonoBehaviour
     
     void ArrowInput()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetButtonDown("Fire1"))
         {
             isAiming = true;
             bowSFX.PlayDrawingBowSFX();
         }
-        if (Input.GetMouseButton(0) && isAiming)
+        if (Input.GetButton("Fire1") && isAiming)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             aimer_script.ShowTrajectory(mousePos);
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
             aimingTime += Time.deltaTime;
         }
 
-        else if (Input.GetMouseButtonUp(0) && isAiming)
+        else if (Input.GetButtonUp("Fire1") && isAiming)
         {
             ReleaseBow();
                 
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     void TeleportationInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetButtonDown("Teleport"))
         {
             if (Arrow.AllArrows.Count > 0)
             {
@@ -112,9 +112,9 @@ public class PlayerController : MonoBehaviour
 
     void TimeInput()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("Fire2"))
             time_script.StartSlowingDownTime();
-        else if (Input.GetMouseButtonUp(1))
+        else if (Input.GetButtonUp("Fire2"))
             time_script.ResetTimeScale();
     }
 
