@@ -261,7 +261,7 @@ MonoBehaviour:
     type: 3}
   firingRange: 25.08
   firerate: 5.6
-  shootingAccuracy: 0.799
+  shootingAccuracy: 0.831
 --- !u!114 &554573303193546125
 MonoBehaviour:
   m_ObjectHideFlags: 0
