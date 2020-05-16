@@ -26,6 +26,7 @@ public class DrifterBeam: Projectile
 
 
         boxCollider2D.size = Vector3.zero;
+        boxCollider2D.offset = Vector3.zero;
         lineRenderer.SetPosition(1, Vector3.zero);
     }
     
@@ -34,6 +35,7 @@ public class DrifterBeam: Projectile
         
         x += rateofExpand * Time.deltaTime;
         lineRenderer.SetPosition(1, new Vector3(x,0,0));
-        boxCollider2D.size = new Vector3(x, 1, 0);
+        boxCollider2D.size = new Vector3(x, 0.125f, 0);
+        boxCollider2D.offset = new Vector3(x / 2, 0, 0);
     }
 }
