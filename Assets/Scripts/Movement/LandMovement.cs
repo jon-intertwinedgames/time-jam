@@ -46,24 +46,12 @@ public class LandMovement : Movement
 
     public void Jump()
     {
-        if (canJump == true)
+        if (rb.velocity.y == 0)
         {
             if (groundDetector_script.IsOnGround)
             {
                 rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-                StartCoroutine(AllowAJump());
             }
         }
-    }
-
-    //I'm OCD and would like to guarantee that the character is no longer touching the ground before allowing for a jump again
-    private IEnumerator AllowAJump()
-    {
-        canJump = false;
-
-        for (int i = 0; i < 2; i++)
-            yield return new WaitForFixedUpdate();
-
-        canJump = true;
     }
 }
