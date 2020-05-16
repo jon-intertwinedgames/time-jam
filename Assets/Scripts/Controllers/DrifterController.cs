@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class DrifterController : MonoBehaviour
 {
+    Animator anim;
+
     [SerializeField]
     ParticleSystem particleSystem = null;
     [SerializeField]
@@ -42,6 +44,8 @@ public class DrifterController : MonoBehaviour
         agent = GetComponent<NavAgent>();
         movement = GetComponent<AirMovement>();
         health = GetComponent<Health>();
+
+        anim = GetComponentInChildren<Animator>();
 
         health.DeathEvent += Death;
 
@@ -190,6 +194,14 @@ public class DrifterController : MonoBehaviour
         foreach (var p in path)
         {
            Gizmos.DrawWireSphere(new Vector2(p.x, p.y), 0.1f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
+        {
+            anim.SetTrigger("Damaged");
         }
     }
 }
