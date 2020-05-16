@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     private static AudioSource managerAudioSource;
     private static Dictionary<SFX, AudioClip> sfxDictionary = new Dictionary<SFX, AudioClip>();
     private static Dictionary<Music, AudioClip> musicDictionary = new Dictionary<Music, AudioClip>();
+    static bool isInit = false;
 
     private void Start()
     {
@@ -16,6 +17,8 @@ public class AudioManager : MonoBehaviour
 
     private void InitializeDatabase()
     {
+        if (isInit) return;
+        isInit = true;
         sfxDictionary.Add(SFX.Running1, Resources.Load<AudioClip>("SFX/Running/Running1"));
         sfxDictionary.Add(SFX.Running2, Resources.Load<AudioClip>("SFX/Running/Running2"));
         sfxDictionary.Add(SFX.Running3, Resources.Load<AudioClip>("SFX/Running/Running3"));

@@ -6,31 +6,19 @@ using UnityEngine;
 
 public class DrifterController : MonoBehaviour
 {
-    NavAgent agent = null;
-    AirMovement movement = null;
-    Health health = null;
-
     [SerializeField]
     ParticleSystem particleSystem = null;
-
     [SerializeField]
     List<Vector2> path;
-
     [SerializeField]
     Transform goal = null; // to make this run faster, we should make this static
-
     [SerializeField]
     float minFlyingAltitude = 10f;
-
-    float FlyingAltitude = 10f;
-
     [SerializeField]
     [Range(0.00001f, 1f)]
     private float floatyness = 0.01f;
-
     [SerializeField]
     GameObject projectile = null;
-
     [SerializeField]
     float firingRange = 10f;
     [SerializeField]
@@ -39,9 +27,14 @@ public class DrifterController : MonoBehaviour
     [Range(0.1F, 1.0F)]
     float shootingAccuracy = 1f;
 
+    NavAgent agent = null;
+    AirMovement movement = null;
+    Health health = null;
     float time = 0f;
-
     Vector2 floatyMovement = Vector2.zero;
+    float FlyingAltitude = 10f;
+
+    System.Random ran = new System.Random();
 
     // Start is called before the first frame update
     void Start()
@@ -88,7 +81,7 @@ public class DrifterController : MonoBehaviour
             if (time > firerate)
             {
                 ShootAtPlayer();
-                time = 0;
+                time = ran.Next(0,2);
             }
         }
         else
