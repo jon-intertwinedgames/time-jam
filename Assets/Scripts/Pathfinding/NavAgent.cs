@@ -17,7 +17,7 @@ namespace com.leothelegion.Nav
 
         static NodeComparer nodeSorter = new NodeComparer();
 
-        Queue<Node> nodePool = new Queue<Node>();
+        static Queue<Node> nodePool = new Queue<Node>();
 
         List<Node> openList = new List<Node>();
         List<Node> closedList = new List<Node>();
@@ -27,11 +27,21 @@ namespace com.leothelegion.Nav
 
         public List<Vector2> FindPath(Vector2Int start, Vector2Int goal)
         {
+            start = start / NavMap.CELLSPACE;
+            goal = goal / NavMap.CELLSPACE;
+
             if (useSharedPathing)
             {
                 if (calculatedPaths.ContainsKey((start, goal)))
                 {
-                    return calculatedPaths[(start, goal)];
+                    List<Vector2> path = new List<Vector2>(calculatedPaths[(start, goal)]);
+
+                    for (int i = 0; i < path.Count; i++)
+                    {
+                        path[i] = path[i] * NavMap.CELLSPACE;
+                    }
+
+                    return path;
                 }
             }
 
@@ -41,18 +51,84 @@ namespace com.leothelegion.Nav
             if (!NavMap.GetPoints().ContainsKey(goal))
                 return new List<Vector2>();
 
+            if (!NavMap.GetPoints()[start])
+            {// if is not walkable
+
+                if (NavMap.GetPoints()[start + Vector2Int.up])
+                    start = start + Vector2Int.up;
+                else if (NavMap.GetPoints()[start + Vector2Int.down])
+                    start = start + Vector2Int.down;
+
+                else if(NavMap.GetPoints()[start + Vector2Int.right])
+                    start = start + Vector2Int.right;
+
+                else if(NavMap.GetPoints()[start + Vector2Int.left])
+                    start = start + Vector2Int.left;
+                else
+                    return new List<Vector2>();
+            }
+
+            if (!NavMap.GetPoints()[goal])
+            {
+                // if is not walkable
+
+                if (NavMap.GetPoints()[goal + Vector2Int.up])
+                    goal = goal + Vector2Int.up;
+                else if (NavMap.GetPoints()[goal + Vector2Int.down])
+                    goal = goal + Vector2Int.down;
+                else if (NavMap.GetPoints()[goal + Vector2Int.right])
+                    goal = goal + Vector2Int.right;
+                else if (NavMap.GetPoints()[goal + Vector2Int.left])
+                    goal = goal + Vector2Int.left;
+                else
+                    return new List<Vector2>();
+            }
+            
             if (useCheapPathfindingWhenPossible)
             {
                 var cheapPath = UseCheapSearch(start, goal);
                 if (cheapPath != null)
                     if (cheapPath.Count > 0)
+                    {
+                        if (!calculatedPaths.ContainsKey((start, goal)))
+                            calculatedPaths.Add((start, goal), new List<Vector2>(cheapPath));
+
+                        for (int i = 0; i < cheapPath.Count; i++)
+                        {
+                            cheapPath[i] = cheapPath[i] * NavMap.CELLSPACE;
+                        }
+
                         return cheapPath;
+                    }
+                        
             }
 
-            var AStarpath =  AStarSearch(start, goal);
+            ref List<Vector2> AStarpath =  ref AStarSearch(start, goal);
 
             if (useSharedPathing)
-                calculatedPaths.Add((start, goal), AStarpath);
+            {
+                if (!calculatedPaths.ContainsKey((start, goal)))
+                    calculatedPaths.Add((start, goal), new List<Vector2>(AStarpath));
+
+                /*List<Vector2> _path = new List<Vector2>(AStarpath);// this generates too much garbage
+
+                while (_path.Count > 0)
+                {
+                    Vector2Int newstart = new Vector2Int((int)_path[0].x, (int)_path[0].y);
+
+                    if (!calculatedPaths.ContainsKey((newstart, goal)))
+                        calculatedPaths.Add((newstart,goal), _path);
+                        
+
+                    _path.RemoveAt(0);
+                }*/
+
+            }
+
+            for (int i = 0; i < AStarpath.Count; i++)
+            {
+                AStarpath[i] = AStarpath[i] * NavMap.CELLSPACE;
+            }
 
             return AStarpath;
         }
@@ -87,10 +163,10 @@ namespace com.leothelegion.Nav
                 return null;
         }
 
-        private List<Vector2> AStarSearch(Vector2Int start, Vector2Int goal)
-        {
-            List<Vector2> path = new List<Vector2>();
+        List<Vector2> path_buffer = new List<Vector2>();
 
+        private ref List<Vector2> AStarSearch(Vector2Int start, Vector2Int goal)
+        {
             Node current = CreateNewNode(start, null, 0, getDistance(start, goal));//new Node(start, null, 0, getDistance(start, goal));
             openList.Add(current);
 
@@ -114,16 +190,16 @@ namespace com.leothelegion.Nav
                     openList.Clear();
                     closedList.Clear();
 
-                    path.Clear();
+                    path_buffer.Clear();
                     foreach (var node in path_node)
                     {
-                        path.Add(node.pos);
+                        path_buffer.Add(node.pos);
                     }
 
                     path_node.Clear();
-                    path.Reverse();
+                    path_buffer.Reverse();
 
-                    return path;
+                    return ref path_buffer;
                 }
                 openList.Remove(current);
                 closedList.Add(current);
@@ -179,7 +255,8 @@ namespace com.leothelegion.Nav
             }
             BackupToPool(closedList);
             closedList.Clear();
-            return null;
+            path_buffer.Clear();
+            return ref path_buffer;
         }
 
         /// 

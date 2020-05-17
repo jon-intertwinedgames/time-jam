@@ -21,6 +21,8 @@ namespace com.leothelegion.Nav
         [SerializeField]
         LayerMask mask = -1;
 
+        public static int CELLSPACE = 2;
+
         private void Start()
         {
             INSTANCE = this;
@@ -29,6 +31,7 @@ namespace com.leothelegion.Nav
 
         internal void Bake(Vector2Int mapsize)
         {
+            mapsize = mapsize / 2;
             mapSizebuffer = this.mapSize;
 
             this.mapSize = mapsize;
@@ -38,8 +41,8 @@ namespace com.leothelegion.Nav
             {
                 for (int x = 0; x < mapSize.x; x++)
                 {
-                    float xa = x;
-                    float ya = y;
+                    float xa = x*CELLSPACE;
+                    float ya = y*CELLSPACE;
 
                     RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f, mask);
 
@@ -57,8 +60,8 @@ namespace com.leothelegion.Nav
             if (!isbaked) return;
 
             
-            Gizmos.DrawCube(new Vector2(mapSize.x,mapSize.y)/2, new Vector2(mapSize.x, mapSize.y));
-            /*foreach (var p in points)
+            //Gizmos.DrawCube(new Vector2(mapSize.x,mapSize.y)/2, new Vector2(mapSize.x, mapSize.y));
+            foreach (var p in points)
             {
                 Vector2Int v = p.Key;
                 float x = (float)v.x;
@@ -66,13 +69,13 @@ namespace com.leothelegion.Nav
 
                 if (p.Value){
                     Gizmos.color = Color.blue;
-                    Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
+                    Gizmos.DrawWireSphere(new Vector2(x*CELLSPACE, y* CELLSPACE), 0.1f);
                 }else{
                     Gizmos.color = Color.red;
-                    Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
+                    Gizmos.DrawWireSphere(new Vector2(x * CELLSPACE, y * CELLSPACE), 0.1f);
                 }
                     
-            }*/
+            }
         }
 
         public static Dictionary<Vector2Int, bool> GetPoints()

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class DrifterController : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class DrifterController : MonoBehaviour
 
     System.Random ran = new System.Random();
 
+    EmissionModule particleSystemEmission;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +63,8 @@ public class DrifterController : MonoBehaviour
         {
 
         }
-        
+
+        particleSystemEmission = particleSystem.emission;
     }
 
     // Update is called once per frame
@@ -69,30 +73,41 @@ public class DrifterController : MonoBehaviour
         if (goal == null) return;
 
         FlyingAltitude = goal.position.y + minFlyingAltitude;
-        
-        HuntPlayer();
 
+        if (CanShootAtPlayer())
+            ShootAtPlayer();
+
+        particleSystemEmission.rateOverTime = 100f * (time / firerate);//<-- LOOK HERE Magic number :D
+    }
+
+    private void FixedUpdate()
+    {
+        if (goal == null) return;
+        HuntPlayer();
+    }
+
+    private bool CanShootAtPlayer()
+    {
         if (Vector3.Distance(this.transform.position, goal.position) < firingRange)
         {
             time += Time.deltaTime;
             if ((time / firerate) < shootingAccuracy)
             {
-                Targetbuffer = new Vector3(
-                    goal.position.x,
-                    goal.position.y,
-                    goal.position.z);
+                Targetbuffer.x = goal.position.x;
+                Targetbuffer.y = goal.position.y;
+                Targetbuffer.z = goal.position.z;
             }
             if (time > firerate)
             {
-                ShootAtPlayer();
-                time = ran.Next(0,2);
+                time = ran.Next(0, 2);
+                return true;
             }
         }
         else
+        {
             time = 0;
-
-        var p = particleSystem.emission;
-        p.rateOverTime = 100f * (time / firerate);//<-- LOOK HERE Magic number :D
+        }
+        return false;
     }
 
     Vector3 Targetbuffer;
@@ -103,7 +118,7 @@ public class DrifterController : MonoBehaviour
 
         Projectile.CreateProjectile(projectile, this.transform.position, (Vector2)a - (Vector2)b);
     }
-
+    
     private void HuntPlayer()
     {
         float xa = 0;
@@ -118,8 +133,9 @@ public class DrifterController : MonoBehaviour
             Mathf.FloorToInt(goal.position.x),
             Mathf.FloorToInt(goal.position.y)
             );
-        path = agent.FindPath(s, e);
-
+        path.Clear();
+        path.AddRange(agent.FindPath(s, e));
+        
         if (path != null)
         {
             if (path.Count > 0)
