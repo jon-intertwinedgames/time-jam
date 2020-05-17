@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useSharedPathing: 1
   useCheapPathfindingWhenPossible: 1
-  D: 1.09
+  D: 0.95
 --- !u!114 &3829405722963638434
 MonoBehaviour:
   m_ObjectHideFlags: 0

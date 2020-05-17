@@ -21,6 +21,7 @@ namespace com.leothelegion.Nav
         [SerializeField]
         LayerMask mask = -1;
 
+        //enter only multiples of 2
         public static int CELLSPACE = 2;
 
         private void Start()
@@ -41,8 +42,8 @@ namespace com.leothelegion.Nav
             {
                 for (int x = 0; x < mapSize.x; x++)
                 {
-                    float xa = x*CELLSPACE;
-                    float ya = y*CELLSPACE;
+                    float xa = x << CELLSPACE;
+                    float ya = y << CELLSPACE;
 
                     RaycastHit2D hit = Physics2D.Raycast(new Vector2(xa, ya), Vector2.up, 0.1f, mask);
 
@@ -64,15 +65,15 @@ namespace com.leothelegion.Nav
             foreach (var p in points)
             {
                 Vector2Int v = p.Key;
-                float x = (float)v.x;
-                float y = (float)v.y;
+                float x = v.x << CELLSPACE;
+                float y = v.y << CELLSPACE;
 
                 if (p.Value){
                     Gizmos.color = Color.blue;
-                    Gizmos.DrawWireSphere(new Vector2(x*CELLSPACE, y* CELLSPACE), 0.1f);
+                    Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
                 }else{
                     Gizmos.color = Color.red;
-                    Gizmos.DrawWireSphere(new Vector2(x * CELLSPACE, y * CELLSPACE), 0.1f);
+                    Gizmos.DrawWireSphere(new Vector2(x, y), 0.1f);
                 }
                     
             }

@@ -5802,11 +5802,6 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: f68b90fd107eee6469b940a6f95f59e6, type: 2}
-    - target: {fileID: 554573303193546125, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: defaultSpeed
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 674611989468756754, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
       propertyPath: m_Name
@@ -5899,7 +5894,7 @@ PrefabInstance:
     - target: {fileID: 65649251246706231, guid: 3e24c88557f2483448ced08f3de1d0ec,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 555515238472251461, guid: 3e24c88557f2483448ced08f3de1d0ec,
         type: 3}
@@ -5988,12 +5983,12 @@ PrefabInstance:
     - target: {fileID: 4358617928209432394, guid: c4169c72e05c97046bb00e56817289d9,
         type: 3}
       propertyPath: mapSize.x
-      value: 600
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4358617928209432394, guid: c4169c72e05c97046bb00e56817289d9,
         type: 3}
       propertyPath: mapSize.y
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4358617928209432395, guid: c4169c72e05c97046bb00e56817289d9,
         type: 3}

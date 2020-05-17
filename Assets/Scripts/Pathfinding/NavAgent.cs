@@ -27,8 +27,11 @@ namespace com.leothelegion.Nav
 
         public List<Vector2> FindPath(Vector2Int start, Vector2Int goal)
         {
-            start = start / NavMap.CELLSPACE;
-            goal = goal / NavMap.CELLSPACE;
+            start.x = start.x >> NavMap.CELLSPACE;
+            start.y = start.y >> NavMap.CELLSPACE;
+
+            goal.x = goal.x >> NavMap.CELLSPACE;
+            goal.y = goal.y >> NavMap.CELLSPACE;
 
             if (useSharedPathing)
             {
@@ -38,7 +41,11 @@ namespace com.leothelegion.Nav
 
                     for (int i = 0; i < path.Count; i++)
                     {
-                        path[i] = path[i] * NavMap.CELLSPACE;
+                        var v = path[i];
+                        v.x = (int)v.x << NavMap.CELLSPACE;
+                        v.y = (int)v.y << NavMap.CELLSPACE;
+
+                        path[i] = v;
                     }
 
                     return path;
@@ -95,7 +102,12 @@ namespace com.leothelegion.Nav
 
                         for (int i = 0; i < cheapPath.Count; i++)
                         {
-                            cheapPath[i] = cheapPath[i] * NavMap.CELLSPACE;
+
+                            var v = cheapPath[i];
+                            v.x = (int)v.x << NavMap.CELLSPACE;
+                            v.y = (int)v.y << NavMap.CELLSPACE;
+
+                            cheapPath[i] = v;
                         }
 
                         return cheapPath;
@@ -127,7 +139,11 @@ namespace com.leothelegion.Nav
 
             for (int i = 0; i < AStarpath.Count; i++)
             {
-                AStarpath[i] = AStarpath[i] * NavMap.CELLSPACE;
+                var v = AStarpath[i];
+                v.x = (int)v.x << NavMap.CELLSPACE;
+                v.y = (int)v.y << NavMap.CELLSPACE;
+
+                AStarpath[i] = v;
             }
 
             return AStarpath;
@@ -195,6 +211,8 @@ namespace com.leothelegion.Nav
                     {
                         path_buffer.Add(node.pos);
                     }
+
+                    BackupToPool(path_node);
 
                     path_node.Clear();
                     path_buffer.Reverse();
@@ -290,6 +308,8 @@ namespace com.leothelegion.Nav
 
         double Manhattan_distance(Vector2 node, Vector2 goal)
         {
+            if (D < 0.1f)
+                D = 0.95f;
             //4 directions
             double dx = Mathf.Abs(node.x - goal.x);
             double dy = Mathf.Abs(node.y - goal.y);
@@ -311,7 +331,8 @@ namespace com.leothelegion.Nav
             //print("backingUp Node");
             foreach (var node in nodelist)
             {
-                nodePool.Enqueue(node);
+                if(!nodePool.Contains(node))
+                    nodePool.Enqueue(node);
             }
         }
 
