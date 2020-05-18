@@ -11,11 +11,16 @@ public class ResultsProcessor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        howmanyKilled_text.text = GlobalVars.EnemiesKilled.ToString();
+        UpdateText();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    private void UpdateText()
     {
         howmanyKilled_text.text = GlobalVars.EnemiesKilled.ToString();
     }

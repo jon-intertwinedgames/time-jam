@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameMaster : MonoBehaviour
 {
     [SerializeField]
-    int numOfEnemiesToKillToWin = 2;
+    public int numOfEnemiesToKillToWin = 2;
+
+
+    [SerializeField]
+    TextMeshProUGUI howmanyToKilled_text = null;
 
     public event EventHandler GameOver;
     private bool isGameOver = false;
@@ -20,6 +25,29 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (howmanyToKilled_text != null)
+            howmanyToKilled_text.text = numOfEnemiesToKillToWin.ToString();
+
+        CheckforWin();
+        CheckforLose();
+    }
+
+    private void CheckforLose()
+    {
+        if (GameObject.FindObjectOfType<PlayerController>() == null)
+        {
+            if (!isGameOver)
+            {
+                OnGameOver(EventArgs.Empty);
+                print("GAMEOVER....");
+                isGameOver = true;
+            }
+
+        }
+    }
+
+    private void CheckforWin()
+    {
         try
         {
             if (GlobalVars.EnemiesKilled >= numOfEnemiesToKillToWin)
@@ -28,17 +56,6 @@ public class GameMaster : MonoBehaviour
         catch (System.Exception)
         {
             print("I'm not in the build.... I can't go to next scene");
-        }
-        
-        if(GameObject.FindObjectOfType<PlayerController>() == null)
-        {
-            if (!isGameOver)
-            {
-                OnGameOver(EventArgs.Empty);
-                print("GAMEOVER....");
-                isGameOver = true;
-            }
-                
         }
     }
 
