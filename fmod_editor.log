@@ -1,0 +1,1308 @@
+[LOG] System::create                           : Header version = 2.01.01. Current version = 2.01.01.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
+[LOG] SystemI::init                            : Initialize version=20101 (109257), maxchannels=256, flags=0x00020000
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 000002577BA33D78 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : done
+[LOG] PlaybackSystem::init                     : 
+[LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] PlaybackSystem::init                     : done
+[LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 4 ', format=5, channels=2, frequency=48000, lengthbytes=6272, lengthpcm=36000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.350656.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 2', format=5, channels=2, frequency=48000, lengthbytes=12128, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.429874.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 1 ', format=5, channels=2, frequency=48000, lengthbytes=13568, lengthpcm=54000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.790297.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 3', format=5, channels=2, frequency=48000, lengthbytes=12416, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.793637.
+[LOG] SoundI::release                          :  (000002577B95E5F8)
+[LOG] SoundI::release                          :     Flying Arrow 1  (000002577B95B8D8)
+[LOG] SoundI::release                          :  (000002577B95FE68)
+[LOG] SoundI::release                          :     Flying Arrow 2 (000002577B958678)
+[LOG] SoundI::release                          :  (000002577B95F008)
+[LOG] SoundI::release                          :     Flying Arrow 3 (000002577B95A3B8)
+[LOG] SoundI::release                          :  (000002577B95E318)
+[LOG] SoundI::release                          :     Flying Arrow 4  (000002577B95A6F8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002577B95E5F8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B95AD78)
+[LOG] SoundI::release                          :  (000002577B95C4E8)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B95A6F8)
+[LOG] SoundI::release                          :  (000002577B95FE68)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B958818)
+[LOG] SoundI::release                          :  (000002577B95E318)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B95BC18)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486708
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486708
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486708
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486708
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002577B95D1D8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B95BDB8)
+[LOG] SoundI::release                          :  (000002577B95E318)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B95C0F8)
+[LOG] SoundI::release                          :  (000002577B95FE68)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B95AD78)
+[LOG] SoundI::release                          :  (000002577B95D068)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B95B598)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Wall 3 ', format=5, channels=2, frequency=48000, lengthbytes=10176, lengthpcm=42000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.557577.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Wall 4', format=5, channels=2, frequency=48000, lengthbytes=9696, lengthpcm=36000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.810583.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Wall 2 ', format=5, channels=2, frequency=48000, lengthbytes=10176, lengthpcm=36000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.465729.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Wall 1 ', format=5, channels=2, frequency=48000, lengthbytes=5088, lengthpcm=29999, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.346047.
+[LOG] SoundI::release                          :  (000002577B95E5F8)
+[LOG] SoundI::release                          :     Arrow Hitting Wall 1  (000002577B959ED8)
+[LOG] SoundI::release                          :  (000002577B95E318)
+[LOG] SoundI::release                          :     Arrow Hitting Wall 2  (000002577B95C298)
+[LOG] SoundI::release                          :  (000002577B95ED28)
+[LOG] SoundI::release                          :     Arrow Hitting Wall 3  (000002577B95B3F8)
+[LOG] SoundI::release                          :  (000002577B95FFD8)
+[LOG] SoundI::release                          :     Arrow Hitting Wall 4 (000002577B95A218)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 2', format=5, channels=2, frequency=48000, lengthbytes=25728, lengthpcm=111595, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.506317.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 4', format=5, channels=2, frequency=48000, lengthbytes=25056, lengthpcm=99056, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.316101.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 3', format=5, channels=2, frequency=48000, lengthbytes=31392, lengthpcm=135418, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.756683.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577B486F48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 1', format=5, channels=2, frequency=48000, lengthbytes=30624, lengthpcm=122880, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.498505.
+[LOG] SoundI::release                          :  (000002577B95D1D8)
+[LOG] SoundI::release                          :     Girl Flying 1 (000002577B95C0F8)
+[LOG] SoundI::release                          :  (000002577B95F008)
+[LOG] SoundI::release                          :     Girl Flying 2 (000002577B95ABD8)
+[LOG] SoundI::release                          :  (000002577B95D628)
+[LOG] SoundI::release                          :     Girl Flying 3 (000002577B9589B8)
+[LOG] SoundI::release                          :  (000002577B95D068)
+[LOG] SoundI::release                          :     Girl Flying 4 (000002577B95AD78)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257761E6178
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 4 ', format=5, channels=2, frequency=48000, lengthbytes=6272, lengthpcm=36000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.350656.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257761E6178
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 2', format=5, channels=2, frequency=48000, lengthbytes=12128, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.429874.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257761E6178
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 1 ', format=5, channels=2, frequency=48000, lengthbytes=13568, lengthpcm=54000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.790297.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257761E6178
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Flying Arrow 3', format=5, channels=2, frequency=48000, lengthbytes=12416, lengthpcm=48000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.793637.
+[LOG] SoundI::release                          :  (000002577B95DA78)
+[LOG] SoundI::release                          :     Flying Arrow 1  (000002577B95A078)
+[LOG] SoundI::release                          :  (000002577B95D1D8)
+[LOG] SoundI::release                          :     Flying Arrow 2 (000002577B95AD78)
+[LOG] SoundI::release                          :  (000002577B95E038)
+[LOG] SoundI::release                          :     Flying Arrow 3 (000002577B959B98)
+[LOG] SoundI::release                          :  (000002577B95D068)
+[LOG] SoundI::release                          :     Flying Arrow 4  (000002577B9596B8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002577B95DA78)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B958B58)
+[LOG] SoundI::release                          :  (00000256CCE43A18)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B95A078)
+[LOG] SoundI::release                          :  (000002577B95D1D8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B9591D8)
+[LOG] SoundI::release                          :  (000002577B95D068)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B95A558)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002577B95DA78)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B95AA38)
+[LOG] SoundI::release                          :  (000002577B95D068)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B95BA78)
+[LOG] SoundI::release                          :  (00000256CCE43CF8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B958E98)
+[LOG] SoundI::release                          :  (00000256CCE43A18)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B9584D8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002577B95DA78)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B958B58)
+[LOG] SoundI::release                          :  (00000256CCE43A18)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B959378)
+[LOG] SoundI::release                          :  (000002577B95D1D8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B959038)
+[LOG] SoundI::release                          :  (000002577B95D068)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B959ED8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002577B95C4E8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B959B98)
+[LOG] SoundI::release                          :  (000002577B95ED28)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B95B3F8)
+[LOG] SoundI::release                          :  (00000256CCE43CF8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B95ABD8)
+[LOG] SoundI::release                          :  (00000256CCE43A18)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B95A078)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577623F788
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577623F788
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577623F788
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002577623F788
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002556209F698)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B9596B8)
+[LOG] SoundI::release                          :  (00000255620A04F8)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B9591D8)
+[LOG] SoundI::release                          :  (00000255620A1918)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B95ABD8)
+[LOG] SoundI::release                          :  (000002556209F978)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B959518)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257762403E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 3', format=5, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.433044.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257762403E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 2', format=5, channels=2, frequency=48000, lengthbytes=4384, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.546417.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257762403E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow Hitting Flesh 4', format=5, channels=2, frequency=48000, lengthbytes=2784, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443695.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000257762403E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Arrow hittings flesh 1', format=5, channels=2, frequency=48000, lengthbytes=5984, lengthpcm=21315, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.550293.
+[LOG] SoundI::release                          :  (000002556209EC88)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 4 (000002577B959B98)
+[LOG] SoundI::release                          :  (000002556209F978)
+[LOG] SoundI::release                          :     Arrow hittings flesh 1 (000002577B95AA38)
+[LOG] SoundI::release                          :  (00000255620A00A8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 2 (000002577B95A898)
+[LOG] SoundI::release                          :  (00000255620A07D8)
+[LOG] SoundI::release                          :     Arrow Hitting Flesh 3 (000002577B9596B8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776240808
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 2', format=5, channels=2, frequency=48000, lengthbytes=25728, lengthpcm=111595, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.506317.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776240808
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 4', format=5, channels=2, frequency=48000, lengthbytes=25056, lengthpcm=99056, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.316101.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776240808
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 3', format=5, channels=2, frequency=48000, lengthbytes=31392, lengthpcm=135418, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.756683.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776240808
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Girl Flying 1', format=5, channels=2, frequency=48000, lengthbytes=30624, lengthpcm=122880, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.498505.
+[LOG] SoundI::release                          :  (00000255620A0218)
+[LOG] SoundI::release                          :     Girl Flying 1 (000002577B95A6F8)
+[LOG] SoundI::release                          :  (000002556209F3B8)
+[LOG] SoundI::release                          :     Girl Flying 2 (000002577B95BF58)
+[LOG] SoundI::release                          :  (000002556209F978)
+[LOG] SoundI::release                          :     Girl Flying 3 (000002577B959ED8)
+[LOG] SoundI::release                          :  (000002556209E558)
+[LOG] SoundI::release                          :     Girl Flying 4 (000002577B95B258)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776243148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 6', format=5, channels=2, frequency=48000, lengthbytes=14144, lengthpcm=68963, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.435211.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776243148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 2', format=5, channels=2, frequency=48000, lengthbytes=18016, lengthpcm=68963, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776243148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 3', format=5, channels=2, frequency=48000, lengthbytes=17408, lengthpcm=75232, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.545959.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776243148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 4', format=5, channels=2, frequency=48000, lengthbytes=15264, lengthpcm=75232, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.521362.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776243148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 5', format=5, channels=2, frequency=48000, lengthbytes=15232, lengthpcm=68963, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.506134.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025776243148
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 1', format=5, channels=2, frequency=48000, lengthbytes=17952, lengthpcm=86517, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SoundI::release                          :  (000002556209F0D8)
+[LOG] SoundI::release                          :     Laser Charging 1 (000002577B95A078)
+[LOG] SoundI::release                          :  (000002556209E108)
+[LOG] SoundI::release                          :     Laser Charging 2 (000002577B95C298)
+[LOG] SoundI::release                          :  (00000255620A0388)
+[LOG] SoundI::release                          :     Laser Charging 3 (000002577B959ED8)
+[LOG] SoundI::release                          :  (000002556209F698)
+[LOG] SoundI::release                          :     Laser Charging 4 (000002577B95B258)
+[LOG] SoundI::release                          :  (00000255620A07D8)
+[LOG] SoundI::release                          :     Laser Charging 5 (000002577B958818)
+[LOG] SoundI::release                          :  (00000255620A0F08)
+[LOG] SoundI::release                          :     Laser Charging 6 (000002577B958E98)
+[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
+[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Hit 2', format=5, channels=2, frequency=48000, lengthbytes=6368, lengthpcm=38870, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Hit 1', format=5, channels=2, frequency=48000, lengthbytes=10624, lengthpcm=38870, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SoundI::release                          :  (000002556209E278)
+[LOG] SoundI::release                          :     Laser Hit 1 (000002577B95ABD8)
+[LOG] SoundI::release                          :  (00000255620A0AB8)
+[LOG] SoundI::release                          :     Laser Hit 2 (000002577B9589B8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 6', format=5, channels=2, frequency=48000, lengthbytes=14144, lengthpcm=68963, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.435211.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 2', format=5, channels=2, frequency=48000, lengthbytes=18016, lengthpcm=68963, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 3', format=5, channels=2, frequency=48000, lengthbytes=17408, lengthpcm=75232, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.545959.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 4', format=5, channels=2, frequency=48000, lengthbytes=15264, lengthpcm=75232, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.521362.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 5', format=5, channels=2, frequency=48000, lengthbytes=15232, lengthpcm=68963, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.506134.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D9B8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Charging 1', format=5, channels=2, frequency=48000, lengthbytes=17952, lengthpcm=86517, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SoundI::release                          :  (000002556209FDC8)
+[LOG] SoundI::release                          :     Laser Charging 1 (000002577B959ED8)
+[LOG] SoundI::release                          :  (00000255620A0D98)
+[LOG] SoundI::release                          :     Laser Charging 2 (000002577B959B98)
+[LOG] SoundI::release                          :  (000002556209E9A8)
+[LOG] SoundI::release                          :     Laser Charging 3 (000002577B95BF58)
+[LOG] SoundI::release                          :  (00000255620A0C28)
+[LOG] SoundI::release                          :     Laser Charging 4 (000002577B95C298)
+[LOG] SoundI::release                          :  (000002556209FF38)
+[LOG] SoundI::release                          :     Laser Charging 5 (000002577B9596B8)
+[LOG] SoundI::release                          :  (000002556209F698)
+[LOG] SoundI::release                          :     Laser Charging 6 (000002577B95A6F8)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Hit 2', format=5, channels=2, frequency=48000, lengthbytes=6368, lengthpcm=38870, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1655808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 40800
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000B1774DF2F8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF808CA79E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF808CA79B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF808CA7AB0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF808CA7B70
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000025775B2D7A8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Laser Hit 1', format=5, channels=2, frequency=48000, lengthbytes=10624, lengthpcm=38870, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
+[LOG] SoundI::release                          :  (00000255620A04F8)
+[LOG] SoundI::release                          :     Laser Hit 1 (000002577B95BF58)
+[LOG] SoundI::release                          :  (000002556209F248)
+[LOG] SoundI::release                          :     Laser Hit 2 (000002577B958818)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] Manager::readBank                        : fileversion = 132, compatVersion = 132 (oldest = 44, newest = 132)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.

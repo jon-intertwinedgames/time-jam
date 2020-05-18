@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{cba1d950-ae8d-49de-8b3b-ecc318f23439}">
+		<property name="assetPath">
+			<value>Girl Flying 2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3248979591836734</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{563ab316-b476-4190-8bb2-a2f27c193fbe}</destination>
+		</relationship>
+	</object>
+</objects>

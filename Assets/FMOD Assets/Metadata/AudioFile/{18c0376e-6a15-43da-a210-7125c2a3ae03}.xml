@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{18c0376e-6a15-43da-a210-7125c2a3ae03}">
+		<property name="assetPath">
+			<value>Arrow Drawing 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{563ab316-b476-4190-8bb2-a2f27c193fbe}</destination>
+		</relationship>
+	</object>
+</objects>

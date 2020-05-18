@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ebaac0f0-4629-49eb-9c93-0a35cde25523}">
+		<property name="assetPath">
+			<value>Seeker Jumping .wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1250113378684807</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{563ab316-b476-4190-8bb2-a2f27c193fbe}</destination>
+		</relationship>
+	</object>
+</objects>
