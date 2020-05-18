@@ -48,10 +48,14 @@ public class PlayerController : MonoBehaviour
         TeleportationInput();
         TimeInput();
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Debug.isDebugBuild)
         {
-            health_script.ChangeHealth(-10);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                health_script.ChangeHealth(-10);
+            }
         }
+        
     }
 
     void MovementInput()
