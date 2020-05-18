@@ -8,7 +8,11 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float fireRate = 1f;
+    float minWaitTimeToShoot = 0.1f;
+
+    [SerializeField]
+    float minWaitTimeForPerfectArrow = 1f;
+
     [SerializeField]
     BowSFX bowSFX;
 
@@ -124,11 +128,23 @@ public class PlayerController : MonoBehaviour
 
     private void ReleaseBow()
     {
-        if (aimingTime < fireRate) return;
+        if (aimingTime < minWaitTimeToShoot) return;
 
         Vector2 mouseInWorldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 projectileDirection = aimer_script.GetDirectionOfAim(mouseInWorldPoint);
-        aimer_script.ShootProjectile(projectileDirection, "arrow");
+
+        float speedPercentage = aimingTime/minWaitTimeForPerfectArrow;
+
+        if (speedPercentage > 10f)//small hard cap
+            speedPercentage = 10f;
+
+        var projectile = aimer_script.ShootProjectile(projectileDirection, "arrow", speedPercentage);
+        var projectile_Damager = projectile.GetComponent<Damager>();
+
+        if(speedPercentage > 5f)
+        {
+            projectile_Damager.setDamage(projectile_Damager.getDamage() * 2);
+        }
 
         if (rb.velocity.y == 0)
         {

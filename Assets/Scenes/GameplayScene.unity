@@ -854,6 +854,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7764822897635043616, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: minWaitTimeForPerfectArrow
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764822897635043616, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: minWaitTimeToShoot
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35089e163fd2ca340a82ee0e820ca7de, type: 3}
 --- !u!1 &226854431
