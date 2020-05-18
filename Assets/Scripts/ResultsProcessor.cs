@@ -17,7 +17,7 @@ public class ResultsProcessor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateText();
     }
 
     private void UpdateText()
