@@ -44,7 +44,8 @@ public class PlayerSFX : MonoBehaviour
 
     private void RunningSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(SFX.Running1, SFX.Running2, SFX.Running3);
+        //AudioManager.PlayRandomOneShotSFX(SFX.Running1, SFX.Running2, SFX.Running3);
+        AudioManager.PlayOneShotSFX(SFX.Running1);
     }
 
     private void JumpingSFX()
@@ -54,16 +55,19 @@ public class PlayerSFX : MonoBehaviour
 
     private void FlyingInAirSFX()
     {
-        AudioManager.PlayRandomSFX(flyingAudioSource, true, SFX.Flying1, SFX.Flying2, SFX.Flying3, SFX.Flying4);
+        AudioManager.PlaySFX(flyingAudioSource, true, SFX.Flying3);
+        //AudioManager.PlayRandomSFX(flyingAudioSource, true, SFX.Flying1, SFX.Flying2, SFX.Flying3, SFX.Flying4);
     }
 
     private void SlowingDownTimeSFX()
     {
-        AudioManager.PlayRandomSFX(timeAudioSource, false, SFX.SlowingDownTime1, SFX.SlowingDownTime2, SFX.SlowingDownTime3, SFX.SlowingDownTime4);
+        AudioManager.PlaySFX(timeAudioSource, false, SFX.SlowingDownTime4);
+        //AudioManager.PlayRandomSFX(timeAudioSource, false, SFX.SlowingDownTime1, SFX.SlowingDownTime2, SFX.SlowingDownTime3, SFX.SlowingDownTime4);
     }
 
     public void TeleportingSFX()
-    {        
-        AudioManager.PlayRandomOneShotSFX(SFX.Teleporting1, SFX.Teleporting2, SFX.Teleporting3, SFX.Teleporting4, SFX.Teleporting5);
+    {
+        AudioManager.PlayOneShotSFX(SFX.Teleporting4);
+       //AudioManager.PlayRandomOneShotSFX(SFX.Teleporting1, SFX.Teleporting2, SFX.Teleporting3, SFX.Teleporting4, SFX.Teleporting5);
     }
 }
