@@ -93,6 +93,31 @@ public class HandlePlayerState : MonoBehaviour
 
     private void UpdateState()
     {
+        if (ActionState == PlayerState.GroundShooting)
+        {
+            if (rb.velocity.y != 0)
+                ActionState = PlayerState.AirShooting;
+            return;
+        }
+            
+        if(ActionState == PlayerState.AirShooting)
+        {
+            if (rb.velocity.y == 0)
+            {
+                ActionState = PlayerState.GroundShooting;
+                ResetRotation();
+            }
+            else
+            {
+                LookatMouse();
+            }
+            return;
+        }
+
+        ResetRotation();
+        if (ActionState == PlayerState.Death)
+            return;
+
         if (rb.velocity == Vector2.zero)
             ActionState = PlayerState.Idle;
         else if (rb.velocity.x != 0 && rb.velocity.y == 0)
@@ -101,5 +126,30 @@ public class HandlePlayerState : MonoBehaviour
             ActionState = PlayerState.Jumping;
         else if (rb.velocity.y < 0 && actionState != PlayerState.Flying)
             ActionState = PlayerState.Falling;
+    }
+
+    private void LookatMouse()
+    {
+        //GetComponent<FlipObjectBasedOnRigidbody>().enabled = false;
+
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        int offset = 0;
+
+        if (this.transform.localScale.x < 0)
+            offset = 180;
+
+        // Get Angle in Radians
+        float AngleRad = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x);
+        // Get Angle in Degrees
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        // Rotate Object
+        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg + offset);
+    }
+
+    private void ResetRotation()
+    {
+        //GetComponent<FlipObjectBasedOnRigidbody>().enabled = true;
+        transform.rotation = new Quaternion();
     }
 }
