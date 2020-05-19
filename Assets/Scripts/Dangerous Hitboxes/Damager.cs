@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour
 {
-    [SerializeField] private bool removeColliderOnHit = false;
+    [SerializeField] public bool removeColliderOnHit = false;
     [SerializeField] protected int damage = 0;
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -15,5 +15,15 @@ public class Damager : MonoBehaviour
         {
             GetComponent<Collider2D>().enabled = false;
         }
+    }
+
+    public void setDamage(int damage)
+    {
+        this.damage = damage;
+    }
+
+    public int getDamage()
+    {
+        return damage;
     }
 }
