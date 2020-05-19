@@ -35,11 +35,19 @@ public class Aimer : MonoBehaviour
         lr.enabled = true;
     }
 
-    public void ShootProjectile(Vector2 projectileDirection, string projectileName)
+    public Projectile ShootProjectile(Vector2 projectileDirection, string projectileName)
     {
         lr.enabled = false;
 
         GameObject projectile = projectile_GameObjects.First(p => p.name.ToLower() == projectileName.ToLower());
-        Projectile.CreateProjectile(projectile, transform.position, projectileDirection);
+        return Projectile.CreateProjectile(projectile, transform.position, projectileDirection);
+    }
+
+    public Projectile ShootProjectile(Vector2 projectileDirection, string projectileName, float speedPercentage)
+    {
+        lr.enabled = false;
+
+        GameObject projectile = projectile_GameObjects.First(p => p.name.ToLower() == projectileName.ToLower());
+        return Projectile.CreateProjectile(projectile, transform.position, projectileDirection, speedPercentage);
     }
 }

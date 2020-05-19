@@ -14,25 +14,19 @@ public abstract class Projectile : MonoBehaviour
         movement_script = GetComponent<AirMovement>();
     }
 
-    public static void CreateProjectile(GameObject projectileToCreate, Vector2 projectilePos, Vector2 projectileDirection)
+    public static Projectile CreateProjectile(GameObject projectileToCreate, Vector2 projectilePos, Vector2 projectileDirection)
     {
         Projectile newProjectile_script = Instantiate(projectileToCreate, projectilePos, Quaternion.identity).GetComponent<Projectile>();
         newProjectile_script.SetInMotion(projectileDirection);
+        return newProjectile_script;
     }
 
-    //public static void CreateProjectile(GameObject projectileToCreate, Vector2 projectilePos, Quaternion projectilerot)
-    //{
-    //    var newProjectile = Instantiate(projectileToCreate, projectilePos, projectilerot);
-
-    //    var toEuler = projectilerot.eulerAngles;
-
-    //    var xa = Mathf.Cos(toEuler.z * (Mathf.PI / 180));
-    //    var ya = Mathf.Sin(toEuler.z * (Mathf.PI / 180));
-
-    //    newProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(xa,ya)*5f;
-
-    //    Destroy(newProjectile, 5f);
-    //}
+    public static Projectile CreateProjectile(GameObject projectileToCreate, Vector2 projectilePos, Vector2 projectileDirection, float speedpercentage)
+    {
+        Projectile newProjectile_script = Instantiate(projectileToCreate, projectilePos, Quaternion.identity).GetComponent<Projectile>();
+        newProjectile_script.SetInMotion(projectileDirection, speedpercentage);
+        return newProjectile_script;
+    }
 
     protected void SetInMotion(Vector2 direction)
     {
@@ -41,4 +35,13 @@ public abstract class Projectile : MonoBehaviour
         Vector2 vel = direction * movement_script.speed;
         movement_script.Move(vel);
     }
+
+    protected void SetInMotion(Vector2 direction , float speedpercentage)
+    {
+        float rotation = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + rotationOffset;
+        transform.Rotate(0, 0, -rotation);
+        Vector2 vel = direction * movement_script.speed * speedpercentage;
+        movement_script.Move(vel);
+    }
+
 }
