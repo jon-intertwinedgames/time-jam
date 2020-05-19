@@ -124,7 +124,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 26e9105858320714fb547fef0c82ef4d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -223,9 +223,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.1112733, y: 2.5582874}
+  m_Offset: {x: 1.6566143, y: 2.3175836}
   serializedVersion: 2
-  m_Radius: 0.6122391
+  m_Radius: 0.63006973
 --- !u!70 &19426914295766855
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,8 +239,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.89402866, y: 0.76717186}
-  m_Size: {x: 2.0554523, y: 2.7992516}
+  m_Offset: {x: 0.80488014, y: 0.91872406}
+  m_Size: {x: 1.6275387, y: 2.1038933}
   m_Direction: 0
 --- !u!114 &674611989468756764
 MonoBehaviour:
@@ -402,7 +402,7 @@ SpriteRenderer:
   m_SortingLayerID: 1474121849
   m_SortingLayer: 3
   m_SortingOrder: 50
-  m_Sprite: {fileID: 21300000, guid: 9bbb312d12447414292cf01ca4141363, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcf267e9742bd0d428d8aeba1e79b4bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -439,25 +439,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 674611989468756766}
     m_Modifications:
-    - target: {fileID: 1447569598427976841, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1474121849
-      objectReference: {fileID: 0}
-    - target: {fileID: 1447569598427976841, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4569148450888134327, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4569148450888134327, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.41
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 4569148450888134327, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
         type: 3}
@@ -508,41 +498,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drifter Trail
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfdd1fc6b85830e44a49384ddeb4b01e, type: 3}
