@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float fireRate = 1f;
+    private float fireRate = 1f;
     [SerializeField]
-    BowSFX bowSFX;
+    private BowSFX bowSFX;
 
     private LandMovement movement_script;
     private Aimer aimer_script;
@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isAiming;
     private float aimingTime = 0;
+
+    public event Action TeleportEvent;
 
     void Start()
     {
@@ -110,6 +112,8 @@ public class PlayerController : MonoBehaviour
                 playerSFX_script.TeleportingSFX();
                 GameObject closestArrow = Arrow.FindClosestArrowToCursor();
                 TeleportToArrow(closestArrow);
+
+                TeleportEvent?.Invoke();
             }
         }
     }
