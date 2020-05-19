@@ -659,7 +659,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 0
     angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1332,7 +1332,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 0.22352943, g: 0.27058825, b: 0.33333334, a: 1}
+        key0: {r: 0, g: 0.42857146, b: 1, a: 1}
         key1: {r: 0.22352943, g: 0.27058825, b: 0.33333334, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}

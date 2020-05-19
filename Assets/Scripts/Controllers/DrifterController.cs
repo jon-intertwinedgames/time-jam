@@ -10,7 +10,7 @@ public class DrifterController : MonoBehaviour
     Animator anim;
 
     [SerializeField]
-    ParticleSystem particleSystem = null;
+    new ParticleSystem particleSystem = null;
     [SerializeField]
     List<Vector2> path;
     [SerializeField]
@@ -77,7 +77,8 @@ public class DrifterController : MonoBehaviour
         if (CanShootAtPlayer())
             ShootAtPlayer();
 
-        particleSystemEmission.rateOverTime = 100f * (time / firerate);//<-- LOOK HERE Magic number :D
+        particleSystemEmission.rateOverTimeMultiplier = 100f * (time / firerate);//<-- LOOK HERE Magic number :D
+        print("");
     }
 
     private void FixedUpdate()
