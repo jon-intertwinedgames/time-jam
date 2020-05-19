@@ -864,6 +864,11 @@ PrefabInstance:
       propertyPath: minWaitTimeToShoot
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 7764822897635043616, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 357605609}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35089e163fd2ca340a82ee0e820ca7de, type: 3}
 --- !u!1 &226854431
@@ -1197,6 +1202,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &357605609 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4299450029061025609, guid: 35089e163fd2ca340a82ee0e820ca7de,
+    type: 3}
+  m_PrefabInstance: {fileID: 209785155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &381965567
 GameObject:
   m_ObjectHideFlags: 0
