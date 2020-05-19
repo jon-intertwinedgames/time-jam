@@ -433,6 +433,75 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &3506562796231840311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 55341741159087728}
+    m_Modifications:
+    - target: {fileID: 166456801370253089, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_Name
+      value: Drifter Trail Sparks
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12956955
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2360329
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000289455
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203324447266406657, guid: 98d2b65e8854bb7469a22d52e26ffc30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 2.5640001
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98d2b65e8854bb7469a22d52e26ffc30, type: 3}
 --- !u!1001 &8981780723425074834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,6 +513,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drifter Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179275480513168478, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179275480513168478, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.r
+      value: 0.17488432
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179275480513168478, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.g
+      value: 0.2212277
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179275480513168478, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: ColorModule.gradient.minGradient.key0.b
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179275480513168478, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8962494210548310242, guid: 794f49e13611b0246b055ff8eaf09509,
         type: 3}
