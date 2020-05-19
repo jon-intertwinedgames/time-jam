@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     public event Action HealthChangedEvent;                 //Executed when the character's health changes
     public event Action DamagedEvent;                       //Executed when the character is dealt damage
     public event Action RegenEvent;                         //Executed when the character gains health
-    public event Action DeathEvent;                         //Executed when the character drops to 0 health or below                        
+    public event Action DeathEvent;                         //Executed when the character drops to 0 health or below    
 
     protected virtual void Awake()
     {

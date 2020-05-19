@@ -9,6 +9,8 @@ using static UnityEngine.ParticleSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    private float fireRate = 1.75f;
+
     float minWaitTimeToShoot = 0.1f;
 
     [SerializeField]
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
     EmissionModule particleSystemEmission;
 
     [SerializeField]
-    BowSFX bowSFX;
+    private BowSFX bowSFX;
 
     private LandMovement movement_script;
     private Aimer aimer_script;
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isAiming;
     private float aimingTime = 0;
+
+    public event Action TeleportEvent;
 
     void Start()
     {
@@ -127,6 +131,8 @@ public class PlayerController : MonoBehaviour
                 playerSFX_script.TeleportingSFX();
                 GameObject closestArrow = Arrow.FindClosestArrowToCursor();
                 TeleportToArrow(closestArrow);
+
+                TeleportEvent?.Invoke();
             }
         }
     }
