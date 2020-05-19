@@ -180,7 +180,6 @@ public class PlayerController : MonoBehaviour
             playerState_script.ActionState == HandlePlayerState.PlayerState.AirShooting)
         {
             playerState_script.ActionState = HandlePlayerState.PlayerState.Idle;
-            print("ra");
         }
     }
 
