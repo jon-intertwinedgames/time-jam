@@ -22,7 +22,8 @@ public class Aimer : MonoBehaviour
         return (targetPos - (Vector2)transform.position).normalized;
     }
 
-    public void ShowTrajectory(Vector2 targetPos)
+
+    public void SetTrajectory(Vector2 targetPos)
     {
         Vector2 currentPosition = transform.position;
         Vector2 projectileDirection = GetDirectionOfAim(targetPos);
@@ -31,23 +32,23 @@ public class Aimer : MonoBehaviour
 
         Vector3[] linePoints = { currentPosition, currentPosition + projectileDirection };
         lr.SetPositions(linePoints);
+    }
 
-        lr.enabled = true;
+    public void ShowTrajectory(bool shouldShow)
+    {
+        lr.enabled = shouldShow;
     }
 
     public Projectile ShootProjectile(Vector2 projectileDirection, string projectileName)
     {
-        lr.enabled = false;
-
         GameObject projectile = projectile_GameObjects.First(p => p.name.ToLower() == projectileName.ToLower());
         return Projectile.CreateProjectile(projectile, transform.position, projectileDirection);
     }
 
     public Projectile ShootProjectile(Vector2 projectileDirection, string projectileName, float speedPercentage)
     {
-        lr.enabled = false;
-
         GameObject projectile = projectile_GameObjects.First(p => p.name.ToLower() == projectileName.ToLower());
         return Projectile.CreateProjectile(projectile, transform.position, projectileDirection, speedPercentage);
     }
+
 }
