@@ -18,6 +18,9 @@ public class PlayerSFX : MonoBehaviour
     {        
         flyingAudioSource = AudioManager.CreateAudioSource(transform);
         timeAudioSource = AudioManager.CreateAudioSource(transform);
+
+        flyingAudioSource.gameObject.name = "flyingAudioSource";
+        timeAudioSource.gameObject.name = "timeAudioSource";
     }
 
     private void Update()
