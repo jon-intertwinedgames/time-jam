@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(AirMovement))]
@@ -65,6 +66,17 @@ public class Arrow : Projectile
 
             if (collision.tag == "Enemy")
             {
+                //////////////////////////////// Creates Arrow Sparks ///////////////////////////////
+                Transform[] arrowChildren = new Transform[transform.childCount];
+                for(int i = 0; i < transform.childCount; i++)
+                {
+                    arrowChildren[i] = transform.GetChild(i);
+                }
+
+                Transform sparks_trans = arrowChildren.First(c => c.name.ToLower().Contains("sparks"));
+                sparks_trans.GetComponent<ParticleSystem>().Play();
+                /////////////////////////////////////////////////////////////
+                
                 transform.SetParent(collision.transform);
             }
         }

@@ -10,6 +10,9 @@ public class DrifterController : MonoBehaviour
     Animator anim;
 
     [SerializeField]
+    GameObject enemyDeath;
+
+    [SerializeField]
     new ParticleSystem particleSystem = null;
     [SerializeField]
     List<Vector2> path;
@@ -186,6 +189,7 @@ public class DrifterController : MonoBehaviour
     private void Death()
     {
         GlobalVars.EnemiesKilled += 1;
+        GameObject.Instantiate(enemyDeath, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
