@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1447569598427976841}
   - component: {fileID: 4880144127658555883}
   m_Layer: 11
-  m_Name: Teleport
+  m_Name: Circular Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,7 @@ Transform:
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2260696015224801995}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
@@ -117,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.35
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -170,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -286,7 +285,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -661,7 +660,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 12
     angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -748,7 +747,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 3
       mode: 0
       spread: 0
       speed:
@@ -867,7 +866,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -977,7 +976,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 5
+      scalar: 10
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1305,7 +1304,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7830189, g: 0, b: 0.7380917, a: 0.78431374}
+        key0: {r: 0.990566, g: 0.9536113, b: 0.864409, a: 0.78431374}
         key1: {r: 0.28627452, g: 0.34117648, b: 0.40784317, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1322,7 +1321,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 12914
+        atime1: 6554
         atime2: 26214
         atime3: 0
         atime4: 0
@@ -1334,8 +1333,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0, b: 0, a: 1}
-        key1: {r: 0, g: 0, b: 0, a: 0.039215688}
+        key0: {r: 1, g: 1, b: 1, a: 0.78431374}
+        key1: {r: 1, g: 0.9215687, b: 1, a: 0.039215688}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1351,7 +1350,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 9830
+        atime1: 16384
         atime2: 0
         atime3: 0
         atime4: 0
@@ -2020,7 +2019,7 @@ ParticleSystem:
     speedModifier:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4769,78 +4768,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToDestroySelf: 0.75
---- !u!1001 &5209552424731351341
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4569148450888134327}
-    m_Modifications:
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274525111789720571, guid: ae00e79fe9647c145add33ba5668c1c1,
-        type: 3}
-      propertyPath: m_Name
-      value: Teleport Portal
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ae00e79fe9647c145add33ba5668c1c1, type: 3}
---- !u!4 &2260696015224801995 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6274525111789720550, guid: ae00e79fe9647c145add33ba5668c1c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 5209552424731351341}
-  m_PrefabAsset: {fileID: 0}
