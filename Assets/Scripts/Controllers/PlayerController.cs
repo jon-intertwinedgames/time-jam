@@ -111,7 +111,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1") && isAiming)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            aimer_script.ShowTrajectory(mousePos);
+
+            aimer_script.SetTrajectory(mousePos);
+            aimer_script.ShowTrajectory(true);
 
             particleSystemEmission.rateOverTime = 10f * GetPowerPercentage();//<-- LOOK HERE Magic number :D
 
@@ -129,6 +131,8 @@ public class PlayerController : MonoBehaviour
 
             particleSystemEmission.rateOverTime = 0;
             ResetPlayerStateBackFromShooting();
+
+            aimer_script.ShowTrajectory(false);
         }
     }
 
