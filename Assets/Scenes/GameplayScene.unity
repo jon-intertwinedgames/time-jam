@@ -5576,6 +5576,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2122023752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7764822897635043617, guid: 35089e163fd2ca340a82ee0e820ca7de,
+    type: 3}
+  m_PrefabInstance: {fileID: 209785155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122023766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122023752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74969295b6a59f840b1e2e8db84cf7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportationVFX: {fileID: 5548346530240268439, guid: 2d341859f23475e41a09125f90142a07,
+    type: 3}
 --- !u!1 &2123846723
 GameObject:
   m_ObjectHideFlags: 0
@@ -5883,6 +5903,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3430086028143966648, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.5707963
+      objectReference: {fileID: 0}
     - target: {fileID: 3829405722963638434, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
       propertyPath: goal
@@ -5893,6 +5918,16 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: f68b90fd107eee6469b940a6f95f59e6, type: 2}
+    - target: {fileID: 9215560943221595396, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215560943221595396, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.59
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a27cac7fb785c74db40927a983e2184, type: 3}
 --- !u!1001 &3614042369035847932
