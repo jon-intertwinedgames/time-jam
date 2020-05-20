@@ -570,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 5527376756567321363, guid: 40184dc4c8df94a41ace385fc232e924,
         type: 3}
       propertyPath: numOfEnemiesToKillToWin
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5527376756567321363, guid: 40184dc4c8df94a41ace385fc232e924,
         type: 3}
@@ -966,13 +966,18 @@ PrefabInstance:
     - target: {fileID: 1440747908043183966, guid: 604a70aa3ca5a32409a8cd295246e1e9,
         type: 3}
       propertyPath: minWaitTimeForPerfectArrow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1440747908043183966, guid: 604a70aa3ca5a32409a8cd295246e1e9,
         type: 3}
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 4299450029061025609}
+    - target: {fileID: 1440747908043183966, guid: 604a70aa3ca5a32409a8cd295246e1e9,
+        type: 3}
+      propertyPath: maxSpeedOfArrow
+      value: 2.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1440747908043183967, guid: 604a70aa3ca5a32409a8cd295246e1e9,
         type: 3}
       propertyPath: m_Name

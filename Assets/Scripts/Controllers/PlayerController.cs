@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     float minWaitTimeForPerfectArrow = 1f;
 
     [SerializeField]
+    float maxSpeedOfArrow = 8f;
+
+    [SerializeField]
     ParticleSystem particleSystem;
     EmissionModule particleSystemEmission;
 
@@ -191,8 +194,8 @@ public class PlayerController : MonoBehaviour
     {
         float speedPercentage = aimingTime / minWaitTimeForPerfectArrow;
 
-        if (speedPercentage > 10f)//small hard cap
-            speedPercentage = 10f;
+        if (speedPercentage > maxSpeedOfArrow) //small hard cap
+            speedPercentage = maxSpeedOfArrow;
         return speedPercentage;
     }
 
