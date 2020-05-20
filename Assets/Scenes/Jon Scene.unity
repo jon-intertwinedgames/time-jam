@@ -1687,6 +1687,11 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 816794986}
+    - target: {fileID: 3829405722963638434, guid: 8a27cac7fb785c74db40927a983e2184,
+        type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4208489631472334777, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
       propertyPath: m_Material
@@ -2140,6 +2145,11 @@ PrefabInstance:
     - target: {fileID: 108984088580319039, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748481071060872661, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2383242091522744168, guid: 35089e163fd2ca340a82ee0e820ca7de,
@@ -6094,6 +6104,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2123294050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7764822897635043617, guid: 35089e163fd2ca340a82ee0e820ca7de,
+    type: 3}
+  m_PrefabInstance: {fileID: 816794985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2123294064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123294050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74969295b6a59f840b1e2e8db84cf7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportationVFX: {fileID: 6274525111789720571, guid: ae00e79fe9647c145add33ba5668c1c1,
+    type: 3}
 --- !u!1 &2131323239
 GameObject:
   m_ObjectHideFlags: 0
