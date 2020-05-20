@@ -224,9 +224,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.6566143, y: 2.3175836}
+  m_Offset: {x: 1.5991383, y: 2.2313662}
   serializedVersion: 2
-  m_Radius: 0.63006973
+  m_Radius: 0.65881824
 --- !u!70 &19426914295766855
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -240,8 +240,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.89402866, y: 0.76717186}
-  m_Size: {x: 2.0554523, y: 2.7992516}
+  m_Offset: {x: 0.82218933, y: 0.8749428}
+  m_Size: {x: 1.6243591, y: 2.2100906}
   m_Direction: 0
 --- !u!114 &674611989468756764
 MonoBehaviour:
@@ -512,12 +512,12 @@ PrefabInstance:
     - target: {fileID: 4569148450888134327, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4569148450888134327, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 4569148450888134327, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
         type: 3}
@@ -603,6 +603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004799266181892619, guid: cfdd1fc6b85830e44a49384ddeb4b01e,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.5707963
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfdd1fc6b85830e44a49384ddeb4b01e, type: 3}

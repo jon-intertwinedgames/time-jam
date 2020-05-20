@@ -5813,40 +5813,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 19426914295766855, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.76717186
-      objectReference: {fileID: 0}
-    - target: {fileID: 19426914295766855, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.7992516
-      objectReference: {fileID: 0}
-    - target: {fileID: 19426914295766855, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.89402866
-      objectReference: {fileID: 0}
-    - target: {fileID: 19426914295766855, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.0554523
-      objectReference: {fileID: 0}
-    - target: {fileID: 19426914295766855, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: f68b90fd107eee6469b940a6f95f59e6, type: 2}
     - target: {fileID: 674611989468756754, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
       propertyPath: m_Name
       value: Drifter
-      objectReference: {fileID: 0}
-    - target: {fileID: 674611989468756754, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 674611989468756766, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
@@ -5903,31 +5873,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3430086028143966648, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 1.5707963
-      objectReference: {fileID: 0}
     - target: {fileID: 3829405722963638434, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
       propertyPath: goal
       value: 
       objectReference: {fileID: 1140296397}
-    - target: {fileID: 4208489631472334777, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: f68b90fd107eee6469b940a6f95f59e6, type: 2}
-    - target: {fileID: 9215560943221595396, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 9215560943221595396, guid: 8a27cac7fb785c74db40927a983e2184,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.59
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a27cac7fb785c74db40927a983e2184, type: 3}
 --- !u!1001 &3614042369035847932
