@@ -53,10 +53,10 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.ArrowHittingFlesh3, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 3"));
         sfxDictionary.Add(SFX.ArrowHittingFlesh4, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 4"));
 
-        sfxDictionary.Add(SFX.SlowingDownTime1, Resources.Load<AudioClip>("SFX/SlowingDownTime/Slowing Down Time 1"));
-        sfxDictionary.Add(SFX.SlowingDownTime2, Resources.Load<AudioClip>("SFX/SlowingDownTime/Slowing Down Time 2"));
-        sfxDictionary.Add(SFX.SlowingDownTime3, Resources.Load<AudioClip>("SFX/SlowingDownTime/Slowing Down Time 3"));
-        sfxDictionary.Add(SFX.SlowingDownTime4, Resources.Load<AudioClip>("SFX/SlowingDownTime/Slowing Down Time 4"));
+        sfxDictionary.Add(SFX.SlowingDownTime1, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 1"));
+        sfxDictionary.Add(SFX.SlowingDownTime2, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 2"));
+        sfxDictionary.Add(SFX.SlowingDownTime3, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 3"));
+        sfxDictionary.Add(SFX.SlowingDownTime4, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 4"));
 
         sfxDictionary.Add(SFX.Teleporting1, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 1"));
         sfxDictionary.Add(SFX.Teleporting2, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 2"));
