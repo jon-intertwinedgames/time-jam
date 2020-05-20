@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             isAiming = true;
-            bowSFX.PlayDrawingBowSFX();
+            //bowSFX.PlayDrawingBowSFX();
 
             if (rb.velocity.y == 0)
             {
