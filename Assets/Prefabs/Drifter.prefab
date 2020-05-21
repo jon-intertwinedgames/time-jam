@@ -517,6 +517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charging Blast
       objectReference: {fileID: 0}
+    - target: {fileID: 6439398716488605622, guid: abc3ab83932b0af4a890dd2a64905258,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6576984058393571499, guid: abc3ab83932b0af4a890dd2a64905258,
         type: 3}
       propertyPath: m_LocalPosition.x

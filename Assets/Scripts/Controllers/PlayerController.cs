@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             aimer_script.SetTrajectory(mousePos);
             aimer_script.ShowTrajectory(true);
 
-            particleSystemEmission.rateOverTime = 10f * GetPowerPercentage();//<-- LOOK HERE Magic number :D
+            particleSystemEmission.rateOverTime = 5f * GetPowerPercentage();//<-- LOOK HERE Magic number :D
 
 
             aimingTime += Time.deltaTime;
