@@ -11,6 +11,8 @@ public class DrifterController : MonoBehaviour
 
     [SerializeField]
     GameObject enemyDeath;
+    [SerializeField]
+    Transform chargeBlast_trans;
 
     [SerializeField]
     new ParticleSystem particleSystem = null;
@@ -119,7 +121,7 @@ public class DrifterController : MonoBehaviour
         Vector3 a = Targetbuffer;
         Vector3 b = this.transform.position;
 
-        Projectile.CreateProjectile(projectile, this.transform.position, (Vector2)a - (Vector2)b);
+        Projectile.CreateProjectile(projectile, chargeBlast_trans.position, (Vector2)a - (Vector2)b);
     }
     
     private void HuntPlayer()

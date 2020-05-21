@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDeath: {fileID: 6274525111789720571, guid: 78205623b8169b644bc84ddb60fdcb84,
     type: 3}
+  chargeBlast_trans: {fileID: 3620231825162027003}
   particleSystem: {fileID: 3469696470419296486}
   path: []
   goal: {fileID: 0}
@@ -519,12 +520,12 @@ PrefabInstance:
     - target: {fileID: 6576984058393571499, guid: abc3ab83932b0af4a890dd2a64905258,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.89
       objectReference: {fileID: 0}
     - target: {fileID: 6576984058393571499, guid: abc3ab83932b0af4a890dd2a64905258,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.81
       objectReference: {fileID: 0}
     - target: {fileID: 6576984058393571499, guid: abc3ab83932b0af4a890dd2a64905258,
         type: 3}
