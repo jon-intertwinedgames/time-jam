@@ -80,7 +80,7 @@ public class DrifterController : MonoBehaviour
         if (CanShootAtPlayer())
             ShootAtPlayer();
 
-        particleSystemEmission.rateOverTimeMultiplier = 50f * (time / firerate);//<-- LOOK HERE Magic number :D
+        particleSystemEmission.rateOverTimeMultiplier = 20f * (time / firerate);//<-- LOOK HERE Magic number :D
     }
 
     private void FixedUpdate()
