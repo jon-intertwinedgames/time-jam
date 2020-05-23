@@ -75,8 +75,10 @@ public class Arrow : Projectile
 
                 Transform sparks_trans = arrowChildren.First(c => c.name.ToLower().Contains("sparks"));
                 sparks_trans.GetComponent<ParticleSystem>().Play();
+                sparks_trans.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                sparks_trans.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
                 /////////////////////////////////////////////////////////////
-                
+
                 transform.SetParent(collision.transform);
             }
         }
