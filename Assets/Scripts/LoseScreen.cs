@@ -14,11 +14,15 @@ public class LoseScreen : MonoBehaviour
     {
         fader = GetComponent<Fader>();
         GetComponent<CanvasGroup>().alpha = 0;
+        GetComponent<CanvasGroup>().interactable = false;
         GameObject.FindObjectOfType<GameMaster>().GameOver += Lose;
+        
     }
+
 
     private void Lose(object sender, EventArgs e)
     {
+        GetComponent<CanvasGroup>().interactable = true;
         fader.FadeOut(1f);
     }
 }
