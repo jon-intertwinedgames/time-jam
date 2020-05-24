@@ -14289,6 +14289,7 @@ GameObject:
   - component: {fileID: 5006391488247464166}
   - component: {fileID: 4735057176657091882}
   - component: {fileID: 5130980440248423990}
+  - component: {fileID: 8623065891939060721}
   m_Layer: 12
   m_Name: Beam
   m_TagString: Untagged
@@ -14630,6 +14631,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90584b3feda8704598f57dba5e82773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8623065891939060721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8757331915550913764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb051527cf23874888e4388d802beab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnParticlebyTag:
+  - tag: Player
+    prefab: {fileID: 6274525111789720569, guid: 09701b329cace3849895e4ffe5355362,
+      type: 3}
+  - tag: Terrain
+    prefab: {fileID: 6274525111789720569, guid: 09701b329cace3849895e4ffe5355362,
+      type: 3}
 --- !u!1001 &443595596303692450
 PrefabInstance:
   m_ObjectHideFlags: 0
