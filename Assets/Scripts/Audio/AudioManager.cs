@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.Running2, Resources.Load<AudioClip>("SFX/Running/Running2"));
         sfxDictionary.Add(SFX.Running3, Resources.Load<AudioClip>("SFX/Running/Running3"));
 
-        sfxDictionary.Add(SFX.Jumping, Resources.Load<AudioClip>("SFX/Jumping/Jump 3"));
+        sfxDictionary.Add(SFX.Jumping, Resources.Load<AudioClip>("SFX/Jumping/New Jump 2"));
 
         sfxDictionary.Add(SFX.Shooting2, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 2"));
         sfxDictionary.Add(SFX.Shooting3, Resources.Load<AudioClip>("SFX/Arrow Being Shot/Shooting Arrow 3"));
@@ -53,6 +53,8 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.FlyingArrow2, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 2"));
         sfxDictionary.Add(SFX.FlyingArrow3, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 3"));
         sfxDictionary.Add(SFX.FlyingArrow4, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 4"));
+        sfxDictionary.Add(SFX.FlyingArrow5, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 5"));
+        sfxDictionary.Add(SFX.FlyingArrow6, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 6"));
 
         sfxDictionary.Add(SFX.BowDrawing1, Resources.Load<AudioClip>("SFX/Bow Drawing/Bow Drawing 1"));
         sfxDictionary.Add(SFX.BowDrawing2, Resources.Load<AudioClip>("SFX/Bow Drawing/Bow Drawing 2"));
@@ -71,6 +73,7 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.SlowingDownTime2, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 2"));
         sfxDictionary.Add(SFX.SlowingDownTime3, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 3"));
         sfxDictionary.Add(SFX.SlowingDownTime4, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 4"));
+        sfxDictionary.Add(SFX.SlowingDownTime5, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 5"));
 
         sfxDictionary.Add(SFX.Teleporting1, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 1"));
         sfxDictionary.Add(SFX.Teleporting2, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 2"));

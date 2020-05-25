@@ -69,7 +69,7 @@ public class PlayerSFX : MonoBehaviour
 
     private void SlowingDownTimeSFX()
     {
-        AudioManager.PlaySFX(timeAudioSource, slowingTime.Volume, slowingTime.Delay, false, SFX.SlowingDownTime4);
+        AudioManager.PlaySFX(timeAudioSource, slowingTime.Volume, slowingTime.Delay, false, SFX.SlowingDownTime5);
         //AudioManager.PlayRandomSFX(timeAudioSource, false, SFX.SlowingDownTime1, SFX.SlowingDownTime2, SFX.SlowingDownTime3, SFX.SlowingDownTime4);
     }
 

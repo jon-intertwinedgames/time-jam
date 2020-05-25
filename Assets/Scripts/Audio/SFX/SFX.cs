@@ -21,6 +21,8 @@
     FlyingArrow2,
     FlyingArrow3,
     FlyingArrow4,
+    FlyingArrow5,
+    FlyingArrow6,
 
     ArrowHittingWall1,
     ArrowHittingWall2,
@@ -36,6 +38,7 @@
     SlowingDownTime2,
     SlowingDownTime3,
     SlowingDownTime4,
+    SlowingDownTime5,
 
     Teleporting1,
     Teleporting2,

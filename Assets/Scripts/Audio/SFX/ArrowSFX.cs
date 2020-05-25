@@ -23,7 +23,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowFlyingSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(audioSource, arrowFlying.Volume, arrowFlying.Delay, SFX.FlyingArrow1, SFX.FlyingArrow2, SFX.FlyingArrow3, SFX.FlyingArrow4);
+        AudioManager.PlaySFX(arrowFlying.Volume, arrowFlying.Delay, false, SFX.FlyingArrow4);
     }
 
     /// <summary>
