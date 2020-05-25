@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private HandlePlayerState playerState_script;
     private Health health_script;
     private PlayerSFX playerSFX_script;
+    private GroundDetector groundDetector_script;
+    private FlipObjectBasedOnRigidbody flipObject_script;
     
 
     private Rigidbody2D rb;
@@ -50,6 +52,8 @@ public class PlayerController : MonoBehaviour
         playerState_script = GetComponent<HandlePlayerState>();
         health_script = GetComponent<Health>();
         playerSFX_script = GetComponent<PlayerSFX>();
+        groundDetector_script = GetComponentInChildren<GroundDetector>();
+        flipObject_script = GetComponent<FlipObjectBasedOnRigidbody>();
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour
         TeleportationInput();
         TimeInput();
 
+        flipObject_script.enabled = (groundDetector_script.IsOnGround) ? true : false;
+
         if (Debug.isDebugBuild)
         {
             if (Input.GetKeyDown(KeyCode.T))
@@ -81,11 +87,6 @@ public class PlayerController : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Jump");
-
-        //if (h > 0)
-        //    sr.flipX = false;
-        //else if (h < 0)
-        //    sr.flipX = true;
 
         movement_script.Move(h);
 
@@ -176,9 +177,7 @@ public class PlayerController : MonoBehaviour
         if (speedPercentage > 5f)
         {
             projectile_Damager.setDamage(projectile_Damager.getDamage() * 2);
-        }
-
-        
+        }        
     }
 
     void ResetPlayerStateBackFromShooting()
