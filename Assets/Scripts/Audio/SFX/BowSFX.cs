@@ -5,6 +5,10 @@ using UnityEngine;
 public class BowSFX : MonoBehaviour
 {
     AudioSource audioSource = null;
+
+    [SerializeField]
+    private SFXOptions drawingBow;
+
     //LineRenderer lr = null;
 
     void Awake()
@@ -27,11 +31,11 @@ public class BowSFX : MonoBehaviour
 
     public void PlayDrawingBowSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(audioSource, SFX.BowDrawing1, SFX.BowDrawing2);
+        drawingBow.sfxCoroutine = AudioManager.PlayRandomOneShotSFX(audioSource, drawingBow.Volume, drawingBow.Delay, SFX.BowDrawing1, SFX.BowDrawing2);
     }
 
     public void StopPlayingSFX()
     {
-        AudioManager.StopPlaying(audioSource);
+        AudioManager.StopPlaying(audioSource, drawingBow.sfxCoroutine);
     }
 }

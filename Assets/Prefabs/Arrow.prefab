@@ -303,6 +303,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbfbac8f98a3054ba8208596d072a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowFlying:
+    volume: 1
+    delay: 0
+  arrowHittingWall:
+    volume: 1
+    delay: 0
+  arrowHittingFlesh:
+    volume: 1
+    delay: 0
 --- !u!114 &5791787202897802594
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,14 +10,14 @@ public class DrifterController : MonoBehaviour
     Animator anim;
 
     [SerializeField]
-    GameObject enemyDeath;
+    GameObject enemyDeath = null;
     [SerializeField]
-    Transform chargeBlast_trans;
+    Transform chargeBlast_trans = null;
 
     [SerializeField]
     new ParticleSystem particleSystem = null;
     [SerializeField]
-    List<Vector2> path;
+    List<Vector2> path = null;
     [SerializeField]
     Transform goal = null; // to make this run faster, we should make this static
     [SerializeField]

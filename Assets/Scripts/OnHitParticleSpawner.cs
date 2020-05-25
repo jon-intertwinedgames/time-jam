@@ -5,7 +5,7 @@ using UnityEngine;
 public class OnHitParticleSpawner : MonoBehaviour
 {
     [SerializeField]
-    private SpawnParticlebyTag[] spawnParticlebyTag;
+    private SpawnParticlebyTag[] spawnParticlebyTag = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

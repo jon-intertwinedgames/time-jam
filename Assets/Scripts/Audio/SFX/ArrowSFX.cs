@@ -8,6 +8,9 @@ public class ArrowSFX : MonoBehaviour
 {
     AudioSource audioSource = null;
 
+    [SerializeField]
+    private SFXOptions arrowFlying, arrowHittingWall, arrowHittingFlesh;
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,7 +23,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowFlyingSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(audioSource, SFX.FlyingArrow1, SFX.FlyingArrow2, SFX.FlyingArrow3, SFX.FlyingArrow4);
+        AudioManager.PlayRandomOneShotSFX(audioSource, arrowFlying.Volume, arrowFlying.Delay, SFX.FlyingArrow1, SFX.FlyingArrow2, SFX.FlyingArrow3, SFX.FlyingArrow4);
     }
 
     /// <summary>
@@ -28,7 +31,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowHittingWallSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(audioSource, SFX.ArrowHittingWall2, SFX.ArrowHittingWall3, SFX.ArrowHittingWall4);
+        AudioManager.PlayRandomOneShotSFX(audioSource, arrowHittingWall.Volume, arrowHittingWall.Delay, SFX.ArrowHittingWall2, SFX.ArrowHittingWall3, SFX.ArrowHittingWall4);
     }
 
     /// <summary>
@@ -36,7 +39,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowHittingFleshSFX()
     {
-        AudioManager.PlayOneShotSFX(audioSource, SFX.ArrowHittingFlesh1);
+        AudioManager.PlayOneShotSFX(audioSource, arrowHittingFlesh.Volume, arrowHittingFlesh.Delay, SFX.ArrowHittingFlesh1);
     }
 
     /// <summary>

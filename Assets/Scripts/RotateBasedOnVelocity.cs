@@ -5,7 +5,7 @@ using UnityEngine;
 //[RequireComponent(typeof(Rigidbody2D))]
 public class RotateBasedOnVelocity : MonoBehaviour
 {
-    Rigidbody2D rigidbody;
+    new Rigidbody2D rigidbody = null;
     // Start is called before the first frame update
     void Start()
     {

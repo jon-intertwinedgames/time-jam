@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerVFX : MonoBehaviour
 {
     [SerializeField]
-    private GameObject teleportationVFX;
+    private GameObject teleportationVFX = null;
 
     private PlayerController playerController_script;
 

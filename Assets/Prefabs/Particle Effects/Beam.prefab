@@ -14631,6 +14631,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90584b3feda8704598f57dba5e82773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamShot:
+    volume: 1
+    delay: 0
+  beamHit:
+    volume: 1
+    delay: 0
 --- !u!114 &8623065891939060721
 MonoBehaviour:
   m_ObjectHideFlags: 0

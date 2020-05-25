@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance = null;
+
     private static AudioSource managerAudioSource;
     private static Dictionary<SFX, AudioClip> sfxDictionary = new Dictionary<SFX, AudioClip>();
     private static Dictionary<Music, AudioClip> musicDictionary = new Dictionary<Music, AudioClip>();
     static bool isInit = false;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -78,81 +92,139 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// Plays music using the Audio Manager's Audio Source.
     /// </summary>
-    /// <param name="music"></param>
-    public static void PlayMusic(Music music)
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="music">The music to play.</param>
+    public static Coroutine PlayMusic(float volume, float delay, Music music)
     {
-        PlayMusic(managerAudioSource, music);
+        return PlayMusic(managerAudioSource, volume, delay, music);
     }
 
-    public static void PlayMusic(AudioSource audioSource, Music music)
+    /// <summary>
+    /// Plays music using the given Audio Source.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="music">The music to play.</param>
+    public static Coroutine PlayMusic(AudioSource audioSource, float volume, float delay, Music music)
     {
-        audioSource.clip = musicDictionary[music];
-        audioSource.Play();
+        return instance.StartCoroutine(PlayNow(delay, delegate
+        {
+            audioSource.clip = musicDictionary[music];
+            audioSource.volume = volume;
+            audioSource.Play();
+        }));
     }
 
     /// <summary>
     /// Plays a random sound effect using the Audio Manager's Audio Source.
     /// </summary>
-    /// <param name="willLoop"></param>
-    /// <param name="sfxs"></param>
-    public static void PlayRandomSFX(bool willLoop, params SFX[] sfxs)
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="willLoop">Value for whether or not the sound effect will loop.</param>
+    /// <param name="sfxs">Sound effects that may be played.</param>
+    public static Coroutine PlayRandomSFX(float volume, float delay, bool willLoop, params SFX[] sfxs)
     {
-        PlayRandomSFX(managerAudioSource, willLoop, sfxs);
+        return PlayRandomSFX(managerAudioSource, volume, delay, willLoop, sfxs);
     }
 
-    public static void PlayRandomSFX(AudioSource audioSource, bool willLoop, params SFX[] sfxs)
+    /// <summary>
+    /// Plays a random sound effect using the given Audio Source.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="willLoop">Value for whether or not the sound effect will loop.</param>
+    /// <param name="sfxs">Sound effects that may be played.</param>
+    public static Coroutine PlayRandomSFX(AudioSource audioSource, float volume, float delay, bool willLoop, params SFX[] sfxs)
     {
         int randomIndex = Random.Range(0, sfxs.Length);
         SFX currentSFX = sfxs[randomIndex];
 
-        PlaySFX(audioSource, willLoop, currentSFX);
+        return PlaySFX(audioSource, volume, delay, willLoop, currentSFX);
     }
 
     /// <summary>
     /// Plays a sound effect using the Audio Manager's Audio Source.
     /// </summary>
-    /// <param name="willLoop"></param>
-    /// <param name="sfx"></param>
-    public static void PlaySFX(bool willLoop, SFX sfx)
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="willLoop">Value for whether or not the sound effect will loop.</param>
+    /// <param name="sfx">The sound effect that will be played.</param>
+    public static Coroutine PlaySFX(float volume, float delay, bool willLoop, SFX sfx)
     {
-        PlaySFX(managerAudioSource, willLoop, sfx);
+        return PlaySFX(managerAudioSource, volume, delay, willLoop, sfx);
     }
 
-    public static void PlaySFX(AudioSource audioSource, bool willLoop, SFX sfx)
+    /// <summary>
+    /// Plays a sound effect using the given Audio Source.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="willLoop">Value for whether or not the sound effect will loop.</param>
+    /// <param name="sfx">The sound effect that will be played.</param>
+    public static Coroutine PlaySFX(AudioSource audioSource, float volume, float delay, bool willLoop, SFX sfx)
     {
-        audioSource.clip = sfxDictionary[sfx];
-        audioSource.loop = willLoop;
-        audioSource.Play();
+        return instance.StartCoroutine(PlayNow(delay, delegate
+        {
+            audioSource.clip = sfxDictionary[sfx];
+            audioSource.loop = willLoop;
+            audioSource.volume = volume;
+            audioSource.Play();
+        }));
     }
 
     /// <summary>
     /// Selects a random sound effect to play one-shot using the Audio Manager's Audio Source.
     /// </summary>
-    /// <param name="sfxs"></param>
-    public static void PlayRandomOneShotSFX(params SFX[] sfxs)
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="sfxs">Sound effects that may be played.</param>
+    public static Coroutine PlayRandomOneShotSFX(float volume, float delay, params SFX[] sfxs)
     {
-        PlayRandomOneShotSFX(managerAudioSource, sfxs);
+        return PlayRandomOneShotSFX(managerAudioSource, volume, delay, sfxs);
     }
 
-    public static void PlayRandomOneShotSFX(AudioSource audioSource, params SFX[] sfxs)
+    /// <summary>
+    /// Selects a random sound effect to play one-shot using the given Audio Source.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="sfxs">Sound effects that may be played.</param>
+    public static Coroutine PlayRandomOneShotSFX(AudioSource audioSource, float volume, float delay, params SFX[] sfxs)
     {
         int randomIndex = Random.Range(0, sfxs.Length);
 
-        PlayOneShotSFX(audioSource, sfxs[randomIndex]);
+        return PlayOneShotSFX(audioSource, volume, delay, sfxs[randomIndex]);
     }
 
     /// <summary>
     /// Plays a sound effect using the Audio Manager's Audio Source.
     /// </summary>
-    /// <param name="sfx"></param>
-    public static void PlayOneShotSFX(SFX sfx) //Possibly add a timer to this function
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="sfx">The sound effect that will be played.</param>
+    public static Coroutine PlayOneShotSFX(float volume, float delay, SFX sfx)
     {
-        PlayOneShotSFX(managerAudioSource, sfx);
+        return PlayOneShotSFX(managerAudioSource, volume, delay, sfx);
     }
 
-    public static void PlayOneShotSFX(AudioSource audioSource, SFX sfx) //Possibly add a timer to this function
+    /// <summary>
+    /// Plays a sound effect using the Audio Manager's Audio Source.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    /// <param name="volume">The volume level.</param>
+    /// <param name="delay">Seconds of delay.</param>
+    /// <param name="sfx">The sound effect that will be played.</param>
+    public static Coroutine PlayOneShotSFX(AudioSource audioSource, float volume, float delay, SFX sfx)
     {
-        audioSource.PlayOneShot(sfxDictionary[sfx]);
+        return instance.StartCoroutine(PlayNow(delay, delegate {
+            audioSource.volume = volume;
+            audioSource.PlayOneShot(sfxDictionary[sfx]);
+        }));
     }
 
     /// <summary>
@@ -160,16 +232,44 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public static void StopPlaying()
     {
-        StopPlaying(managerAudioSource);
-    }
-
-    public static void StopPlaying(AudioSource audioSource)
-    {
-        audioSource.Stop();
+        StopPlaying(managerAudioSource, null);
     }
 
     /// <summary>
-    /// Creates a new Audio Source
+    /// Stops playing the audio clip in the given Audio Source.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    public static void StopPlaying(AudioSource audioSource)
+    {
+        StopPlaying(audioSource, null);
+    }
+
+    /// <summary>
+    /// Stops playing the audio clip in the Audio Manager's Audio Source and stops the given coroutine.
+    /// </summary>
+    /// <param name="sfxCoroutine">Coroutine to stop.</param>
+    public static void StopPlaying(Coroutine sfxCoroutine)
+    {
+        StopPlaying(managerAudioSource, sfxCoroutine);
+    }
+
+    /// <summary>
+    /// Stops playing the audio clip in the given Audio Source and stops the given coroutine.
+    /// </summary>
+    /// <param name="audioSource">The Audio Source this sfx will play from.</param>
+    /// <param name="sfxCoroutine">Coroutine to stop.</param>
+    public static void StopPlaying(AudioSource audioSource, Coroutine sfxCoroutine)
+    {
+        audioSource.Stop();
+
+        if (sfxCoroutine != null)
+        {
+            instance.StopCoroutine(sfxCoroutine);
+        }
+    }
+
+    /// <summary>
+    /// Creates a new Audio Source.
     /// </summary>
     /// <param name="parent">(Optional) The parent transform for the newly created Audio Source.</param>
     public static AudioSource CreateAudioSource(Transform parent = null)
@@ -180,5 +280,11 @@ public class AudioManager : MonoBehaviour
         newAudioSource.transform.localPosition = Vector2.zero;
         newAudioSource.name = "New Audio Source GameObject";
         return newAudioSource;
+    }
+
+    private static IEnumerator PlayNow(float delay, System.Action PlayMethod)
+    {
+        yield return new WaitForSeconds(delay);
+        PlayMethod();
     }
 }

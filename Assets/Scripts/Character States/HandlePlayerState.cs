@@ -10,6 +10,8 @@ public class HandlePlayerState : MonoBehaviour
 
     private string currentTrigger = "";
 
+    private SFXOptions landing;
+
 
     public enum PlayerState
     {
@@ -34,7 +36,9 @@ public class HandlePlayerState : MonoBehaviour
             if (actionState != value)
             {
                 if (actionState == PlayerState.Falling && (value == PlayerState.Idle || value == PlayerState.Running))
-                    AudioManager.PlayOneShotSFX(SFX.NormalLanding);
+                {
+                    AudioManager.PlayOneShotSFX(landing.Volume, landing.Delay, SFX.NormalLanding);
+                }
 
                 actionState = value;
 
@@ -61,13 +65,9 @@ public class HandlePlayerState : MonoBehaviour
                         break;
                     case PlayerState.GroundShooting:
                         currentTrigger = "Ground Shooting";
-                        AudioManager.PlayRandomOneShotSFX(SFX.Shooting2, SFX.Shooting3);
-                        //AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
                     case PlayerState.AirShooting:
                         currentTrigger = "Air Shooting";
-                        AudioManager.PlayRandomOneShotSFX(SFX.Shooting2, SFX.Shooting3);
-                        //AudioManager.PlayOneShotSFX(SFX.Shooting);
                         break;
                     case PlayerState.Flying:
                         break;
@@ -84,6 +84,11 @@ public class HandlePlayerState : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        landing = GetComponent<PlayerSFX>().Landing;
     }
 
     private void Update()

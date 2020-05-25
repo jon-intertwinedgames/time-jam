@@ -8,8 +8,8 @@ using static UnityEngine.ParticleSystem;
 [RequireComponent (typeof(HandlePlayerState))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float fireRate = 1.75f;
+    //[SerializeField]
+    //private float fireRate = 1.75f;
 
     float minWaitTimeToShoot = 0.1f;
 
@@ -20,11 +20,11 @@ public class PlayerController : MonoBehaviour
     float maxSpeedOfArrow = 8f;
 
     [SerializeField]
-    ParticleSystem particleSystem;
+    new ParticleSystem particleSystem = null;
     EmissionModule particleSystemEmission;
 
     [SerializeField]
-    private BowSFX bowSFX;
+    private BowSFX bowSFX = null;
 
     private LandMovement movement_script;
     private Aimer aimer_script;
