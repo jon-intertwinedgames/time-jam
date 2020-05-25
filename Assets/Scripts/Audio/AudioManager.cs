@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -112,12 +113,20 @@ public class AudioManager : MonoBehaviour
     /// <param name="music">The music to play.</param>
     public static Coroutine PlayMusic(AudioSource audioSource, float volume, float delay, Music music)
     {
-        return instance.StartCoroutine(PlayNow(delay, delegate
+        Action audioAction = delegate
         {
             audioSource.clip = musicDictionary[music];
             audioSource.volume = volume;
             audioSource.Play();
-        }));
+        };
+
+        if(delay == 0)
+        {
+            audioAction();
+            return null;
+        }
+
+        return instance.StartCoroutine(PlayNow(delay, audioAction));
     }
 
     /// <summary>
@@ -142,7 +151,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="sfxs">Sound effects that may be played.</param>
     public static Coroutine PlayRandomSFX(AudioSource audioSource, float volume, float delay, bool willLoop, params SFX[] sfxs)
     {
-        int randomIndex = Random.Range(0, sfxs.Length);
+        int randomIndex = UnityEngine.Random.Range(0, sfxs.Length);
         SFX currentSFX = sfxs[randomIndex];
 
         return PlaySFX(audioSource, volume, delay, willLoop, currentSFX);
@@ -170,13 +179,21 @@ public class AudioManager : MonoBehaviour
     /// <param name="sfx">The sound effect that will be played.</param>
     public static Coroutine PlaySFX(AudioSource audioSource, float volume, float delay, bool willLoop, SFX sfx)
     {
-        return instance.StartCoroutine(PlayNow(delay, delegate
+        Action audioAction = delegate
         {
             audioSource.clip = sfxDictionary[sfx];
             audioSource.loop = willLoop;
             audioSource.volume = volume;
             audioSource.Play();
-        }));
+        };
+
+        if(delay == 0)
+        {
+            audioAction();
+            return null;
+        }
+
+        return instance.StartCoroutine(PlayNow(delay, audioAction));
     }
 
     /// <summary>
@@ -199,7 +216,7 @@ public class AudioManager : MonoBehaviour
     /// <param name="sfxs">Sound effects that may be played.</param>
     public static Coroutine PlayRandomOneShotSFX(AudioSource audioSource, float volume, float delay, params SFX[] sfxs)
     {
-        int randomIndex = Random.Range(0, sfxs.Length);
+        int randomIndex = UnityEngine.Random.Range(0, sfxs.Length);
 
         return PlayOneShotSFX(audioSource, volume, delay, sfxs[randomIndex]);
     }
@@ -224,10 +241,19 @@ public class AudioManager : MonoBehaviour
     /// <param name="sfx">The sound effect that will be played.</param>
     public static Coroutine PlayOneShotSFX(AudioSource audioSource, float volume, float delay, SFX sfx)
     {
-        return instance.StartCoroutine(PlayNow(delay, delegate {
+        Action audioAction = delegate
+        {
             audioSource.volume = volume;
             audioSource.PlayOneShot(sfxDictionary[sfx]);
-        }));
+        };
+
+        if (delay == 0)
+        {
+            audioAction();
+            return null;
+        }
+
+        return instance.StartCoroutine(PlayNow(delay, audioAction));
     }
 
     /// <summary>

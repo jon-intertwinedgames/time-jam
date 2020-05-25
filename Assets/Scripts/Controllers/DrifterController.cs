@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
@@ -192,7 +193,31 @@ public class DrifterController : MonoBehaviour
     {
         GlobalVars.EnemiesKilled += 1;
         GameObject.Instantiate(enemyDeath, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+
+        SpriteRenderer[] childSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        Collider2D[] childColliders = GetComponentsInChildren<Collider2D>();
+        ParticleSystem[] childParticleSystems = GetComponentsInChildren<ParticleSystem>();
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<DrifterController>().enabled = false;
+
+        foreach (SpriteRenderer sr in childSpriteRenderers)
+        {
+            sr.enabled = false;
+        }
+
+        foreach(Collider2D col in childColliders)
+        {
+            col.enabled = false;
+        }
+
+        foreach(ParticleSystem ps in childParticleSystems)
+        {
+            ps.Stop();
+        }
+
+        gameObject.AddComponent<SelfDestruct>().ResetWithNewTimer(1);
     }
 
 

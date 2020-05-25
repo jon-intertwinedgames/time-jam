@@ -59,7 +59,10 @@ public class Arrow : Projectile
             objectStruckInitialPos = collision.transform.position;
             rb.velocity = Vector2.zero;
             StartCoroutine(SlowDownAfterCollision());
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            GetComponentInChildren<TrailRenderer>().enabled = false;
+
+            //rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
             //Destroy(rb);/// I believe this shouldn't be used since it could break scripts but it works..
 
