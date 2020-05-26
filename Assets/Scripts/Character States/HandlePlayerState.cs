@@ -8,6 +8,8 @@ public class HandlePlayerState : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    private GroundDetector groundDetector_script;
+
     private string currentTrigger = "";
 
     private SFXOptions landing;
@@ -89,6 +91,7 @@ public class HandlePlayerState : MonoBehaviour
     private void Start()
     {
         landing = GetComponent<PlayerSFX>().Landing;
+        groundDetector_script = GetComponentInChildren<GroundDetector>();
     }
 
     private void Update()
@@ -102,15 +105,18 @@ public class HandlePlayerState : MonoBehaviour
         {
             if (rb.velocity.y != 0)
                 ActionState = PlayerState.AirShooting;
+
+            else
+                ResetRotation();
+
             return;
         }
-            
+
         if(ActionState == PlayerState.AirShooting)
         {
             if (rb.velocity.y == 0)
             {
                 ActionState = PlayerState.GroundShooting;
-                ResetRotation();
             }
             else
             {
@@ -123,9 +129,9 @@ public class HandlePlayerState : MonoBehaviour
         if (ActionState == PlayerState.Death)
             return;
 
-        if (rb.velocity == Vector2.zero)
+        if (rb.velocity == Vector2.zero && groundDetector_script.IsOnGround)
             ActionState = PlayerState.Idle;
-        else if (rb.velocity.x != 0 && rb.velocity.y == 0)
+        else if (rb.velocity.x != 0 && rb.velocity.y == 0 && groundDetector_script.IsOnGround)
             ActionState = PlayerState.Running;
         else if (rb.velocity.y > 0 && actionState != PlayerState.Flying) //Separate this into Falling later.
             ActionState = PlayerState.Jumping;

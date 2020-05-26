@@ -31,7 +31,7 @@ public class BowSFX : MonoBehaviour
 
     public void PlayDrawingBowSFX()
     {
-        drawingBow.sfxCoroutine = AudioManager.PlayRandomOneShotSFX(audioSource, drawingBow.Volume, drawingBow.Delay, SFX.BowDrawing1, SFX.BowDrawing2);
+        drawingBow.sfxCoroutine = AudioManager.PlaySFX(audioSource, drawingBow.Volume, drawingBow.Delay, false, SFX.DrawingBow);
     }
 
     public void StopPlayingSFX()

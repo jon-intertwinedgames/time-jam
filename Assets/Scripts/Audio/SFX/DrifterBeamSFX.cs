@@ -17,7 +17,7 @@ public class DrifterBeamSFX : MonoBehaviour
 
     private void BeamShotSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(audioSource, beamShot.Volume, beamShot.Delay, SFX.DrifterBeamShooting1, SFX.DrifterBeamShooting2, SFX.DrifterBeamShooting3, SFX.DrifterBeamShooting4);
+        AudioManager.PlayRandomOneShotSFX(audioSource, beamShot.Volume, beamShot.Delay, SFX.DrifterBeamShooting1, SFX.DrifterBeamShooting2, SFX.DrifterBeamShooting3);
     }
 
     private void BeamHitSFX()

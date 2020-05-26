@@ -1193,7 +1193,7 @@ PrefabInstance:
     - target: {fileID: 8190358475557611048, guid: 604a70aa3ca5a32409a8cd295246e1e9,
         type: 3}
       propertyPath: drawingBow.delay
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8278656710680991302, guid: 604a70aa3ca5a32409a8cd295246e1e9,
         type: 3}

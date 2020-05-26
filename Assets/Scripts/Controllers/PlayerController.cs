@@ -102,15 +102,6 @@ public class PlayerController : MonoBehaviour
         {
             isAiming = true;
             bowSFX.PlayDrawingBowSFX();
-
-            if (rb.velocity.y == 0)
-            {
-                playerState_script.ActionState = HandlePlayerState.PlayerState.GroundShooting;
-            }
-            else
-            {
-                playerState_script.ActionState = HandlePlayerState.PlayerState.AirShooting;
-            }
         }
         if (Input.GetButton("Fire1") && isAiming)
         {
@@ -121,6 +112,14 @@ public class PlayerController : MonoBehaviour
 
             particleSystemEmission.rateOverTime = 5f * GetPowerPercentage();//<-- LOOK HERE Magic number :D
 
+            if (rb.velocity.y == 0)
+            {
+                playerState_script.ActionState = HandlePlayerState.PlayerState.GroundShooting;
+            }
+            else
+            {
+                playerState_script.ActionState = HandlePlayerState.PlayerState.AirShooting;
+            }
 
             aimingTime += Time.deltaTime;
         }

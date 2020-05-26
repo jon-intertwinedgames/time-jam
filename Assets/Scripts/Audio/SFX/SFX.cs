@@ -11,18 +11,12 @@
     Flying3,
     Flying4,
 
-    BowDrawing1,
-    BowDrawing2,
+    DrawingBow,
 
     Shooting2,
     Shooting3,
 
-    FlyingArrow1,
-    FlyingArrow2,
-    FlyingArrow3,
-    FlyingArrow4,
-    FlyingArrow5,
-    FlyingArrow6,
+    FlyingArrow,
 
     ArrowHittingWall1,
     ArrowHittingWall2,
@@ -34,11 +28,7 @@
     ArrowHittingFlesh3,
     ArrowHittingFlesh4,
 
-    SlowingDownTime1,
-    SlowingDownTime2,
-    SlowingDownTime3,
-    SlowingDownTime4,
-    SlowingDownTime5,
+    SlowingDownTime,
 
     Teleporting1,
     Teleporting2,
@@ -51,8 +41,9 @@
     DrifterBeamShooting1,
     DrifterBeamShooting2,
     DrifterBeamShooting3,
-    DrifterBeamShooting4,
 
     DrifterBeamHit1,
-    DrifterBeamHit2
+    DrifterBeamHit2,
+
+    DrifterDeath
 }

@@ -9,6 +9,8 @@ public class PlayerSFX : MonoBehaviour
     private AudioSource flyingAudioSource = null;
     private AudioSource timeAudioSource = null;
 
+    private bool timeSlowAudioPlayed;
+
     [SerializeField]
     private SFXOptions running, jumping, flyingInAir, landing, slowingTime, teleporting;
 
@@ -32,21 +34,25 @@ public class PlayerSFX : MonoBehaviour
     {
         if(playerState_script.ActionState == HandlePlayerState.PlayerState.Flying)
         {
-            if(flyingAudioSource.isPlaying == false)
+            if (flyingAudioSource.isPlaying == false)
+            {
                 FlyingInAirSFX();
+            }
         }
         else if(playerState_script.ActionState != HandlePlayerState.PlayerState.Flying)
         {
             flyingAudioSource.Stop();
         }
 
-        if(Time.timeScale != 1 && timeAudioSource.isPlaying == false)
+        if(Time.timeScale != 1 && timeSlowAudioPlayed == false)
         {
             SlowingDownTimeSFX();
+            timeSlowAudioPlayed = true;
         }
-        else if(Time.timeScale == 1)
+        else if(Time.timeScale == 1 && timeSlowAudioPlayed)
         {
             timeAudioSource.Stop();
+            timeSlowAudioPlayed = false;
         }
     }
 
@@ -69,7 +75,7 @@ public class PlayerSFX : MonoBehaviour
 
     private void SlowingDownTimeSFX()
     {
-        AudioManager.PlaySFX(timeAudioSource, slowingTime.Volume, slowingTime.Delay, false, SFX.SlowingDownTime5);
+        AudioManager.PlaySFX(timeAudioSource, slowingTime.Volume, slowingTime.Delay, false, SFX.SlowingDownTime);
         //AudioManager.PlayRandomSFX(timeAudioSource, false, SFX.SlowingDownTime1, SFX.SlowingDownTime2, SFX.SlowingDownTime3, SFX.SlowingDownTime4);
     }
 

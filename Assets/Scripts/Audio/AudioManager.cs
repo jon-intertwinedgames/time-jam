@@ -22,10 +22,7 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void Start()
-    {
         InitializeDatabase();
         managerAudioSource = GetComponent<AudioSource>();
     }
@@ -34,6 +31,7 @@ public class AudioManager : MonoBehaviour
     {
         if (isInit) return;
         isInit = true;
+
         sfxDictionary.Add(SFX.Running1, Resources.Load<AudioClip>("SFX/Running/Running1"));
         sfxDictionary.Add(SFX.Running2, Resources.Load<AudioClip>("SFX/Running/Running2"));
         sfxDictionary.Add(SFX.Running3, Resources.Load<AudioClip>("SFX/Running/Running3"));
@@ -50,15 +48,9 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.Flying3, Resources.Load<AudioClip>("SFX/Flying/Girl Flying 3"));
         sfxDictionary.Add(SFX.Flying4, Resources.Load<AudioClip>("SFX/Flying/Girl Flying 4"));
 
-        sfxDictionary.Add(SFX.FlyingArrow1, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 1"));
-        sfxDictionary.Add(SFX.FlyingArrow2, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 2"));
-        sfxDictionary.Add(SFX.FlyingArrow3, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 3"));
-        sfxDictionary.Add(SFX.FlyingArrow4, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 4"));
-        sfxDictionary.Add(SFX.FlyingArrow5, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 5"));
-        sfxDictionary.Add(SFX.FlyingArrow6, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Flying Arrow 6"));
+        sfxDictionary.Add(SFX.FlyingArrow, Resources.Load<AudioClip>("SFX/Arrow Flying Through the Air/Arrow Flying"));
 
-        sfxDictionary.Add(SFX.BowDrawing1, Resources.Load<AudioClip>("SFX/Bow Drawing/Bow Drawing 1"));
-        sfxDictionary.Add(SFX.BowDrawing2, Resources.Load<AudioClip>("SFX/Bow Drawing/Bow Drawing 2"));
+        sfxDictionary.Add(SFX.DrawingBow, Resources.Load<AudioClip>("SFX/Bow Drawing/Drawing Bow"));
 
         sfxDictionary.Add(SFX.ArrowHittingWall1, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 1"));
         sfxDictionary.Add(SFX.ArrowHittingWall2, Resources.Load<AudioClip>("SFX/Arrow impact - Wall-Ground/Arrow Hitting Wall 2"));
@@ -70,11 +62,7 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.ArrowHittingFlesh3, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 3"));
         sfxDictionary.Add(SFX.ArrowHittingFlesh4, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 4"));
 
-        sfxDictionary.Add(SFX.SlowingDownTime1, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 1"));
-        sfxDictionary.Add(SFX.SlowingDownTime2, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 2"));
-        sfxDictionary.Add(SFX.SlowingDownTime3, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 3"));
-        sfxDictionary.Add(SFX.SlowingDownTime4, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 4"));
-        sfxDictionary.Add(SFX.SlowingDownTime5, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time 5"));
+        sfxDictionary.Add(SFX.SlowingDownTime, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time"));
 
         sfxDictionary.Add(SFX.Teleporting1, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 1"));
         sfxDictionary.Add(SFX.Teleporting2, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 2"));
@@ -84,13 +72,14 @@ public class AudioManager : MonoBehaviour
 
         sfxDictionary.Add(SFX.Drifting, Resources.Load<AudioClip>("SFX/Drifter/Drifting"));
 
-        sfxDictionary.Add(SFX.DrifterBeamShooting1, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Laser Blast 1"));
-        sfxDictionary.Add(SFX.DrifterBeamShooting2, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Laser Blast 2"));
-        sfxDictionary.Add(SFX.DrifterBeamShooting3, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Laser Blast 3"));
-        sfxDictionary.Add(SFX.DrifterBeamShooting4, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Laser Blast 4"));
+        sfxDictionary.Add(SFX.DrifterBeamShooting1, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Drifter Beam Shooting 1"));
+        sfxDictionary.Add(SFX.DrifterBeamShooting2, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Drifter Beam Shooting 2"));
+        sfxDictionary.Add(SFX.DrifterBeamShooting3, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam/Drifter Beam Shooting 3"));
 
         sfxDictionary.Add(SFX.DrifterBeamHit1, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam Hit/Laser Hit 1"));
         sfxDictionary.Add(SFX.DrifterBeamHit2, Resources.Load<AudioClip>("SFX/Drifter/Drifter Beam Hit/Laser Hit 2"));
+
+        sfxDictionary.Add(SFX.DrifterDeath, Resources.Load<AudioClip>("SFX/Drifter/Drifter Death"));
     }
 
     /// <summary>

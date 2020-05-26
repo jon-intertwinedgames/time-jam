@@ -27,9 +27,17 @@ public class Movement : MonoBehaviour
         if ((rb.velocity.x > defaultSpeed && xVel > 0) || (rb.velocity.x < -defaultSpeed && xVel < 0))
             return;
 
-        if(rb.velocity.magnitude != 0)
+        if (rb.velocity.magnitude != 0)
         {
             forcetoAdd -= rb.velocity;
+
+            if (rb.velocity.y == 0)
+            {
+                if ((rb.velocity.x > 0 && xVel <= 0) || (rb.velocity.x < 0 && xVel >= 0))
+                {
+                    rb.velocity = Vector2.zero;
+                }
+            }
         }
 
         rb.AddForce(forcetoAdd);

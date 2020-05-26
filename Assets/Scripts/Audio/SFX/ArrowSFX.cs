@@ -23,7 +23,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowFlyingSFX()
     {
-        AudioManager.PlaySFX(arrowFlying.Volume, arrowFlying.Delay, false, SFX.FlyingArrow4);
+        AudioManager.PlaySFX(audioSource, arrowFlying.Volume, arrowFlying.Delay, false, SFX.FlyingArrow);
     }
 
     /// <summary>
@@ -31,7 +31,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowHittingWallSFX()
     {
-        AudioManager.PlayRandomOneShotSFX(audioSource, arrowHittingWall.Volume, arrowHittingWall.Delay, SFX.ArrowHittingWall2, SFX.ArrowHittingWall3, SFX.ArrowHittingWall4);
+        AudioManager.PlayRandomSFX(audioSource, arrowHittingWall.Volume, arrowHittingWall.Delay, false, SFX.ArrowHittingWall2, SFX.ArrowHittingWall3, SFX.ArrowHittingWall4);
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public class ArrowSFX : MonoBehaviour
     /// </summary>
     private void ArrowHittingFleshSFX()
     {
-        AudioManager.PlayOneShotSFX(audioSource, arrowHittingFlesh.Volume, arrowHittingFlesh.Delay, SFX.ArrowHittingFlesh1);
+        AudioManager.PlayRandomSFX(audioSource, arrowHittingFlesh.Volume, arrowHittingFlesh.Delay, false, SFX.ArrowHittingFlesh1, SFX.ArrowHittingFlesh2, SFX.ArrowHittingFlesh3, SFX.ArrowHittingFlesh4);
     }
 
     /// <summary>
