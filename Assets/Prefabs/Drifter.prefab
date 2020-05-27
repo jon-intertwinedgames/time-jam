@@ -80,9 +80,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -22214609
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 0.162251, b: 1, a: 1}
   m_FlipX: 0
@@ -171,7 +171,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -280,8 +280,8 @@ MonoBehaviour:
   floatyness: 0.85
   projectile: {fileID: 8757331915550913764, guid: 03e49544475a41c4db14c2c8ab2791d3,
     type: 3}
-  firingRange: 30
-  firerate: 2
+  firingRange: 45
+  firerate: 4
   shootingAccuracy: 0.95
 --- !u!114 &554573303193546125
 MonoBehaviour:
@@ -336,10 +336,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drifting:
-    volume: 0.5
+    volume: 0.2
     delay: 0
   death:
-    volume: 1
+    volume: 0.7
     delay: 0
 --- !u!1 &7368319071390906131
 GameObject:
@@ -409,9 +409,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1474121849
-  m_SortingLayer: 3
-  m_SortingOrder: 50
+  m_SortingLayerID: -22214609
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bcf267e9742bd0d428d8aeba1e79b4bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -518,6 +518,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 674611989468756766}
     m_Modifications:
+    - target: {fileID: 538485022557500692, guid: abc3ab83932b0af4a890dd2a64905258,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3994466999631507600, guid: abc3ab83932b0af4a890dd2a64905258,
         type: 3}
       propertyPath: m_Name
@@ -633,6 +638,16 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277736750684625628, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -22214609
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277736750684625628, guid: 794f49e13611b0246b055ff8eaf09509,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962494210548310242, guid: 794f49e13611b0246b055ff8eaf09509,
         type: 3}
