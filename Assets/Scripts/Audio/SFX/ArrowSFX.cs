@@ -9,7 +9,7 @@ public class ArrowSFX : MonoBehaviour
     AudioSource audioSource = null;
 
     [SerializeField]
-    private SFXOptions arrowFlying, arrowHittingWall, arrowHittingFlesh;
+    private AudioOptions arrowFlying, arrowHittingWall, arrowHittingFlesh;
 
     void Awake()
     {

@@ -8,8 +8,14 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance = null;
 
     private static AudioSource managerAudioSource;
+    public static AudioSource ManagerAudioSource { get => managerAudioSource; }
+
     private static Dictionary<SFX, AudioClip> sfxDictionary = new Dictionary<SFX, AudioClip>();
     private static Dictionary<Music, AudioClip> musicDictionary = new Dictionary<Music, AudioClip>();
+
+    public static Dictionary<SFX, AudioClip> SfxDictionary { get => sfxDictionary; }
+    public static Dictionary<Music, AudioClip> MusicDictionary = new Dictionary<Music, AudioClip>();
+
     static bool isInit = false;
 
     private void Awake()
@@ -32,6 +38,18 @@ public class AudioManager : MonoBehaviour
         if (isInit) return;
         isInit = true;
 
+        InitializeMusic();
+        InitializeSFX();
+    }
+
+    private void InitializeMusic()
+    {
+        musicDictionary.Add(Music.IntroBattleTheme, Resources.Load<AudioClip>("Music/Intro"));
+        musicDictionary.Add(Music.BattleThemeLoop, Resources.Load<AudioClip>("Music/Battle Theme Loop"));
+    }
+
+    private void InitializeSFX()
+    {
         sfxDictionary.Add(SFX.Running1, Resources.Load<AudioClip>("SFX/Running/Running1"));
         sfxDictionary.Add(SFX.Running2, Resources.Load<AudioClip>("SFX/Running/Running2"));
         sfxDictionary.Add(SFX.Running3, Resources.Load<AudioClip>("SFX/Running/Running3"));
@@ -88,9 +106,9 @@ public class AudioManager : MonoBehaviour
     /// <param name="volume">The volume level.</param>
     /// <param name="delay">Seconds of delay.</param>
     /// <param name="music">The music to play.</param>
-    public static Coroutine PlayMusic(float volume, float delay, Music music)
+    public static Coroutine PlayMusic(float volume, float delay, bool willLoop, Music music)
     {
-        return PlayMusic(managerAudioSource, volume, delay, music);
+        return PlayMusic(managerAudioSource, volume, delay, willLoop, music);
     }
 
     /// <summary>
@@ -100,12 +118,13 @@ public class AudioManager : MonoBehaviour
     /// <param name="volume">The volume level.</param>
     /// <param name="delay">Seconds of delay.</param>
     /// <param name="music">The music to play.</param>
-    public static Coroutine PlayMusic(AudioSource audioSource, float volume, float delay, Music music)
+    public static Coroutine PlayMusic(AudioSource audioSource, float volume, float delay, bool willLoop, Music music)
     {
         Action audioAction = delegate
         {
             audioSource.clip = musicDictionary[music];
             audioSource.volume = volume;
+            audioSource.loop = willLoop;
             audioSource.Play();
         };
 
@@ -298,6 +317,12 @@ public class AudioManager : MonoBehaviour
         newAudioSource.transform.localPosition = Vector2.zero;
         newAudioSource.name = "New Audio Source GameObject";
         return newAudioSource;
+    }
+
+    public static IEnumerator CallMethodAfterMusicClip(Music music, Action actionMethod)
+    {
+        yield return new WaitForSecondsRealtime(musicDictionary[music].length);
+        actionMethod();
     }
 
     private static IEnumerator PlayNow(float delay, System.Action PlayMethod)

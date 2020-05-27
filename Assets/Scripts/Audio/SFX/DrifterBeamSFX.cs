@@ -7,7 +7,7 @@ public class DrifterBeamSFX : MonoBehaviour
     AudioSource audioSource = null;
 
     [SerializeField]
-    private SFXOptions beamShot, beamHit;
+    private AudioOptions beamShot, beamHit;
 
     private void Awake()
     {

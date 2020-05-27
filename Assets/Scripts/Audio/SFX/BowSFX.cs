@@ -7,7 +7,7 @@ public class BowSFX : MonoBehaviour
     AudioSource audioSource = null;
 
     [SerializeField]
-    private SFXOptions drawingBow;
+    private AudioOptions drawingBow;
 
     //LineRenderer lr = null;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class DrifterSFX : MonoBehaviour
 {
     [SerializeField]
-    private SFXOptions drifting, death;
+    private AudioOptions drifting, death;
 
     private AudioSource audioSource;
 

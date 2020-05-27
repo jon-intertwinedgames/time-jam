@@ -6,19 +6,22 @@ public class PlayerSFX : MonoBehaviour
 {
     private HandlePlayerState playerState_script = null;
 
+    private AudioSource audioSource = null;
     private AudioSource flyingAudioSource = null;
     private AudioSource timeAudioSource = null;
 
     private bool timeSlowAudioPlayed;
 
     [SerializeField]
-    private SFXOptions running, jumping, flyingInAir, landing, slowingTime, teleporting;
+    private AudioOptions running, jumping, flyingInAir, landing, slowingTime, teleporting;
 
-    public SFXOptions Landing{ get => landing; }
+    public AudioOptions Landing{ get => landing; }
 
     private void Awake()
     {
         playerState_script = GetComponent<HandlePlayerState>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -59,12 +62,12 @@ public class PlayerSFX : MonoBehaviour
     private void RunningSFX()
     {
         //AudioManager.PlayRandomOneShotSFX(SFX.Running1, SFX.Running2, SFX.Running3);
-        AudioManager.PlayOneShotSFX(running.Volume, running.Delay, SFX.Running1);
+        AudioManager.PlayOneShotSFX(audioSource, running.Volume, running.Delay, SFX.Running1);
     }
 
     private void JumpingSFX()
     {
-        AudioManager.PlayOneShotSFX(jumping.Volume, jumping.Delay, SFX.Jumping);
+        AudioManager.PlayOneShotSFX(audioSource, jumping.Volume, jumping.Delay, SFX.Jumping);
     }
 
     private void FlyingInAirSFX()
@@ -81,7 +84,7 @@ public class PlayerSFX : MonoBehaviour
 
     public void TeleportingSFX()
     {
-        AudioManager.PlayOneShotSFX(teleporting.Volume, teleporting.Delay, SFX.Teleporting4);
+        AudioManager.PlayOneShotSFX(audioSource, teleporting.Volume, teleporting.Delay, SFX.Teleporting4);
        //AudioManager.PlayRandomOneShotSFX(SFX.Teleporting1, SFX.Teleporting2, SFX.Teleporting3, SFX.Teleporting4, SFX.Teleporting5);
     }
 }

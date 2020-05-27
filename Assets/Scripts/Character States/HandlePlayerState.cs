@@ -12,7 +12,7 @@ public class HandlePlayerState : MonoBehaviour
 
     private string currentTrigger = "";
 
-    private SFXOptions landing;
+    private AudioOptions landing;
 
 
     public enum PlayerState

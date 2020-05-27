@@ -194,6 +194,22 @@ public class DrifterController : MonoBehaviour
         GlobalVars.EnemiesKilled += 1;
         GameObject.Instantiate(enemyDeath, transform.position, Quaternion.identity);
 
+        List<Transform> childArrows = new List<Transform>();
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform currentChild = transform.GetChild(i);
+            if (currentChild.name.ToLower().Contains("arrow"))
+            {
+                childArrows.Add(currentChild);
+            }
+        }
+
+        foreach (Transform arrow in childArrows)
+        {
+            Destroy(arrow.gameObject);
+        }
+
         SpriteRenderer[] childSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         Collider2D[] childColliders = GetComponentsInChildren<Collider2D>();
         ParticleSystem[] childParticleSystems = GetComponentsInChildren<ParticleSystem>();
