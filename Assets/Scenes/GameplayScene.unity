@@ -799,6 +799,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 991734760040884617, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.049997967
+      objectReference: {fileID: 0}
+    - target: {fileID: 991734760040884617, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7766647
+      objectReference: {fileID: 0}
+    - target: {fileID: 991734762075519720, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.049997967
+      objectReference: {fileID: 0}
+    - target: {fileID: 991734762075519720, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.7766647
+      objectReference: {fileID: 0}
     - target: {fileID: 2899164055153349665, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -813,6 +833,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100931219922342573, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: battleMusicTheme.volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4100931219922342573, guid: 35089e163fd2ca340a82ee0e820ca7de,
+        type: 3}
+      propertyPath: introTheme.volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5298453747275170855, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}

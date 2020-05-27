@@ -10,10 +10,9 @@ public class HandlePlayerState : MonoBehaviour
 
     private GroundDetector groundDetector_script;
 
+    private PlayerSFX playersfx_script;
+
     private string currentTrigger = "";
-
-    private AudioOptions landing;
-
 
     public enum PlayerState
     {
@@ -39,7 +38,7 @@ public class HandlePlayerState : MonoBehaviour
             {
                 if (actionState == PlayerState.Falling && (value == PlayerState.Idle || value == PlayerState.Running))
                 {
-                    AudioManager.PlayOneShotSFX(landing.Volume, landing.Delay, SFX.NormalLanding);
+                    playersfx_script.LandingSFX();
                 }
 
                 actionState = value;
@@ -90,8 +89,8 @@ public class HandlePlayerState : MonoBehaviour
 
     private void Start()
     {
-        landing = GetComponent<PlayerSFX>().Landing;
         groundDetector_script = GetComponentInChildren<GroundDetector>();
+        playersfx_script = GetComponent<PlayerSFX>();
     }
 
     private void Update()
