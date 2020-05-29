@@ -1,0 +1,1103 @@
+fileFormatVersion: 2
+guid: fe506a662278a4e468f7fe0068e0dcdb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -835036076222522155
+    second: Trees 1
+  - first:
+      213: 9000629218985363152
+    second: Trees 2
+  - first:
+      213: -2908706756413174733
+    second: Trees 3
+  - first:
+      213: -251238724588115251
+    second: Trees 4
+  - first:
+      213: -6007820133728874394
+    second: Trees 5
+  - first:
+      213: -7264984734546727604
+    second: Trees and Shrubbery_5
+  - first:
+      213: -5360204742930887656
+    second: Trees 6
+  - first:
+      213: -5302933366084443026
+    second: Trees 7
+  - first:
+      213: 3738621295842248939
+    second: Trees and Shrubbery_8
+  - first:
+      213: -415084595159851160
+    second: Trees and Shrubbery_9
+  - first:
+      213: -3903797340210325831
+    second: Trees 8
+  - first:
+      213: -2910697279720215776
+    second: Trees and Shrubbery_11
+  - first:
+      213: 6325653696234782536
+    second: Shrubbery 1
+  - first:
+      213: 221195592865171661
+    second: Shrubbery 2
+  - first:
+      213: -575013570064673833
+    second: Shrubbery 5
+  - first:
+      213: -5267640058870412757
+    second: Shrubbery 6
+  - first:
+      213: -2869977644454752543
+    second: Trees and Shrubbery_16
+  - first:
+      213: -8232480565440171597
+    second: Shrubbery 7
+  - first:
+      213: -5062740281948384379
+    second: Shrubbery 8
+  - first:
+      213: -4457592050236620426
+    second: Shrubbery 9
+  - first:
+      213: 531619052004805918
+    second: Shrubbery 3
+  - first:
+      213: 4771846318399723394
+    second: Shrubbery 4
+  - first:
+      213: -5385182749903930253
+    second: Trees and Shrubbery_22
+  - first:
+      213: -6905957789543155495
+    second: Trees and Shrubbery_23
+  - first:
+      213: 4225344736205436290
+    second: Shrubbery 11
+  - first:
+      213: -7859019697252458616
+    second: Shrubbery 12
+  - first:
+      213: -5487260559410824615
+    second: Shrubbery 13
+  - first:
+      213: 5818731578698559234
+    second: Shrubbery 14
+  - first:
+      213: -1523427018781162715
+    second: Shrubbery 15
+  - first:
+      213: 8400599348189650017
+    second: Shrubbery 10
+  - first:
+      213: -3524738919446236772
+    second: Trees and Shrubbery_30
+  - first:
+      213: 4096660097209320780
+    second: Shrubbery 16
+  - first:
+      213: 5470165943632867635
+    second: Shrubbery 17
+  - first:
+      213: 4088309572032188091
+    second: Trees and Shrubbery_33
+  - first:
+      213: -5502825528655265301
+    second: Shrubbery 18
+  - first:
+      213: -5764671226079514556
+    second: Shrubbery 19
+  - first:
+      213: -6078434370849582622
+    second: Shrubbery 20
+  - first:
+      213: -31073913031289075
+    second: Trees and Shrubbery_37
+  - first:
+      213: -1951606971508804852
+    second: Trees and Shrubbery_38
+  - first:
+      213: -354008063155302725
+    second: Trees and Shrubbery_39
+  - first:
+      213: -4418041540847323917
+    second: Trees and Shrubbery_40
+  - first:
+      213: 196436610429132511
+    second: Trees and Shrubbery_41
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Trees 1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 3077
+        width: 416
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcde16ec1b5964f0800000000000000
+      internalID: -835036076222522155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 2
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 2751
+        width: 719
+        height: 810
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6cf985698a8ec70800000000000000
+      internalID: 9000629218985363152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 3
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 2707
+        width: 658
+        height: 823
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cc634bd9232a7d0800000000000000
+      internalID: -2908706756413174733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 4
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 2847
+        width: 663
+        height: 673
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca6a1b06bb638cf0800000000000000
+      internalID: -251238724588115251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 5
+      rect:
+        serializedVersion: 2
+        x: 2924
+        y: 2810
+        width: 1040
+        height: 718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66096ae4b6fef9ca0800000000000000
+      internalID: -6007820133728874394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_5
+      rect:
+        serializedVersion: 2
+        x: 3940
+        y: 3097
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4de4be10e69d2b90800000000000000
+      internalID: -7264984734546727604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1363
+        width: 1405
+        height: 1283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c8d369f2abc95b0800000000000000
+      internalID: -5360204742930887656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 7
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 1380
+        width: 1156
+        height: 1195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6468fe13323866b0800000000000000
+      internalID: -5302933366084443026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_8
+      rect:
+        serializedVersion: 2
+        x: 2651
+        y: 2095
+        width: 60
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be84360b24042e330800000000000000
+      internalID: 3738621295842248939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_9
+      rect:
+        serializedVersion: 2
+        x: 2802
+        y: 2128
+        width: 55
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f92c982c25d3af0800000000000000
+      internalID: -415084595159851160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees 8
+      rect:
+        serializedVersion: 2
+        x: 2833
+        y: 1844
+        width: 1044
+        height: 725
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b616a5900de2d9c0800000000000000
+      internalID: -3903797340210325831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_11
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2053
+        width: 73
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ba491ee302b97d0800000000000000
+      internalID: -2910697279720215776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 1
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 1504
+        width: 396
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ff530a58c39c750800000000000000
+      internalID: 6325653696234782536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 2
+      rect:
+        serializedVersion: 2
+        x: 3425
+        y: 1367
+        width: 373
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc84c924838d11300800000000000000
+      internalID: 221195592865171661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 5
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 806
+        width: 585
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3144f54342508f0800000000000000
+      internalID: -575013570064673833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 850
+        width: 378
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a496e864595e6b0800000000000000
+      internalID: -5267640058870412757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_16
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 986
+        width: 49
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee46f4c98acb28d0800000000000000
+      internalID: -2869977644454752543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 7
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 860
+        width: 269
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1b1a41b8a50cd80800000000000000
+      internalID: -8232480565440171597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 8
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 825
+        width: 453
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583d76089888db9b0800000000000000
+      internalID: -5062740281948384379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 9
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 797
+        width: 387
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6718a0cc5a37322c0800000000000000
+      internalID: -4457592050236620426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 3
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 942
+        width: 500
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d839e06b0b06700800000000000000
+      internalID: 531619052004805918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 4
+      rect:
+        serializedVersion: 2
+        x: 3469
+        y: 1010
+        width: 360
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28798fab1f0093240800000000000000
+      internalID: 4771846318399723394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_22
+      rect:
+        serializedVersion: 2
+        x: 2238
+        y: 901
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c3a6522dcf345b0800000000000000
+      internalID: -5385182749903930253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_23
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 883
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d83070dafb1920a0800000000000000
+      internalID: -6905957789543155495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 11
+      rect:
+        serializedVersion: 2
+        x: 3495
+        y: 725
+        width: 255
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285771796a073aa30800000000000000
+      internalID: 4225344736205436290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 12
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 436
+        width: 795
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f187669372fe290800000000000000
+      internalID: -7859019697252458616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 13
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 438
+        width: 349
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a7e4e089559d3b0800000000000000
+      internalID: -5487260559410824615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 14
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 456
+        width: 429
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20feca7ba8940c050800000000000000
+      internalID: 5818731578698559234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 15
+      rect:
+        serializedVersion: 2
+        x: 2158
+        y: 470
+        width: 307
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5230158a233bbdae0800000000000000
+      internalID: -1523427018781162715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 10
+      rect:
+        serializedVersion: 2
+        x: 2853
+        y: 645
+        width: 586
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16cd831599ce49470800000000000000
+      internalID: 8400599348189650017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_30
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 434
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91b96ca0ac951fc0800000000000000
+      internalID: -3524738919446236772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 16
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 57
+        width: 364
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45cda347a24ad830800000000000000
+      internalID: 4096660097209320780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 17
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 47
+        width: 300
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3313dac81fee9eb40800000000000000
+      internalID: 5470165943632867635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_33
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 234
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbececc15e79cb830800000000000000
+      internalID: 4088309572032188091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 18
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 34
+        width: 371
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be14d8f365902a3b0800000000000000
+      internalID: -5502825528655265301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 19
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 53
+        width: 359
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4407d9aff06cfffa0800000000000000
+      internalID: -5764671226079514556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shrubbery 20
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 67
+        width: 470
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e15cf6052015aba0800000000000000
+      internalID: -6078434370849582622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_37
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 178
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d071df3d07a919ff0800000000000000
+      internalID: -31073913031289075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_38
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 98
+        width: 94
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03ba0aaccf7ae4e0800000000000000
+      internalID: -1951606971508804852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_39
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 49
+        width: 67
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe010cca8f461bf0800000000000000
+      internalID: -354008063155302725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trees and Shrubbery_40
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 43
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f430ea50a6ffa2c0800000000000000
+      internalID: -4418041540847323917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

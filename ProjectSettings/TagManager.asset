@@ -52,15 +52,21 @@ TagManager:
   - name: Enemies
     uniqueID: 4272752687
     locked: 0
+  - name: Player Projectiles
+    uniqueID: 956434611
+    locked: 0
+  - name: Terrain
+    uniqueID: 4072140035
+    locked: 0
+  - name: Tutorial
+    uniqueID: 2092538499
+    locked: 0
   - name: Player
     uniqueID: 1921634251
-    locked: 0
-  - name: Projectiles
-    uniqueID: 956434611
     locked: 0
   - name: Foreground
     uniqueID: 1474121849
     locked: 0
-  - name: Tutorial
-    uniqueID: 2092538499
+  - name: Enemy Projectiles
+    uniqueID: 721259579
     locked: 0

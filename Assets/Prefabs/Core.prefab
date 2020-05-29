@@ -742,6 +742,11 @@ PrefabInstance:
       propertyPath: blackScreen_image
       value: 
       objectReference: {fileID: 268181351226406853}
+    - target: {fileID: 1440747908043183958, guid: 604a70aa3ca5a32409a8cd295246e1e9,
+        type: 3}
+      propertyPath: timeReductionPerSec
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1440747908043183960, guid: 604a70aa3ca5a32409a8cd295246e1e9,
         type: 3}
       propertyPath: m_Material
