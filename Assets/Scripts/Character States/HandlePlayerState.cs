@@ -10,6 +10,7 @@ public class HandlePlayerState : MonoBehaviour
 
     private GroundDetector groundDetector_script;
 
+    private PlayerController playerController_script;
     private PlayerSFX playersfx_script;
 
     private string currentTrigger = "";
@@ -21,7 +22,9 @@ public class HandlePlayerState : MonoBehaviour
         Jumping,
         Falling,
         Landing,
+        GroundAiming,
         GroundShooting,
+        AirAiming,
         AirShooting,
         Flying,
         Death
@@ -60,22 +63,28 @@ public class HandlePlayerState : MonoBehaviour
                         currentTrigger = "Jumping";
                         break;
                     case PlayerState.Falling:
+                        currentTrigger = "Jumping"; //Change this to falling when we get the animation for it
                         break;
                     case PlayerState.Landing:
-                        //AudioManager.PlayOneShot(SFX.NormalLanding);
+                        break;
+                    case PlayerState.GroundAiming:
+                        currentTrigger = "Ground Aiming";
                         break;
                     case PlayerState.GroundShooting:
                         currentTrigger = "Ground Shooting";
+                        break;
+                    case PlayerState.AirAiming:
+                        currentTrigger = "Air Shooting";
                         break;
                     case PlayerState.AirShooting:
                         currentTrigger = "Air Shooting";
                         break;
                     case PlayerState.Flying:
+                        currentTrigger = "Jumping"; //Change this into flying when we get the animation for it
                         break;
                     case PlayerState.Death:
                         break;
                 }
-
                 anim.SetTrigger(currentTrigger);
             }
         }
@@ -91,57 +100,42 @@ public class HandlePlayerState : MonoBehaviour
     {
         groundDetector_script = GetComponentInChildren<GroundDetector>();
         playersfx_script = GetComponent<PlayerSFX>();
+        playerController_script = GetComponent<PlayerController>();
+
+        playerController_script.IdleEvent += delegate { ActionState = PlayerState.Idle; };
+        playerController_script.RunningEvent += delegate { ActionState = PlayerState.Running; };
+        playerController_script.JumpingEvent += delegate { ActionState = PlayerState.Jumping; };
+        playerController_script.FallingEvent += delegate { ActionState = PlayerState.Falling; };
+        playerController_script.GroundAimEvent += delegate { ActionState = PlayerState.GroundAiming; };
+        playerController_script.GroundShootEvent += delegate { ActionState = PlayerState.GroundShooting; };
+        playerController_script.AirAimEvent += delegate { ActionState = PlayerState.AirAiming; };
+        playerController_script.AirShootEvent += delegate { ActionState = PlayerState.AirShooting; };
     }
 
     private void Update()
     {
         UpdateState();
+        print(actionState);
     }
 
     private void UpdateState()
     {
-        if (ActionState == PlayerState.GroundShooting)
+        if(groundDetector_script.IsOnGround)
         {
-            if (rb.velocity.y != 0)
-                ActionState = PlayerState.AirShooting;
-
-            else
-                ResetRotation();
-
-            return;
+            ResetRotation();
         }
 
-        if(ActionState == PlayerState.AirShooting)
+        switch (actionState)
         {
-            if (rb.velocity.y == 0)
-            {
-                ActionState = PlayerState.GroundShooting;
-            }
-            else
-            {
+            case PlayerState.AirAiming:
+            case PlayerState.AirShooting:
                 LookatMouse();
-            }
-            return;
+                break;
         }
-
-        ResetRotation();
-        if (ActionState == PlayerState.Death)
-            return;
-
-        if (rb.velocity == Vector2.zero && groundDetector_script.IsOnGround)
-            ActionState = PlayerState.Idle;
-        else if (rb.velocity.x != 0 && rb.velocity.y == 0 && groundDetector_script.IsOnGround)
-            ActionState = PlayerState.Running;
-        else if (rb.velocity.y > 0 && actionState != PlayerState.Flying) //Separate this into Falling later.
-            ActionState = PlayerState.Jumping;
-        else if (rb.velocity.y < 0 && actionState != PlayerState.Flying)
-            ActionState = PlayerState.Falling;
     }
 
     private void LookatMouse()
     {
-        //GetComponent<FlipObjectBasedOnRigidbody>().enabled = false;
-
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         int offset = 0;
@@ -159,7 +153,6 @@ public class HandlePlayerState : MonoBehaviour
 
     private void ResetRotation()
     {
-        //GetComponent<FlipObjectBasedOnRigidbody>().enabled = true;
         transform.rotation = new Quaternion();
     }
 }

@@ -42,7 +42,10 @@ public class PlayerController : MonoBehaviour
     private bool isAiming;
     private float aimingTime = 0;
 
-    public event Action TeleportEvent;
+    public event Action IdleEvent, RunningEvent, JumpingEvent, FallingEvent,
+                                    GroundAimEvent, GroundShootEvent,
+                                    AirAimEvent, AirShootEvent,
+                                    TeleportEvent;
 
     void Start()
     {
@@ -79,8 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 health_script.ChangeHealth(-10);
             }
-        }
-        
+        }        
     }
 
     void MovementInput()
@@ -90,9 +92,31 @@ public class PlayerController : MonoBehaviour
 
         movement_script.Move(h);
 
+        if (h == 0 && groundDetector_script.IsOnGround)
+        {
+            IdleEvent?.Invoke();
+        }
+
+        else if (h != 0 && groundDetector_script.IsOnGround && playerState_script.ActionState != HandlePlayerState.PlayerState.Jumping)
+        {
+            RunningEvent?.Invoke();
+        }
+
+        bool willJump;
+
         if (v != 0)
         {
-            movement_script.Jump();
+            willJump = movement_script.Jump();
+
+            if(willJump)
+            {
+                JumpingEvent?.Invoke();
+            }
+        }
+
+        if (rb.velocity.y < 0 && groundDetector_script.IsOnGround == false)
+        {
+            FallingEvent?.Invoke();
         }
     }
     
@@ -102,6 +126,15 @@ public class PlayerController : MonoBehaviour
         {
             isAiming = true;
             bowSFX.PlayDrawingBowSFX();
+
+            if (groundDetector_script.IsOnGround)
+            {
+                GroundAimEvent?.Invoke();
+            }
+            else
+            {
+                AirAimEvent?.Invoke();
+            }
         }
         if (Input.GetButton("Fire1") && isAiming)
         {
@@ -112,13 +145,13 @@ public class PlayerController : MonoBehaviour
 
             particleSystemEmission.rateOverTime = 5f * GetPowerPercentage();//<-- LOOK HERE Magic number :D
 
-            if (rb.velocity.y == 0)
+            if (groundDetector_script.IsOnGround)
             {
-                playerState_script.ActionState = HandlePlayerState.PlayerState.GroundShooting;
+                GroundAimEvent?.Invoke();
             }
             else
             {
-                playerState_script.ActionState = HandlePlayerState.PlayerState.AirShooting;
+                AirAimEvent?.Invoke();
             }
 
             aimingTime += Time.deltaTime;
@@ -133,9 +166,17 @@ public class PlayerController : MonoBehaviour
             aimingTime = 0;
 
             particleSystemEmission.rateOverTime = 0;
-            ResetPlayerStateBackFromShooting();
 
             aimer_script.ShowTrajectory(false);
+
+            if(groundDetector_script.IsOnGround)
+            {
+                GroundShootEvent?.Invoke();
+            }
+            else
+            {
+                AirShootEvent?.Invoke();
+            }
         }
     }
 
@@ -177,15 +218,6 @@ public class PlayerController : MonoBehaviour
         {
             projectile_Damager.setDamage(projectile_Damager.getDamage() * 2);
         }        
-    }
-
-    void ResetPlayerStateBackFromShooting()
-    {
-        if (playerState_script.ActionState == HandlePlayerState.PlayerState.GroundShooting ||
-            playerState_script.ActionState == HandlePlayerState.PlayerState.AirShooting)
-        {
-            playerState_script.ActionState = HandlePlayerState.PlayerState.Idle;
-        }
     }
 
     private float GetPowerPercentage()

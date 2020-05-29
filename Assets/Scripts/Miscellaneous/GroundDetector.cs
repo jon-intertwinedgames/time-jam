@@ -9,6 +9,9 @@ public class GroundDetector : MonoBehaviour
     private bool isOnGround;
     public bool IsOnGround { get => isOnGround; }
 
+    [SerializeField]
+    private Transform player_trans;
+
     private void Update()
     {
         isOnGround = CheckIfOnGround();
@@ -17,7 +20,7 @@ public class GroundDetector : MonoBehaviour
     public bool CheckIfOnGround()
     {
         Vector2 startPosition = GetStartPosition();
-        RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.down, groundDetectionLength, LayerMask.GetMask("Terrain"));
+        RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.right, groundDetectionLength, LayerMask.GetMask("Terrain"));
 
         if (hit)
             return true;
@@ -27,7 +30,7 @@ public class GroundDetector : MonoBehaviour
 
     private Vector2 GetStartPosition()
     {
-        Vector2 startPosition = transform.position;
+        Vector2 startPosition = player_trans.position + transform.localPosition;
         startPosition.x -= groundDetectionLength / 2;
         return startPosition;
     }
@@ -35,8 +38,8 @@ public class GroundDetector : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawCube(this.transform.position
-            + (Vector3.down * this.groundDetectionLength)
-            , new Vector3(1,1,1) * 1f);
+        Vector3 startPosition = GetStartPosition();
+        Gizmos.DrawLine(startPosition,
+            startPosition + (Vector3.right * this.groundDetectionLength));
     }
 }

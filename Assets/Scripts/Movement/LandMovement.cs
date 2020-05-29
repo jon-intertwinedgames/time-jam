@@ -44,14 +44,17 @@ public class LandMovement : Movement
             rb.AddForce(new Vector2(xVelMultiplier, 0), ForceMode2D.Force);
     }
 
-    public void Jump()
+    public bool Jump()
     {
         if (rb.velocity.y == 0)
         {
             if (groundDetector_script.IsOnGround)
             {
                 rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                return true;
             }
         }
+
+        return false;
     }
 }
