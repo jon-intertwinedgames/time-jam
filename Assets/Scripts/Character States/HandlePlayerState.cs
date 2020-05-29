@@ -22,7 +22,8 @@ public class HandlePlayerState : MonoBehaviour
         Jumping,
         Falling,
         Landing,
-        GroundAiming,
+        GroundIdleAiming,
+        GroundRunningAiming,
         GroundShooting,
         AirAiming,
         AirShooting,
@@ -67,8 +68,11 @@ public class HandlePlayerState : MonoBehaviour
                         break;
                     case PlayerState.Landing:
                         break;
-                    case PlayerState.GroundAiming:
-                        currentTrigger = "Ground Aiming";
+                    case PlayerState.GroundIdleAiming:
+                        currentTrigger = "Ground Idle Aiming";
+                        break;
+                    case PlayerState.GroundRunningAiming:
+                        currentTrigger = "Ground Running Aiming";
                         break;
                     case PlayerState.GroundShooting:
                         currentTrigger = "Ground Shooting";
@@ -106,7 +110,8 @@ public class HandlePlayerState : MonoBehaviour
         playerController_script.RunningEvent += delegate { ActionState = PlayerState.Running; };
         playerController_script.JumpingEvent += delegate { ActionState = PlayerState.Jumping; };
         playerController_script.FallingEvent += delegate { ActionState = PlayerState.Falling; };
-        playerController_script.GroundAimEvent += delegate { ActionState = PlayerState.GroundAiming; };
+        playerController_script.GroundIdleAimEvent += delegate { ActionState = PlayerState.GroundIdleAiming; };
+        playerController_script.GroundRunningAimEvent += delegate { ActionState = PlayerState.GroundRunningAiming; };
         playerController_script.GroundShootEvent += delegate { ActionState = PlayerState.GroundShooting; };
         playerController_script.AirAimEvent += delegate { ActionState = PlayerState.AirAiming; };
         playerController_script.AirShootEvent += delegate { ActionState = PlayerState.AirShooting; };

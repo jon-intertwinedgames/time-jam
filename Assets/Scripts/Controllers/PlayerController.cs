@@ -39,11 +39,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
+    private float h, v; //horizontal axis and vertical axis
     private bool isAiming;
     private float aimingTime = 0;
 
     public event Action IdleEvent, RunningEvent, JumpingEvent, FallingEvent,
-                                    GroundAimEvent, GroundShootEvent,
+                                    GroundIdleAimEvent, GroundRunningAimEvent, GroundShootEvent,
                                     AirAimEvent, AirShootEvent,
                                     TeleportEvent;
 
@@ -87,14 +88,15 @@ public class PlayerController : MonoBehaviour
 
     void MovementInput()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Jump");
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Jump");
 
         movement_script.Move(h);
 
         if (h == 0 && groundDetector_script.IsOnGround)
         {
             IdleEvent?.Invoke();
+            print("Hi");
         }
 
         else if (h != 0 && groundDetector_script.IsOnGround && playerState_script.ActionState != HandlePlayerState.PlayerState.Jumping)
@@ -104,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
         bool willJump;
 
-        if (v != 0)
+        if (v > 0)
         {
             willJump = movement_script.Jump();
 
@@ -126,15 +128,6 @@ public class PlayerController : MonoBehaviour
         {
             isAiming = true;
             bowSFX.PlayDrawingBowSFX();
-
-            if (groundDetector_script.IsOnGround)
-            {
-                GroundAimEvent?.Invoke();
-            }
-            else
-            {
-                AirAimEvent?.Invoke();
-            }
         }
         if (Input.GetButton("Fire1") && isAiming)
         {
@@ -147,7 +140,14 @@ public class PlayerController : MonoBehaviour
 
             if (groundDetector_script.IsOnGround)
             {
-                GroundAimEvent?.Invoke();
+                if (h == 0)
+                {
+                    GroundIdleAimEvent?.Invoke();
+                }
+                else if(h != 0)
+                {
+                    GroundRunningAimEvent?.Invoke();
+                }
             }
             else
             {
