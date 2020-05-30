@@ -27,7 +27,9 @@ public class HandlePlayerState : MonoBehaviour
         AirAiming,
         AirShooting,
         Flying,
-        Death
+        Death,
+        MovingGroundAim,
+        MovingGroundShoot
     }
 
     private PlayerState actionState;
@@ -50,7 +52,7 @@ public class HandlePlayerState : MonoBehaviour
                 {
                     anim.ResetTrigger(currentTrigger);
                 }
-
+                print(actionState.ToString());
                 switch (actionState)
                 {
                     case PlayerState.Idle:
@@ -84,6 +86,13 @@ public class HandlePlayerState : MonoBehaviour
                         break;
                     case PlayerState.Death:
                         break;
+                    case PlayerState.MovingGroundAim:
+                        currentTrigger = "Moving Ground Aiming"; //Change this into flying when we get the animation for it
+                        break;
+                    case PlayerState.MovingGroundShoot:
+                        currentTrigger = "Moving Ground Shooting";
+                        break;
+
                 }
                 anim.SetTrigger(currentTrigger);
             }
@@ -110,12 +119,14 @@ public class HandlePlayerState : MonoBehaviour
         playerController_script.GroundShootEvent += delegate { ActionState = PlayerState.GroundShooting; };
         playerController_script.AirAimEvent += delegate { ActionState = PlayerState.AirAiming; };
         playerController_script.AirShootEvent += delegate { ActionState = PlayerState.AirShooting; };
+        playerController_script.MovingGroundAimEvent += delegate { ActionState = PlayerState.MovingGroundAim; };
+        playerController_script.MovingGroundShootEvent += delegate { ActionState = PlayerState.MovingGroundShoot; };
     }
 
     private void Update()
     {
         UpdateState();
-        print(actionState);
+        //print(actionState);
     }
 
     private void UpdateState()
