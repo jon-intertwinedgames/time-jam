@@ -275,6 +275,6 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
-        //Destroy(gameObject);
+        Destroy(gameObject);//gamemaster is always searching for this obj
     }
 }
