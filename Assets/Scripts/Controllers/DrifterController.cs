@@ -96,6 +96,18 @@ public class DrifterController : MonoBehaviour
     {
         if (Vector3.Distance(this.transform.position, goal.position) < firingRange)
         {
+            GetComponent<FlipObjectBasedOnRigidbody>().enabled = false;
+
+            if(this.transform.position.x < goal.position.x)
+            {
+                this.transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            if (this.transform.position.x > goal.position.x)
+            {
+                this.transform.localScale = new Vector3(-1, 1, 1);
+            }
+
             time += Time.deltaTime;
             if ((time / firerate) < shootingAccuracy)
             {
@@ -111,6 +123,7 @@ public class DrifterController : MonoBehaviour
         }
         else
         {
+            GetComponent<FlipObjectBasedOnRigidbody>().enabled = true;
             time = 0;
         }
         return false;
