@@ -52,7 +52,7 @@ public class HandlePlayerState : MonoBehaviour
                 {
                     anim.ResetTrigger(currentTrigger);
                 }
-                print(actionState.ToString());
+                //print(actionState.ToString());
                 switch (actionState)
                 {
                     case PlayerState.Idle:
