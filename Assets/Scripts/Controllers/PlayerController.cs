@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     public event Action IdleEvent, RunningEvent, JumpingEvent, FallingEvent,
                                     GroundAimEvent, GroundShootEvent,
                                     AirAimEvent, AirShootEvent,
-                                    TeleportEvent;
+                                    TeleportEvent, MovingGroundAimEvent, MovingGroundShootEvent;
 
     void Start()
     {
@@ -92,6 +92,25 @@ public class PlayerController : MonoBehaviour
 
         movement_script.Move(h);
 
+
+        bool willJump = false;
+
+        if (v != 0)
+        {
+            willJump = movement_script.Jump();
+        }
+
+
+        if (playerState_script.ActionState == HandlePlayerState.PlayerState.AirAiming ||
+            playerState_script.ActionState == HandlePlayerState.PlayerState.GroundAiming ||
+            playerState_script.ActionState == HandlePlayerState.PlayerState.AirShooting||
+            playerState_script.ActionState == HandlePlayerState.PlayerState.GroundShooting ||
+            playerState_script.ActionState == HandlePlayerState.PlayerState.MovingGroundAim ||
+            playerState_script.ActionState == HandlePlayerState.PlayerState.MovingGroundShoot)
+        {
+            return;
+        }
+
         if (h == 0 && groundDetector_script.IsOnGround)
         {
             IdleEvent?.Invoke();
@@ -102,21 +121,14 @@ public class PlayerController : MonoBehaviour
             RunningEvent?.Invoke();
         }
 
-        bool willJump;
-
-        if (v != 0)
-        {
-            willJump = movement_script.Jump();
-
-            if(willJump)
-            {
-                JumpingEvent?.Invoke();
-            }
-        }
-
         if (rb.velocity.y < 0 && groundDetector_script.IsOnGround == false)
         {
             FallingEvent?.Invoke();
+        }
+
+        if (willJump)
+        {
+            JumpingEvent?.Invoke();
         }
     }
     
@@ -126,15 +138,15 @@ public class PlayerController : MonoBehaviour
         {
             isAiming = true;
             bowSFX.PlayDrawingBowSFX();
-
-            if (groundDetector_script.IsOnGround)
+            StopAllCoroutines();
+            /*if (groundDetector_script.IsOnGround)
             {
                 GroundAimEvent?.Invoke();
             }
             else
             {
                 AirAimEvent?.Invoke();
-            }
+            }*/
         }
         if (Input.GetButton("Fire1") && isAiming)
         {
@@ -147,7 +159,15 @@ public class PlayerController : MonoBehaviour
 
             if (groundDetector_script.IsOnGround)
             {
-                GroundAimEvent?.Invoke();
+                if(GetComponent<Rigidbody2D>().velocity.x != 0)
+                {
+                    MovingGroundAimEvent?.Invoke();
+                }
+                else
+                {
+
+                    GroundAimEvent?.Invoke();
+                }
             }
             else
             {
@@ -171,13 +191,28 @@ public class PlayerController : MonoBehaviour
 
             if(groundDetector_script.IsOnGround)
             {
-                GroundShootEvent?.Invoke();
+                if (GetComponent<Rigidbody2D>().velocity.x != 0)
+                {
+                    MovingGroundShootEvent?.Invoke();
+                }
+                else
+                {
+                    GroundShootEvent?.Invoke();
+                }
             }
             else
             {
                 AirShootEvent?.Invoke();
             }
+
+            StartCoroutine(resetToNormal());
         }
+    }
+
+    IEnumerator resetToNormal()
+    {
+        yield return new WaitForSeconds(0.1f);
+        IdleEvent?.Invoke();
     }
 
     void TeleportationInput()
