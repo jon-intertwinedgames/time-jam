@@ -126,14 +126,14 @@ public class HandlePlayerState : MonoBehaviour
     private void Update()
     {
         UpdateState();
-        //print(actionState);
+        print(actionState);
     }
 
     private void UpdateState()
     {
         if(groundDetector_script.IsOnGround)
         {
-            ResetRotation();
+           // ResetRotation();
         }
 
         switch (actionState)
@@ -141,6 +141,9 @@ public class HandlePlayerState : MonoBehaviour
             case PlayerState.AirAiming:
             case PlayerState.AirShooting:
                 LookatMouse();
+                break;
+            default:
+                ResetRotation();
                 break;
         }
     }
