@@ -49,11 +49,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Enemies
-    uniqueID: 4272752687
-    locked: 0
   - name: Player Projectiles
     uniqueID: 956434611
+    locked: 0
+  - name: Enemies
+    uniqueID: 4272752687
     locked: 0
   - name: Terrain
     uniqueID: 4072140035
@@ -64,9 +64,12 @@ TagManager:
   - name: Player
     uniqueID: 1921634251
     locked: 0
+  - name: Enemy Projectiles
+    uniqueID: 721259579
+    locked: 0
   - name: Foreground
     uniqueID: 1474121849
     locked: 0
-  - name: Enemy Projectiles
-    uniqueID: 721259579
+  - name: UI
+    uniqueID: 155886585
     locked: 0

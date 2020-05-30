@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     private TimeManipulation time_script;
     private HandlePlayerState playerState_script;
     private Health health_script;
-    private PlayerSFX playerSFX_script;
     private GroundDetector groundDetector_script;
     private FlipObjectBasedOnRigidbody flipObject_script;
     
@@ -54,7 +53,6 @@ public class PlayerController : MonoBehaviour
         time_script = GetComponent<TimeManipulation>();
         playerState_script = GetComponent<HandlePlayerState>();
         health_script = GetComponent<Health>();
-        playerSFX_script = GetComponent<PlayerSFX>();
         groundDetector_script = GetComponentInChildren<GroundDetector>();
         flipObject_script = GetComponent<FlipObjectBasedOnRigidbody>();
 
@@ -139,14 +137,6 @@ public class PlayerController : MonoBehaviour
             isAiming = true;
             bowSFX.PlayDrawingBowSFX();
             StopAllCoroutines();
-            /*if (groundDetector_script.IsOnGround)
-            {
-                GroundAimEvent?.Invoke();
-            }
-            else
-            {
-                AirAimEvent?.Invoke();
-            }*/
         }
         if (Input.GetButton("Fire1") && isAiming)
         {
@@ -221,7 +211,6 @@ public class PlayerController : MonoBehaviour
         {
             if (Arrow.AllArrows.Count > 0)
             {
-                playerSFX_script.TeleportingSFX();
                 GameObject closestArrow = Arrow.FindClosestArrowToCursor();
                 TeleportToArrow(closestArrow);
 
@@ -284,9 +273,8 @@ public class PlayerController : MonoBehaviour
         playerState_script.ActionState = HandlePlayerState.PlayerState.Flying;
     }
 
-    [SerializeField]
     private void Death()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

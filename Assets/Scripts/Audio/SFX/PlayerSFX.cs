@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerSFX : MonoBehaviour
 {
+    private PlayerController playerController_script = null;
     private HandlePlayerState playerState_script = null;
 
     private AudioSource audioSource = null;
@@ -13,12 +14,13 @@ public class PlayerSFX : MonoBehaviour
     private bool timeSlowAudioPlayed;
 
     [SerializeField]
-    private AudioOptions running, jumping, flyingInAir, landing, slowingTime, teleporting;
+    private AudioOptions running, jumping, flyingInAir, landing, slowingTime, teleporting, death;
 
     public AudioOptions Landing{ get => landing; }
 
     private void Awake()
     {
+        playerController_script = GetComponent<PlayerController>();
         playerState_script = GetComponent<HandlePlayerState>();
 
         audioSource = GetComponent<AudioSource>();
@@ -31,6 +33,9 @@ public class PlayerSFX : MonoBehaviour
 
         flyingAudioSource.gameObject.name = "flyingAudioSource";
         timeAudioSource.gameObject.name = "timeAudioSource";
+
+        playerController_script.TeleportEvent += TeleportingSFX;
+        GetComponent<Health>().DeathEvent += DeathSFX;
     }
 
     private void Update()
@@ -84,8 +89,13 @@ public class PlayerSFX : MonoBehaviour
         AudioManager.PlaySFX(timeAudioSource, slowingTime.Volume, slowingTime.Delay, false, SFX.SlowingDownTime);
     }
 
-    public void TeleportingSFX()
+    private void TeleportingSFX()
     {
         AudioManager.PlayOneShotSFX(audioSource, teleporting.Volume, teleporting.Delay, SFX.Teleporting4);
+    }
+
+    private void DeathSFX()
+    {
+        AudioManager.PlayOneShotSFX(audioSource, death.Volume, death.Delay, SFX.DrifterDeath);
     }
 }
