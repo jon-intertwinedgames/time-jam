@@ -344,11 +344,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5527376756567321363, guid: 40184dc4c8df94a41ace385fc232e924,
         type: 3}
-      propertyPath: numOfEnemiesToKillToWin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5527376756567321363, guid: 40184dc4c8df94a41ace385fc232e924,
-        type: 3}
       propertyPath: howmanyToKilled_text
       value: 
       objectReference: {fileID: 7343492855354867027}
