@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 674611989468756754, guid: 8a27cac7fb785c74db40927a983e2184,
     type: 3}
+  maxObjects: 20
   spawnFreq: 5
   shouldSpawn: 1
 --- !u!1 &5704606884157222565

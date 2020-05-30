@@ -9,10 +9,14 @@ public class ObjectSpawner : MonoBehaviour
     GameObject objectPrefab = null;
 
     [SerializeField]
+    int maxObjects = 20;
+
+    [SerializeField]
     float spawnFreq = 5f;
     [SerializeField]
     bool shouldSpawn = true;
 
+    private List<GameObject> _gameObjects;
 
     float time; // I could use a coroutine but... I think that would be over doing it
     System.Random ran = new System.Random();
@@ -20,7 +24,7 @@ public class ObjectSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _gameObjects = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class ObjectSpawner : MonoBehaviour
             time += Time.deltaTime;
             if(time > spawnFreq)
             {
-                SpawnObjectAtRandomSpawnPoint();
+                Spawn();
                 time = 0;
             }
         }
@@ -39,6 +43,18 @@ public class ObjectSpawner : MonoBehaviour
         {
             time = 0;
         }
+
+        foreach (var g in _gameObjects)
+        {
+            if (g == null)
+                _gameObjects.Remove(g);
+        }
+    }
+
+    private void Spawn()
+    {
+        if(_gameObjects.Count < maxObjects)
+            SpawnObjectAtRandomSpawnPoint();
     }
 
     private void SpawnObjectAtRandomSpawnPoint()
@@ -52,8 +68,9 @@ public class ObjectSpawner : MonoBehaviour
     {
         var position = this.transform.GetChild(i).position;
 
-        Instantiate(objectPrefab, position, this.transform.rotation)
-            .transform.SetParent(this.transform);
+        var g = Instantiate(objectPrefab, position, this.transform.rotation);
+        g.transform.SetParent(this.transform);
+        _gameObjects.Add(g);
     }
 
     private void OnDrawGizmosSelected()
