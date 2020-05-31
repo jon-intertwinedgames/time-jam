@@ -81,9 +81,9 @@ public class Arrow : Projectile
                 sparks_trans.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
                 sparks_trans.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
                 /////////////////////////////////////////////////////////////
+                
+                transform.SetParent(collision.transform);
             }
-
-            transform.SetParent(collision.transform);
         }
     }
 
