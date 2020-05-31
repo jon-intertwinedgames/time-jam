@@ -12,7 +12,7 @@ public class HealthBar : HUDBar
     private bool showHealthText;
 
     [SerializeField]
-    private TextMeshProUGUI currentHealth_text, totalHealth_text;
+    private TextMeshProUGUI currentHealth_text;
 
     protected override void Start()
     {
@@ -33,6 +33,5 @@ public class HealthBar : HUDBar
     private void UpdateHealthText()
     {
         currentHealth_text.text = health_script.CurrentHealth.ToString();
-        totalHealth_text.text = health_script.StartingHealth.ToString();
     }
 }
