@@ -126,7 +126,7 @@ public class HandlePlayerState : MonoBehaviour
     private void Update()
     {
         UpdateState();
-        print(actionState);
+        //print(actionState);
     }
 
     private void UpdateState()

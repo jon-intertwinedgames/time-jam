@@ -46,7 +46,7 @@ public class LandMovement : Movement
 
     public bool Jump()
     {
-        if (rb.velocity.y == 0)
+        if (Mathf.Abs( rb.velocity.y) < 0.01f)
         {
             if (groundDetector_script.IsOnGround)
             {

@@ -23,7 +23,10 @@ public class GroundDetector : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(startPosition, Vector2.right, groundDetectionLength, LayerMask.GetMask("Terrain"));
 
         if (hit)
+        {
+            //print(hit.collider.name);
             return true;
+        }
 
         return false;
     }
