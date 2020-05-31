@@ -25,6 +25,7 @@ public class ObjectSpawner : MonoBehaviour
     void Start()
     {
         _gameObjects = new List<GameObject>();
+        time = spawnFreq + 1;
     }
 
     // Update is called once per frame

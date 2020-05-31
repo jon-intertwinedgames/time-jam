@@ -100,12 +100,15 @@ public class DrifterController : MonoBehaviour
 
             if(this.transform.position.x < goal.position.x)
             {
-                this.transform.localScale = new Vector3(1, 1, 1);
+                if (this.transform.localScale.x < 0)
+                    this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                
             }
 
             if (this.transform.position.x > goal.position.x)
             {
-                this.transform.localScale = new Vector3(-1, 1, 1);
+                if (this.transform.localScale.x > 0)
+                    this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
             }
 
             time += Time.deltaTime;
