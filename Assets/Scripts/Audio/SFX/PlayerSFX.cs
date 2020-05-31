@@ -33,8 +33,11 @@ public class PlayerSFX : MonoBehaviour
         timeAudioSource = AudioManager.CreateAudioSource(transform);
         deathAudioSource = AudioManager.CreateAudioSource();
 
+        timeAudioSource.spatialBlend = 0;
+
         flyingAudioSource.gameObject.name = "flyingAudioSource";
         timeAudioSource.gameObject.name = "timeAudioSource";
+        deathAudioSource.gameObject.name = "deathAudioSource";
 
         playerController_script.TeleportEvent += TeleportingSFX;
         GetComponent<Health>().DeathEvent += DeathSFX;

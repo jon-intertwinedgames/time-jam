@@ -570,7 +570,7 @@ MonoBehaviour:
     volume: 1
     delay: 0
   slowingTime:
-    volume: 1
+    volume: 0.5
     delay: 0
   teleporting:
     volume: 1
