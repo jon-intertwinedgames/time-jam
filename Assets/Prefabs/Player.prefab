@@ -468,6 +468,8 @@ MonoBehaviour:
   maxSpeedOfArrow: 8
   particleSystem: {fileID: 0}
   bowSFX: {fileID: 8190358475557611048}
+  deathAnim: {fileID: 6274525111789720571, guid: 6eb146ab7370a1840a0889672714c3d9,
+    type: 3}
 --- !u!114 &1440747908043183961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,6 +530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar_trans: {fileID: 5108809151912794425}
+  showHealthText: 0
+  currentHealth_text: {fileID: 0}
 --- !u!114 &3735859577938741648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +576,7 @@ MonoBehaviour:
     volume: 1
     delay: 0
   death:
-    volume: 0
+    volume: 1
     delay: 0
 --- !u!95 &145456463300354630
 Animator:
@@ -729,8 +733,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.000015258789}
-  m_Size: {x: 1.4700001, y: 5.8000007}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.5, y: 5.8}
   m_Direction: 0
 --- !u!1 &1440747908094185107
 GameObject:
