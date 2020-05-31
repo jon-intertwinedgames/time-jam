@@ -12,17 +12,21 @@ public class FlipObjectBasedOnRigidbody : MonoBehaviour
     {
         if (rb)
         {
-            if (rb.velocity.x > 0)
+            if(rb.velocity.magnitude > 0.1f)
             {
-                if (this.transform.localScale.x < 0)
-                    this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
-            }
+                if (rb.velocity.x > 0)
+                {
+                    if (this.transform.localScale.x < 0)
+                        this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                }
 
-            else if (rb.velocity.x < 0)
-            {
-                if (this.transform.localScale.x > 0)
-                    this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                else if (rb.velocity.x < 0)
+                {
+                    if (this.transform.localScale.x > 0)
+                        this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+                }
             }
+            
         }
 
         else
