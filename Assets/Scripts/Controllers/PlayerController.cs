@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     new ParticleSystem particleSystem = null;
     EmissionModule particleSystemEmission;
 
-    [SerializeField]
-    private BowSFX bowSFX = null;
+    [SerializeField] private BowSFX bowSFX = null;
+    [SerializeField] private GameObject deathAnim = null;
 
     private LandMovement movement_script;
     private Aimer aimer_script;
@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     private Health health_script;
     private GroundDetector groundDetector_script;
     private FlipObjectBasedOnRigidbody flipObject_script;
-    
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -275,6 +274,7 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
+        Instantiate(deathAnim, transform.position, Quaternion.identity);
         Destroy(gameObject);//gamemaster is always searching for this obj
     }
 }

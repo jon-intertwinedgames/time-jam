@@ -80,7 +80,7 @@ public class AudioManager : MonoBehaviour
         sfxDictionary.Add(SFX.ArrowHittingFlesh3, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 3"));
         sfxDictionary.Add(SFX.ArrowHittingFlesh4, Resources.Load<AudioClip>("SFX/Arrow Hitting Flesh/Arrow Hitting Flesh 4"));
 
-        sfxDictionary.Add(SFX.SlowingDownTime, Resources.Load<AudioClip>("SFX/Slowing Down Time/Slowing Down Time"));
+        sfxDictionary.Add(SFX.SlowingDownTime, Resources.Load<AudioClip>("SFX/Time/Slow Down Time"));
 
         sfxDictionary.Add(SFX.Teleporting1, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 1"));
         sfxDictionary.Add(SFX.Teleporting2, Resources.Load<AudioClip>("SFX/Teleporting/Teleporting 2"));

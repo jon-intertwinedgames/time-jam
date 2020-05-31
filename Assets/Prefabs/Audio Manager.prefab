@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introTheme:
-    volume: 0.2
+    volume: 0.125
     delay: 0
   battleMusicTheme:
-    volume: 0.2
+    volume: 0.125
     delay: 0

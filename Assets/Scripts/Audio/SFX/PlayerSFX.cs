@@ -10,6 +10,7 @@ public class PlayerSFX : MonoBehaviour
     private AudioSource audioSource = null;
     private AudioSource flyingAudioSource = null;
     private AudioSource timeAudioSource = null;
+    private AudioSource deathAudioSource = null;
 
     private bool timeSlowAudioPlayed;
 
@@ -30,9 +31,13 @@ public class PlayerSFX : MonoBehaviour
     {        
         flyingAudioSource = AudioManager.CreateAudioSource(transform);
         timeAudioSource = AudioManager.CreateAudioSource(transform);
+        deathAudioSource = AudioManager.CreateAudioSource();
+
+        timeAudioSource.spatialBlend = 0;
 
         flyingAudioSource.gameObject.name = "flyingAudioSource";
         timeAudioSource.gameObject.name = "timeAudioSource";
+        deathAudioSource.gameObject.name = "deathAudioSource";
 
         playerController_script.TeleportEvent += TeleportingSFX;
         GetComponent<Health>().DeathEvent += DeathSFX;
@@ -96,6 +101,7 @@ public class PlayerSFX : MonoBehaviour
 
     private void DeathSFX()
     {
-        AudioManager.PlayOneShotSFX(audioSource, death.Volume, death.Delay, SFX.DrifterDeath);
+        deathAudioSource.transform.position = transform.position;
+        AudioManager.PlayOneShotSFX(deathAudioSource, death.Volume, death.Delay, SFX.DrifterDeath);
     }
 }
