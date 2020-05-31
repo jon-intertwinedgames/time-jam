@@ -587,7 +587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'time jam
+  m_text: 'Artemis
 
 '
   m_isRightToLeft: 0
@@ -659,10 +659,10 @@ MonoBehaviour:
   m_margin: {x: -6.984207, y: 0, z: 0, w: 0.3904724}
   m_textInfo:
     textComponent: {fileID: 408074990}
-    characterCount: 9
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 2
+    spaceCount: 1
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
