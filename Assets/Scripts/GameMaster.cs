@@ -97,6 +97,7 @@ public class GameMaster : MonoBehaviour
                 case GameState.Playing:
                     state = GameState.Paused;
                     Time.timeScale = 0 ;
+                    pauseCanvasGroup.blocksRaycasts = true;
                     pauseCanvasGroup.alpha = 1;
                     pauseCanvasGroup.interactable = true;                    
                     break;
@@ -105,7 +106,7 @@ public class GameMaster : MonoBehaviour
                     Time.timeScale = 1;
                     pauseCanvasGroup.alpha = 0;
                     pauseCanvasGroup.interactable = false;
-
+                    pauseCanvasGroup.blocksRaycasts = false;
                     print("Made it     " + state + " " + Time.timeScale);
                     break;
             }   

@@ -123,7 +123,7 @@ public class HandlePlayerState : MonoBehaviour
         playerController_script.MovingGroundShootEvent += delegate { ActionState = PlayerState.MovingGroundShoot; };
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         UpdateState();
         //print(actionState);

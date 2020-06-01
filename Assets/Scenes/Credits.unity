@@ -2027,7 +2027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Michael Mena
+  m_text: LeoTheLegion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e3586212dd2fa6b43ab2c06253811ead, type: 2}
   m_sharedMaterial: {fileID: -9097213845109434794, guid: e3586212dd2fa6b43ab2c06253811ead,
@@ -2099,8 +2099,8 @@ MonoBehaviour:
     textComponent: {fileID: 1590121921}
     characterCount: 12
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
