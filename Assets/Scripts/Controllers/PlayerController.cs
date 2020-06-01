@@ -66,20 +66,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        MovementInput();
-        ArrowInput();
-        TeleportationInput();
-        TimeInput();
-
-        flipObject_script.enabled = (groundDetector_script.IsOnGround) ? true : false;
-
-        if (Debug.isDebugBuild)
+        if (GameMaster.State == GameState.Playing)
         {
-            if (Input.GetKeyDown(KeyCode.T))
+            MovementInput();
+            ArrowInput();
+            TeleportationInput();
+            TimeInput();
+
+            flipObject_script.enabled = (groundDetector_script.IsOnGround) ? true : false;
+
+            if (Debug.isDebugBuild)
             {
-                health_script.ChangeHealth(-10);
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    health_script.ChangeHealth(-10);
+                }
             }
-        }        
+        }
     }
 
     void MovementInput()

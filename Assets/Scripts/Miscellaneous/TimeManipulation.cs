@@ -45,7 +45,7 @@ public class TimeManipulation : MonoBehaviour
 
     private void Update()
     {
-        if(Time.timeScale != 1 && UpdateTimeBar != null)
+        if(Time.timeScale != 1 && GameMaster.State == GameState.Playing && UpdateTimeBar != null)
         {
             currentTimeValue -= timeReductionPerSec * Time.unscaledDeltaTime;
 
