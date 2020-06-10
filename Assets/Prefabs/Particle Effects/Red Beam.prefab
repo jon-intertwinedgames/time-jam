@@ -7,15 +7,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 716383613797989438, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 716383613797989438, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998368212602524565, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998368212602524565, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998368212602524565, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951311206191043401, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 721259579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951311206191043401, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4735057176657091882, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}
       propertyPath: secondsToDestroySelf
-      value: 2.92
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992588190161872900, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5006391488247464166, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}
       propertyPath: damage
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5063678287412361840, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}
@@ -31,6 +71,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063678287412361840, guid: 03e49544475a41c4db14c2c8ab2791d3,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6956369764600819817, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}
@@ -50,12 +95,12 @@ PrefabInstance:
     - target: {fileID: 8535633931790060202, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}
       propertyPath: rateofExpand
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8757331915550913764, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}
       propertyPath: m_Name
-      value: Small Beam
+      value: Red Beam
       objectReference: {fileID: 0}
     - target: {fileID: 8757331915550913771, guid: 03e49544475a41c4db14c2c8ab2791d3,
         type: 3}

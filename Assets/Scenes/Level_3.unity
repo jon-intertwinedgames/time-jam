@@ -10494,12 +10494,12 @@ PrefabInstance:
     - target: {fileID: 4722392535113422285, guid: 3e24c88557f2483448ced08f3de1d0ec,
         type: 3}
       propertyPath: maxObjects
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4722392535113422285, guid: 3e24c88557f2483448ced08f3de1d0ec,
         type: 3}
       propertyPath: spawnFreq
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e24c88557f2483448ced08f3de1d0ec, type: 3}
