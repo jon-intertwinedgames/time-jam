@@ -2420,7 +2420,7 @@ PrefabInstance:
     - target: {fileID: 5505058423717676767, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
       propertyPath: numOfEnemiesToKillToWin
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6988861212717405183, guid: 35089e163fd2ca340a82ee0e820ca7de,
         type: 3}
@@ -24811,7 +24811,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectPrefab
       value: 
-      objectReference: {fileID: 5174794603219495003, guid: cfb565b98be91d447851d8f70f4838b4,
+      objectReference: {fileID: 674611989468756754, guid: 8a27cac7fb785c74db40927a983e2184,
         type: 3}
     - target: {fileID: 4722392535113422285, guid: 3e24c88557f2483448ced08f3de1d0ec,
         type: 3}
@@ -24821,7 +24821,7 @@ PrefabInstance:
     - target: {fileID: 4722392535113422285, guid: 3e24c88557f2483448ced08f3de1d0ec,
         type: 3}
       propertyPath: spawnFreq
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e24c88557f2483448ced08f3de1d0ec, type: 3}
