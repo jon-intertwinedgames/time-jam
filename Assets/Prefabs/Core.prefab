@@ -1091,12 +1091,12 @@ PrefabInstance:
     - target: {fileID: 5428847235842693805, guid: fc1f51a20fae0e04cb823216c3c8cd44,
         type: 3}
       propertyPath: introTheme.volume
-      value: 0.15
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5428847235842693805, guid: fc1f51a20fae0e04cb823216c3c8cd44,
         type: 3}
       propertyPath: battleMusicTheme.volume
-      value: 0.15
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc1f51a20fae0e04cb823216c3c8cd44, type: 3}

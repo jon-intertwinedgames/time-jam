@@ -53,11 +53,11 @@ TagManager:
   - name: Player Projectiles
     uniqueID: 956434611
     locked: 0
-  - name: Enemies
-    uniqueID: 4272752687
-    locked: 0
   - name: Terrain
     uniqueID: 4072140035
+    locked: 0
+  - name: Enemies
+    uniqueID: 4272752687
     locked: 0
   - name: Tutorial
     uniqueID: 2092538499
