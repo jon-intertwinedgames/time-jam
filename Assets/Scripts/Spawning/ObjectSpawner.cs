@@ -45,10 +45,10 @@ public class ObjectSpawner : MonoBehaviour
             time = 0;
         }
 
-        foreach (var g in _gameObjects)
+        for(int i = 0; i < _gameObjects.Count; i++)
         {
-            if (g == null)
-                _gameObjects.Remove(g);
+            if (_gameObjects[i] == null)
+                _gameObjects.Remove(_gameObjects[i]);
         }
     }
 
